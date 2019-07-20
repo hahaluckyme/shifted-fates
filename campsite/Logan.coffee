@@ -37,6 +37,6 @@ export Logan = new class extends NPC
       "Don't believe him": =>
         say paragraph "He laughs. \"Well, you'll believe me soon enough! Sorry to break the news to you!\""
 
-    say paragraph "... to be continued"
+    say paragraph "(... to be continued, demo ending 1 of 2)"
 
     await do end
