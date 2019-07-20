@@ -9,7 +9,7 @@ export ObservatoryInside = new class extends Room
     else
       say paragraph "It's the room you woke up in."
     say "There's a door to the north. Light floods through the window."
-
+s
   Choices: =>
     "Scavenge": if not @scavenged then =>
       await scene @Scavenge
