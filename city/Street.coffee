@@ -34,5 +34,4 @@ export CityStreetHuskyHouse = new class extends Room
       say paragraph "You keep your distance and stay out of sight."
 
   Choices: =>
-    "Explore": => await scene @Explore
     West: => await Player.location = CityStreetOutskirts
