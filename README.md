@@ -14,7 +14,7 @@ Are you a confirmed writer for the game? If so, skip this step!
 
 Otherwise, you will have to `Fork` the project on the page https://github.com/hahaluckyme/shifted-fates by clicking `Fork`.
 
-## 5. Clone the `alphabet` engine repo
+## 5. Clone the `alphabet` game engine repo
 1. Click `Clone a repository from the Internet...`
 2. Click the `URL` tab
 3.  Are you a DM? Type `https://github.com/hahaluckyme/alphabet`
