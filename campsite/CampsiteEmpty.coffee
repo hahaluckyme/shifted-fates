@@ -7,7 +7,7 @@ export CampsiteEmpty = new class extends Room
   # TODO: Rewrite to prioritize survival-oriented items, such as water, food, some kind of knife, etc.
 
   Enter: =>
-    say paragraph "While wandering along the outside perimeter of the repurposed observatory, you stumble across a small campsite."
+    say paragraph "You walk down the trail, treading carefully with each step. It's better than walking through "
     switch
       when not @take_chair and not @take_pot and not @take_bottles
         say "Within the campsite are a tent, chair, and basic supplies, including cookware and two bottles of water."
@@ -73,7 +73,7 @@ export CampsiteEmpty = new class extends Room
 
     say paragraph "\"I don't think that belongs to you,\" he growls."
 
-    say paragraph "He throws a hard punch at your head and you black out."
+    say paragraph "Before you can react, he throws a hard punch at your head. You don't even feel the pain of the impact as you black out."
 
     await do pause
 

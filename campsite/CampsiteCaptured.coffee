@@ -54,7 +54,6 @@ export CampsiteCaptured = new class extends Room
       await do end
 
 
-
   Call: =>
     switch
       when @times_called is 0
