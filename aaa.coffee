@@ -33,7 +33,9 @@ export flush = (force) =>
     stdout = ''
 
 say = (inner) =>
-  if inner != null
+  if typeof inner is 'function'
+    inner()
+  else if inner != null
     inner = '' + inner
     inner = inner.replace 'undefined', ''
     if inner[inner.length-1] in '.!?"'
@@ -46,7 +48,10 @@ say = (inner) =>
       buffers[buffers.length-1] += inner
 
 scene = (inner) =>
-  game.playScene inner
+  if inner instanceof Scenario
+    game.playScene inner.Start
+  else
+    game.playScene inner
 
 speech = (inner) =>
   return '"' + inner + '"'
@@ -78,6 +83,7 @@ class Character extends Entity
   @get has_cunt: => @sex is 'female'
   @set location: (target) => await game.goTo target
 
+class Scenario extends Entity
 
 export Player = new class extends Character
   inventory: []

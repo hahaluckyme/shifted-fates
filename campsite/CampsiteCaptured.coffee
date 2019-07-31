@@ -54,39 +54,39 @@ export CampsiteCaptured = new class extends Room
       await do end
 
 
-  Call: =>
-    switch
-      when @times_called is 0
-        say paragraph "You call out to the wolf to get his attention. One of his ears flickers at the sound, but he doesn't pay you any mind."
-      when @times_called is 1
-        say paragraph "Louder this time, you call to the wolf. He continues to ignore you, now quietly humming a song to himself to drown out your protests."
-      when @times_called is 2
-        say paragraph "Try as you might to get him to pay attention to you, nothing you yell or cry out seems to "
-    @times_called += 1
+  # Call: =>
+  #   switch
+  #     when @times_called is 0
+  #       say paragraph "You call out to the wolf to get his attention. One of his ears flickers at the sound, but he doesn't pay you any mind."
+  #     when @times_called is 1
+  #       say paragraph "Louder this time, you call to the wolf. He continues to ignore you, now quietly humming a song to himself to drown out your protests."
+  #     when @times_called is 2
+  #       say paragraph "Try as you might to get him to pay attention to you, nothing you yell or cry out seems to "
+  #   @times_called += 1
 
-    # "Apologize": if @times_begged is 0 then =>
-    #   await scene @Beg
-    # "Plead": if @times_begged is 1 then =>
-    #   await scene @Beg
-    # "Beg": if @times_begged is 2 then =>
-    #   await scene @Beg
-    # "Cry": if not @cried then =>
-    #   @cried = true
-    #   say paragraph "You realize how much of a mess you've already gotten yourself into. Tears streak down your face."
+  # "Apologize": if @times_begged is 0 then =>
+  #   await scene @Beg
+  # "Plead": if @times_begged is 1 then =>
+  #   await scene @Beg
+  # "Beg": if @times_begged is 2 then =>
+  #   await scene @Beg
+  # "Cry": if not @cried then =>
+  #   @cried = true
+  #   say paragraph "You realize how much of a mess you've already gotten yourself into. Tears streak down your face."
 
-    #   if @times_begged is 3 and @cried
-    #     await scene LoganCaptureFuck
-    # "Examine collar": if @times_examined_collar < 3 then =>
-    #   say paragraph "You look at the collar. It is securely fastened to your neck and around the tree."
-    #   @times_examined_collar += 1
+  #   if @times_begged is 3 and @cried
+  #     await scene LoganCaptureFuck
+  # "Examine collar": if @times_examined_collar < 3 then =>
+  #   say paragraph "You look at the collar. It is securely fastened to your neck and around the tree."
+  #   @times_examined_collar += 1
 
-    #   TODO: On third time, you notice that one of the links on the chain is broken
-    # TODO: Try to look for a hard object if you've noticed the broken link
-    #   TODO: Grab the hard object
-    # TODO: Try to escape if you have the hard object
-    #   TODO: You break the chain and attempt to run away, but get caught because Logan is faster than you.
-    #   TODO: Angry fuck scene
-    #   TODO: Post-end game credits describing you being broken in as his bitch, but you're completely broken and collared.
+  #   TODO: On third time, you notice that one of the links on the chain is broken
+  # TODO: Try to look for a hard object if you've noticed the broken link
+  #   TODO: Grab the hard object
+  # TODO: Try to escape if you have the hard object
+  #   TODO: You break the chain and attempt to run away, but get caught because Logan is faster than you.
+  #   TODO: Angry fuck scene
+  #   TODO: Post-end game credits describing you being broken in as his bitch, but you're completely broken and collared.
 
   # Beg: =>
   #   switch
@@ -98,8 +98,8 @@ export CampsiteCaptured = new class extends Room
   #       say paragraph "You beg for him to let you go, chains jangling as you move your head."
   #   @times_begged += 1
 
-    if @times_begged is 3 and @cried
-      await scene LoganCaptureFuck
+  # if @times_begged is 3 and @cried
+  #   await scene LoganCaptureFuck
 
 export LoganCaptureFuck = =>
 
