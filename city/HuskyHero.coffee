@@ -8,16 +8,16 @@ export HuskyHero = new class extends Scenario
 
     await choice =>
       "Fight him!": =>
-        await scene @FightText
+        say @FightText
         await scene @Combat
       "Distract him and run!": =>
-        await scene @DistractText
+        say @DistractText
         await scene @Combat
       "Hide and watch": =>
-        await scene @HideText
+        say @HideText
         await scene @Sneak
       "Skulk away...": =>
-        await scene @SkulkText
+        say @SkulkText
         await scene @Sneak
 
   Combat: =>
@@ -27,7 +27,7 @@ export HuskyHero = new class extends Scenario
     await choice =>
       "Overpower him (STR)": =>
         say @OverpowerText
-        roll20 str, =>
+        await roll20 str, =>
           0: =>
             say @OverpowerLostText
             await scene @LostFight
@@ -35,8 +35,8 @@ export HuskyHero = new class extends Scenario
             say @OverpowerWonText
             await scene @WonFight
       "Outmaneuver him (DEX)": =>
-        await scene @OutmaneuverText
-        roll20 dex, =>
+        say @OutmaneuverText
+        await roll20 dex, =>
           0: =>
             say @OutmaneuverLostText
             await scene @LostFight
@@ -44,8 +44,8 @@ export HuskyHero = new class extends Scenario
             say @OutmaneuverWonText
             await scene @WonFight
       "Bolt away (DEX)": =>
-        await scene @BoltAwayFromFightText
-        roll20 dex, =>
+        say @BoltAwayFromFightText
+        await roll20 dex, =>
           0: =>
             say @BoltAwayFromFightLostText
             await scene @LostFight
@@ -59,7 +59,7 @@ export HuskyHero = new class extends Scenario
     await choice =>
       "Bolt away (DEX)": =>
         say @BoltAwayFromHidingText
-        roll20 dex, =>
+        await roll20 dex, =>
           0: =>
             say @BoltAwayFromHidingLostText
             await scene @LostFight
@@ -68,7 +68,7 @@ export HuskyHero = new class extends Scenario
             await scene @Escaped
       "Sneak away (DEX)": =>
         say @SneakAwayText
-        roll20 dex, =>
+        await roll20 dex, =>
           0: =>
             say @SneakAwayLostText
             await scene @LostFight
@@ -80,6 +80,7 @@ export HuskyHero = new class extends Scenario
 
   LostFight: =>
     say paragraph "\"Well, well. Looks like someone's going to have to be doing double duty when we get back to the house.\""
+    await do pause
 
     await do end
     # await Player.location = HuskyHouse
@@ -93,11 +94,19 @@ export HuskyHero = new class extends Scenario
   # TEXT
 
   FightText: =>
+    say paragraph "Fight!"
+
   DistractText: =>
+    say paragraph "Distract!"
+
   HideText: =>
+    say paragraph "Hide!"
+
   SkulkText: =>
+    say paragraph "Skulk!"
 
   OverpowerText: =>
+    say paragraph "Overpower him!"
 
   OverpowerLostText: =>
     say paragraph "Swallowing your fear, you brace yourself for a forward leap to tackle the large husky male. The force of the impact is enough to leave him on unsteady footing, and some extra clumsy wrestling drags him down to the ground with you. You straddle the canine's hips and start to wail away at his face with frenzied punches. Try as you might to subdue him, however, the male finds an opening to pull your chest against his and rolls over on top of you, turning the tables by pinning you beneath his bulk."
@@ -109,6 +118,7 @@ export HuskyHero = new class extends Scenario
     say paragraph "Satisfied with the bad dog's scolding, you rise to your feat, breathing heavily from the adrenaline and exertion. The husky doesn't wait an instant to scamper off, running on all fours like the cowed dog he is. Once he's out of sight, you let out a quiet sigh of relief and begin to wander back to a safer area, hoping you don't have to play hero like this again any time soon. You can't help but feel like maybe you went overboard, but if that's what it takes to protect "
 
   OutmaneuverText: =>
+    say paragraph "Outmaneuver him!"
 
   OutmaneuverLostText: =>
     say paragraph "You don't even see the husky's fist before it's too late. In one swift swing, you're knocked flat on your ass, your vision swimming from the force of the impact. Ringing erupts in your ears as the canine crouches down to look into your eyes, his cocksure smile and rock-hard cock spelling out his intent. Dazed as you are, it's all too easy for the dog to guide you down onto your back with a single firm, imploring press of his handpaw."
@@ -120,18 +130,25 @@ export HuskyHero = new class extends Scenario
     say paragraph "Adrenaline pumping through your veins, you run a long time before finally coming to a stop around several city blocks. You're still worried he'll be able to scent you, but bank on the rank stank of the city-folk to mask your own smell. Wiping your brow, you continue walking back to safety, fingers crossed that you'll never meet the husky again."
 
   BoltAwayFromFightText: =>
+    say paragraph "BoltAwayFromFightText!"
 
   BoltAwayFromFightLostText: =>
+    say paragraph "BoltAwayFromFightLostText!"
 
   BoltAwayFromFightWonText: =>
+    say paragraph "BoltAwayFromFightWonText!"
 
   BoltAwayFromHidingText: =>
+    say paragraph "BoltAwayFromHidingText!"
 
   BoltAwayFromHidingLostText: =>
+    say paragraph "BoltAwayFromHidingLostText!"
 
   BoltAwayFromHidingWonText: =>
+    say paragraph "BoltAwayFromHidingWonText!"
 
   SneakAwayText: =>
+    say paragraph "SneakAwayText!"
 
 
 
@@ -172,7 +189,7 @@ export HuskyHeroFailedSelfDefense = =>
 export HuskyHeroEscape = =>
   say paragraph "You run as fast as you can to get away from the angry husky."
 
-  roll20 dex, =>
+  await roll20 dex, =>
     0: =>
       await scene HuskyHeroFailedEscape
     23: =>
