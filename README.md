@@ -6,39 +6,50 @@ https://desktop.github.com/
 ## 2. Download VSCode
 https://code.visualstudio.com/
 
-## 3. Install Node JS, version `Recommended For Most Users`
+## 3. Download Git Bash
+https://git-scm.com/download/win
+
+## 4. Install Node JS, version `Recommended For Most Users`
 https://nodejs.org/en/
 
-## 4. Fork the repo
-Are you a confirmed writer for the game? If so, skip this step!
-
-Otherwise, you will have to `Fork` the project on the page https://github.com/hahaluckyme/shifted-fates by clicking `Fork`.
-
 ## 5. Clone the `alphabet` game engine repo
-1. Click `Clone a repository from the Internet...`
+1. In Github Desktop, click `File` -> `Clone repository...` or `Clone a repository from the Internet...`
 2. Click the `URL` tab
-3.  Are you a DM? Type `https://github.com/hahaluckyme/alphabet`
+3. Type `https://github.com/hahaluckyme/alphabet`
 
-## 6. Clone the `shifted-fates` game data repo
-1. Click `File` -> `Clone repository...`
-2. Click `Clone a repository from the Internet...`
+## 6. Fork and clone the `shifted-fates` game data repo
+1. `Fork` the project on the page https://github.com/hahaluckyme/shifted-fates by clicking `Fork`.
+2. In Github Desktop, click `File` -> `Clone repository...` or `Clone a repository from the Internet...`
 3. Click the `URL` tab
-4. type `https://github.com/hahaluckyme/shifted-fates`. If you are not a confirmed writer, replace `hahaluckyme` with your Github username.
+4. Type `https://github.com/hahaluckyme/shifted-fates`, but replace `hahaluckyme` with your Github username or else you won't be able to push any changes.
 5. Change the `Local path` to end in `GitHub\alphabet\data` instead. Example: `C:\Users\Lucky\Documents\GitHub\alphabet\data`
 
 ## 7. Setup VSCode
-Open VSCode and click `File` -> `Open Folder` -> and select the `data` folder.
+Open VSCode and click `File` -> `Open Folder` -> and select the `data` folder. This is the folder that contains all of the game data that you can edit.
 
 Example: `C:\Users\Lucky\Documents\GitHub\alphabet\data`
 
+## 8. Install VSCode extensions
+You should install these extensions (some may already be installed):
+- [coffeescript-support](https://marketplace.visualstudio.com/items?itemName=yorkxin.coffeescript-support)
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+- [npm](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script)
+
+(OPTIONAL):
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [WordCounter](https://marketplace.visualstudio.com/items?itemName=kirozen.wordcounter)
+
+(OPTIONAL but ask someone for help):
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+
 ## 8. Install engine dependencies
-`CTRL+SHIFT+P` and type `npm install`.
+`CTRL+SHIFT+P` and type `npm install` and click `npm: Install Dependencies`.
 A small terminal should pop up and install dependencies.
 
 ## 9. Start development server
-`CTRL+SHIFT+P` and type `npm start`. The terminal should start the development server for your game to run and a browser tab should be opened on your computer. You may have to refresh the page when it loads if it is a blank screen.
+`CTRL+SHIFT+P` and type `npm start` and click `npm: Start`. A popup window at the bottom should have come up, setting up your server. It will automatically open a window on your default browser to http://localhost:3000/. Refresh the page and the game should be loaded.
 
-Feel free to close the terminal panel with the X button labeled `Close Panel`, it will keep running in the background.
+Feel free to close the terminal panel with the X button, which will keep it running while you have VSCode open. If you hover over the icon it will be labeled `Close Panel`. If you want to stop the server, click the trash can button labeled `Kill Terminal`.
 
 ## 10. Edit the game!
 When you save, it should refresh your game window with the latest build.

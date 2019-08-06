@@ -1,4 +1,4 @@
-if window.location.pathname is "/debug"
+if window.location.search is "?debug"
   say paragraph "Secret Shifted Fates Debug menu!"
   option "Husky Hero Scenario": => await scene HuskyHero
   await do choice
