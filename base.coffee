@@ -1,14 +1,21 @@
-buffers = []
-stdout = ''
+game = null
 
-game = require('game');
+export hook = (comp) =>
+  game = comp
 
 str = 'STR'
-dex = 'dex'
+dex = 'DEX'
 per = 'PER'
 int = 'INT'
 cha = 'CHA'
 luck = 'LUCK'
+
+buffer = ''
+export flush = () =>
+  if buffer.length is 0
+    return
+  game.print(buffer)
+  buffer = ''
 
 # disabled until fixed...
 # Function::toStringOld = Function::toString
@@ -18,34 +25,13 @@ luck = 'LUCK'
 #   buffer = buffers.pop()
 #   return buffer
 
-export flush = (force) =>
-  if stdout.trim() is ''
-    return
-  lines = stdout.split '\n'
-
-  if not force
-    for line in lines[0...-1]
-      game.print line
-    [..., stdout] = lines
-  else
-    for line in lines
-      game.print line
-    stdout = ''
-
 say = (inner) =>
-  if typeof inner is 'function'
-    inner()
-  else if inner != null
-    inner = '' + inner
-    inner = inner.replace 'undefined', ''
-    if inner[inner.length-1] in '.!?"'
-      inner = inner + ' '
+  inner = '' + inner
+  inner = inner.replace 'undefined', ''
+  if inner[inner.length-1] in '.!?"'
+    inner = inner + ' '
 
-    if buffers.length is 0
-      stdout += ''+inner
-      flush()
-    else
-      buffers[buffers.length-1] += inner
+  buffer += inner
 
 scene = (inner) =>
   if inner instanceof Scenario
@@ -57,40 +43,16 @@ speech = (inner) =>
   return '"' + inner + '"'
 
 paragraph = (inner) =>
-  return '\n' + inner
+  flush()
+  return inner
 
 add = (object, ...additions) =>
   object.push(...additions)
 
 end = =>
-  await Player.location = Nowhere
   say paragraph "The end."
-
-class Entity
-  @get: (props) =>
-    for prop, func of props
-      Object.defineProperty @prototype, prop,
-        configurable: true
-        get: func
-  @set: (props) =>
-    for prop, func of props
-      Object.defineProperty @prototype, prop,
-        configurable: true
-        set: func
-
-class Character extends Entity
-  @get has_cock: => @sex is 'male'
-  @get has_cunt: => @sex is 'female'
-  @set location: (target) => await game.goTo target
-
-class Scenario extends Entity
-
-export Player = new class extends Character
-  inventory: []
-take = (...elems) => Player.inventory.push ...elems
-
-class NPC extends Character
-class Room extends Entity
+  flush()
+  game.end()
 
 delay = (seconds) =>
   flush(true)
@@ -108,15 +70,22 @@ oneof = (...args) =>
     random_key_index = Math.floor Math.random() * outcomes.length
     return outcomes[random_key_index]
 
-choice = (choices) =>
-  flush(true)
-  if typeof choices is 'function'
-    choices = choices()
-  return new Promise (resolve) => game.setChoices choices, resolve
+options = {}
+option = (outcome_obj) =>
+  options = {
+    options...
+    outcome_obj...
+  }
+
+choice = =>
+  flush()
+  tmp_options = options
+  options = {}
+  await new Promise (resolve) => game.showChoices tmp_options, resolve
 
 pause = =>
-  choice =>
-    "...": =>
+  option "...": =>
+  await do choice
 
 roll20 = (attribute, dc_outcomes_func) =>
   bonus = switch attribute
