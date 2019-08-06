@@ -3,20 +3,20 @@ active: true
 Start: =>
   say paragraph "While wandering through the city, you end up passing by one of the seedier-looking neighborhoods. You're about to give it a wide berth when you hear an agonized cry from down the street. Sparing another glance, you spot a fox woman writhing in protest beneath a muscular male husky, the canine growling aggressively as he pins her arms to the ground and kicks apart her legs. Her cries grow louder when the husky spears his stiff doggy cock into her folds, his hips rocking hard and fast as he plows her unwilling form."
 
-  await choice =>
-    "Fight him": => await scene @Fight
-    "Distract him and run": => await scene @Distract
-    # "Hide and watch": => await scene @Hide
-    "Escape unseen": => await scene @Escape
+  option "Fight him": => await scene @Fight
+  option "Distract him and run": => await scene @Distract
+  # option "Hide and watch": => await scene @Hide
+  option "Escape unseen": => await scene @Escape
+  await do choice
 
 Fight: =>
   say paragraph "The city may have gone to hell, but you're not about to let someone be brutally raped without intervening. After taking a deep breath to steel your resolve, you run up to the husky and kick the dog's side as hard as you can. He lets out a pained yelp at this, quickly shoving the fox girl off his length and turning to growl at you. Seizing the opportunity, his prey scrambles to her feet and runs away with frightened whimpers, not sparing her rescuer another glance in her panic."
   say paragraph "Standing upright, the canine proves much taller than you anticipated. His broad shoulders and muscular stature speak of someone who has spent years honing their physique. You can see every little ripple of tension beneath that dense, cream-colored fur as he glowers at you. After sizing you up for a moment, the sharp scowl on his muzzle melts into a self-satisfied smirk. \"You picked the wrong fight,\" the husky rumbles darkly. \"I'm gonna enjoy breaking you, bitch.\""
 
-  await choice =>
-    "Overpower him (STR)": => await scene @Overpower
-    "Outmaneuver him (DEX)": => await scene @Outmaneuver
-    "Run away (DEX)": => await scene @RunAway
+  option "Overpower him (STR)": => await scene @Overpower
+  option "Outmaneuver him (DEX)": => await scene @Outmaneuver
+  option "Run away (DEX)": => await scene @RunAway
+  await do choice
 
 Overpower: =>
   if roll20 str >= 25
@@ -38,20 +38,12 @@ Outmaneuver: =>
     say paragraph "The husky leans over you, his breath bathing your face in warmth as he stares deeply into your eyes. \"Thought you were some hot shit, didn't ya?\" he teases. \"Don't kid yourself. You're nothing but another bitch in the making. Nothing but a stupid little whore who needs a hot dose of cum to fix that head of yours. Now be a good slut and spread those legs for me.\" There's something about his assertive tone and the way his paws stroke along your sides that leaves you hard despite yourself, your cock twitching weakly in submissive resignation."
     await scene @LostFight
 
-RunAway: =>
-  if roll20 dex >= 20
-    say placeholder
-    await scene @Escaped
-  else
-    say placeholder
-    await scene @LostFight
-
 Distract: =>
   say paragraph "Given how eagerly he's pounding into the vulpine woman, you doubt the burly husky be too happy if you interrupted him. Instead, you decide to distract the dog from a distance, weighing all the options at your disposal."
 
-  await choice =>
-    "Mimic a howl (CHA)": => await scene @MimicHowl
-    "Throw a rock (DEX)": => await scene @ThrowRock
+  option "Mimic a howl (CHA)": => await scene @MimicHowl
+  option "Throw a rock (DEX)": => await scene @ThrowRock
+  await do choice
 
 MimicHowl: =>
   if roll20 cha >= 20
@@ -72,9 +64,17 @@ ThrowRock: =>
 Escape: =>
   say paragraph "You skulk away because you're probably going to die if you get on the wrong side of that husky."
 
-  await choice =>
-    "Run away (DEX)": => await scene @RunAway
-    "Sneak away (DEX)": => await scene @SneakAway
+  option "Run away (DEX)": => await scene @RunAway
+  option "Sneak away (DEX)": => await scene @SneakAway
+  await do choice
+
+RunAway: =>
+  if roll20 dex >= 20
+    say placeholder
+    await scene @Escaped
+  else
+    say placeholder
+    await scene @LostFight
 
 SneakAway: =>
   if roll20 dex >= 20
@@ -117,7 +117,7 @@ LostFight: =>
   say paragraph "Several more minutes pass before his knot deflates enough to pry free from your stretched and cum-sullied hole. Your entrance gapes in its absence, the alabaster mess drooling from your passage meager salve for the sore, reddish flesh. You reach back to finger your gooey pussy, your tail wagging weakly your alpha stands up behind you. \"That's a good girl,\" he rumbles. \"I bet you feel so much better now. I knew you'd be a good doggy bitch the moment I saw what a weak, needy male you were. Your slutty husky pussy just feels so much better, doesn't it? Mmh, of course it does. Now stand up and follow your alpha so I share that needy little snatch of yours with the rest of the pack.\""
   say paragraph "His words make your shudder in mindless ecstasy, every suggesting ringing true to your doggified mind. Without hesitation, you obey him, using your feminine arms to push yourself up off the ground, your knees still wobbly as pleasure radiates from your cum-filled core. \"Follow,\" he commands again, sternly, a command you instinctively heed as the husky begins to walk. Your mind drifts toward what the rest of the pack could be like and how happy they'll be to see a new member, wetness trickling from your slit as you're led back to the den that becomes your new home."
   say paragraph "You spend the rest of your life as your alpha's obedient cumslut. He takes you when he pleases, pinning you down to fuck your pretty maw of plunge into sex whenever he's horny, which he almost always is. You share your pleasure with the rest of the pack, helpfully lapping at other bitch's cunts to quell their heat until their alpha returns or using your body and fluids to transform captives into your likeness. You're often pushed onto all fours and fucked by several of the males at once, left to suck on musk-laced dog-cock while another sheathes his amazing canine length in your cunt or slutty backside. At the end of the day, it the alpha who transformed you that you always return to, his very special bitch among many to ravish as you add to the pack's numbers for many years to come. It's a simple existence, but one that you couldn't be happier with."
-  await do end
+  do end
 
 # # OLD STUFF
 
@@ -146,7 +146,7 @@ LostFight: =>
 #   say "Instead of instinctively spitting it out, you find that you can't help but swallow, panting as your breasts fill out and juices spill down your legs."
 
 #   say paragraph "(...to be continued, ending 3)"
-#   await do end
+#   do end
 
 # export HuskyHeroEscape = =>
 #   say paragraph "You run as fast as you can to get away from the angry husky."
