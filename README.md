@@ -42,33 +42,27 @@ You should install these extensions (some may already be installed):
 (OPTIONAL but ask someone for help):
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
-## 8. Install engine dependencies
+## 9. Setup game engine
 `CTRL+SHIFT+P` and type `npm install` and click `npm: Install Dependencies`.
-A small terminal should pop up and install dependencies.
+A small terminal should pop up and install dependencies. Wait for it to finish.
 
-## 9. Start development server
+## 10. Start development server
 `CTRL+SHIFT+P` and type `npm start` and click `npm: Start`. A popup window at the bottom should have come up, setting up your server. It will automatically open a window on your default browser to http://localhost:3000/. Refresh the page and the game should be loaded.
 
 Feel free to close the terminal panel with the X button, which will keep it running while you have VSCode open. If you hover over the icon it will be labeled `Close Panel`. If you want to stop the server, click the trash can button labeled `Kill Terminal`.
 
-## 10. Edit the game!
-When you save, it should refresh your game window with the latest build.
-
-## 11. Need to download game updates?
-Are you a confirmed writer?
-1. In Github Desktop, click the `Fetch origin` button.
-
-Otherwise...
-1. In Github Desktop, click on `Current branch` and select the `Branches` tab.
-2. Set your branch to `master` and click `Choose a branch to merge into master`.
-3. Click on `upstream/master` and then `Merge upstream/master into master`.
-4. Then click `Push origin` to push the new changes back into your own copy of the game on Github.
+## 11. Edit the game!
+When you save any file named with `.coffee` at the end, it should refresh your game window with the latest build, automatically restarting the game.
 
 ## 12. Submit changes back
-1. To submit changes back, open Github Desktop and type your changes in the left box, then `Commit to master`.
-2. Click `Push origin` at the top to push up your changes to Github.
+1. Open Github Desktop. There will be a list of changes that you've made in the left-hand panel.
+2. Make a change by typing a summary for a title and a description describing your changes, then click `Commit to master`.
+3. Click `Push origin` at the top to push up your changes to Github.
+4. Click on `Branch` -> `Create pull request`.
+5. Click on the `Create pull request` button on the Github site that is opened.
+6. Then just wait for comments and one of the editors to accept your pull request! You might get some feedback on your changes--update your local copy with those suggestions, and then make another change and push it up again.
 
-If you are not a confirmed writer, you will have to submit a Pull Request by also:
-1. Clicking on `Branch` -> `Create pull request`.
-2. Click on the `Create pull request` button on the Github site that is opened.
-3. Then just wait for one of the maintainers to accept your pull request! If it gets accepted, you likely won't have to do anything and you'll see your changes in the next push of the game.
+## 13. Need to download the latest version?
+1. In Github Desktop, click on `Branch` -> `Rebase current branch`.
+2. Click on the `upstream/master` branch.
+3. If your game is up-to-date, it will say `This branch is up to date with master` at the bottom. Otherwise, click `Start rebase`.
