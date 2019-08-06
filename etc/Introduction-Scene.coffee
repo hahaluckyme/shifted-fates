@@ -1,5 +1,8 @@
-option "Husky Hero Scenario": => await scene HuskyHero
-option "Intro Scene": =>
+if window.location.pathname is "/debug"
+  say paragraph "Secret Shifted Fates Debug menu!"
+  option "Husky Hero Scenario": => await scene HuskyHero
+  await do choice
+else
   # set player initial stats
   Player.sex = "male"
   Player.name = "Player"
@@ -18,4 +21,3 @@ option "Intro Scene": =>
   # say paragraph "What's your name?"
 
   await Player.location = ObservatoryInside
-await do choice
