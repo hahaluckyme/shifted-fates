@@ -35,9 +35,9 @@ say = (inner) =>
 
 scene = (inner) =>
   if inner instanceof Scenario
-    game.playScene inner.Start
+    await game.playScene inner.Start
   else
-    game.playScene inner
+    await game.playScene inner
 
 speech = (inner) =>
   return '"' + inner + '"'
@@ -87,7 +87,9 @@ pause = =>
   option "...": =>
   await do choice
 
-roll20 = (attribute, dc_outcomes_func) =>
+placeholder = "<PLACEHOLDER>"
+
+roll20 = (attribute) =>
   bonus = switch attribute
     when str then Player.str
     when dex then Player.dex
@@ -96,19 +98,6 @@ roll20 = (attribute, dc_outcomes_func) =>
     when cha then Player.cha
     when luck then Player.luck
 
-  dc_outcomes = dc_outcomes_func()
   roll = Math.floor Math.random() * 20 + 1
   result = roll + bonus
-  dcs = (Object.keys dc_outcomes).map (e) => parseInt(e)
-
-  max_dc = Math.max ...dcs.filter (e) => result >= e
-  min_dc = Math.min ...dcs
-  if max_dc of dc_outcomes
-    if max_dc is min_dc
-      say paragraph "Dice: #{roll} + #{bonus} (#{attribute}) = #{result} (failed)"
-    else
-      say paragraph "Dice: #{roll} + #{bonus} (#{attribute}) = #{result} (success)"
-    await scene dc_outcomes[max_dc]
-  else
-    say paragraph "Dice: #{roll} + #{bonus} (#{attribute}) = #{result} (failed) "
-    await scene dc_outcomes[min_dc]
+  return result
