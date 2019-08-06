@@ -51,6 +51,7 @@ add = (object, ...additions) =>
 
 end = =>
   say paragraph "The end."
+  flush()
   game.end()
 
 delay = (seconds) =>
