@@ -19,7 +19,7 @@ Fight: =>
   await do choice
 
 Overpower: =>
-  if (roll20 str) >= 25
+  if roll20 str, 25
     say paragraph "Intent on giving the husky a lesson he won't soon forget, you jump forward and tackle him before he has a chance to gain the upper hand. The force of the impact startles the dog and knocks him flat on his back. You immediately wail away at his muzzle with harsh, fast punches. He growls and attempts to shove you off the whole time, but you have none of it, continuing to pummel his head until his snarls degrade into fearful whimpers and cries. Only once the last ounce of machismo is forcibly knocked from the husky's head do you relent, the raising his arms to shield his face before you can do any irreparable damage."
     say paragraph "Satisfied with the bad dog's scolding, you rise to your feat, breathing heavily from the adrenaline and exertion. The husky is quick to scamper off, running on all fours like the cowed dog he is. Once he's out of sight, you let out a sigh of relief and make your way back to a safer area of the city. You can't help but feel like maybe you went overboard, but you assure yourself that you did what was necessary and push the disquieting thought from your mind. You just hope that you don't have to play hero like this again any time soon."
   else
@@ -29,7 +29,7 @@ Overpower: =>
     await scene @LostFight
 
 Outmaneuver: =>
-  if (roll20 dex) >= 20
+  if roll20 dex, 20
     say paragraph "You successfully weave under a lightning-quick punch and drive your knee directly into the husky's junk. His shrill yelp of pain is the opening you need to ram your fist into his throat, stealing the breath from his lungs. With every ounce of your strength, you twist your body to kick the dog's stomach, sending him reeling before he stumbles back on his ass. The husky groans and coughs weakly on the ground, giving you time to beat tracks before he can recover enough to return the favor."
     say paragraph "Adrenaline pumping through your veins, you run for a long time before finally coming to a stop around several city blocks. You're still worried he'll be able to scent you, but bank on the rank stank of the city-folk to mask your own smell. Wiping your brow, you continue walking back to safety, fingers crossed that you'll never meet the husky again."
   else
@@ -39,11 +39,12 @@ Outmaneuver: =>
     await scene @LostFight
 
 RunFromFight: =>
-  if (roll20 dex) >=25
-    say paragraph "You get second thoughts and run!"
-    await scene @Escaped
+  if roll20 dex, 25
+    say paragraph "Seeing the canine's tall and muscular body up close gives you ample reason to reconsider. Rather than fight him, you quickly turn and beat tracks before he gets the chance to smash you into a pulp. The husky doesn't take too kindly to this and forgoes his vulpine fucktoy to pursue you instead, starting into a four-legged sprint while growling and barking his contempt. It's a close race, the canine hot on your heels while you sprint through the streets, but your stamina eventually prevails. You hear a chilling howl as you turn a corner, continuing to run like your life depended on it until you're finally sure that the dog's out of sight."
+    say paragraph "You wipe the sweat from your brow and bend over to catch your breath. The fox girl most likely took the opportunity to flee her rapist, but you never looked back at any point to know for sure. Even if she manages to find trouble elsewhere, you can't help but feel proud of yourself for doing a good thing today. Your nerves, however, are still frayed from the close encounter, the adrenaline coursing through you leaving you jittery and paranoid for a little while longer as you make your way back to relative safety."
   else
-    say placeholder
+    say paragraph "Intimidated by the muscular husky, you decide that picking a fight with him was a mistake and quickly turn around to run away as fast as you can. Enraged by your cowardice, the canine forgets about his recent fucktoy and begins to pursue you instead, falling down on all fours to chase after you in loping strides. You make a valiant effort to lose him, twisting sharply around corners to slow him down, but the husky closes the distance when your legs begin to falter. His raucous, frenzied barking comes to a swift and jarring halt when he finally jumps forward, sealing his arms around your torso to tackle you to the ground."
+    say paragraph "You struggle fiercely, kicking and crying out in fear as he maneuvers himself fully atop of you. Once certain you can't wriggle free, you're roughly flipped over your your back and your arms are pinned down on either side of you, giving you no room to maneuver beyond some impotent bucking and thrashing. \"Come on, now. Did you really think you could get up in my face and then run away like a bitch?\" His tone is harsh, but measured, calm in a way that feels strangely disarming. You try to look away from him, but all this yields is a sultry rumble as he leans down to lick along your cheek. \"Don't worry your little head off, slut. Let your alpha take good care of you instead.\" His teasing words make you shudder, your length already half-hard with arousal in spite of yourself."
     await scene @LostFight
 
 Distract: =>
@@ -54,17 +55,15 @@ Distract: =>
   await do choice
 
 MimicHowl: =>
-  if (roll20 cha) >= 20
+  if roll20 cha, 20
     say placeholder
-    await scene @Escaped
   else
     say placeholder
     await scene @LostFight
 
 ThrowRock: =>
-  if (roll20 dex) >= 20
+  if roll20 dex, 20
     say placeholder
-    await scene @Escaped
   else
     say placeholder
     await scene @LostFight
@@ -77,17 +76,15 @@ Escape: =>
   await do choice
 
 RunAway: =>
-  if (roll20 dex) >= 20
+  if roll20 dex, 20
     say placeholder
-    await scene @Escaped
   else
     say placeholder
     await scene @LostFight
 
 SneakAway: =>
-  if (roll20 dex) >= 20
+  if roll20 dex, 20
     say @SneakAwayWonText
-    await scene @Escaped
   else
     say @SneakAwayLostText
     await scene @LostFight
