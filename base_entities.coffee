@@ -19,6 +19,15 @@ class Scenario extends Entity
 
 export Player = new class extends Character
   inventory: []
+  sex: "male"
+  name: "Player"
+  str: 5
+  dex: 5
+  per: 5
+  int: 5
+  cha: 5
+  luck: 0
+
 take = (...elems) => Player.inventory.push ...elems
 
 class NPC extends Character

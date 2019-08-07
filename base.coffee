@@ -1,21 +1,16 @@
+React = require 'react'
+
 game = null
 
 export hook = (comp) =>
   game = comp
 
-str = 'STR'
-dex = 'DEX'
-per = 'PER'
-int = 'INT'
-cha = 'CHA'
-luck = 'LUCK'
-
-buffer = ''
+buffer = []
 export flush = () =>
   if buffer.length is 0
     return
   game.print(buffer)
-  buffer = ''
+  buffer = []
 
 # disabled until fixed...
 # Function::toStringOld = Function::toString
@@ -26,12 +21,12 @@ export flush = () =>
 #   return buffer
 
 say = (inner) =>
-  inner = '' + inner
-  inner = inner.replace 'undefined', ''
-  if inner[inner.length-1] in '.!?"'
-    inner = inner + ' '
+  if typeof inner is 'string'
+    inner = inner.replace 'undefined', ''
+    if inner[inner.length-1] in '.!?"'
+      inner = inner + ' '
 
-  buffer += inner
+  buffer = <>{buffer}{inner}</>
 
 scene = (inner) =>
   if inner instanceof Scenario
@@ -89,7 +84,20 @@ pause = =>
 
 placeholder = "<PLACEHOLDER>"
 
-roll20 = (attribute) =>
+str = 'STR'
+dex = 'DEX'
+per = 'PER'
+int = 'INT'
+cha = 'CHA'
+luck = 'LUCK'
+
+red = (inner) =>
+  <b style={{color: 'red'}}>{inner}</b>
+
+green = (inner) =>
+  <b style={{color: 'green'}}>{inner}</b>
+
+roll20 = (attribute, dc) =>
   bonus = switch attribute
     when str then Player.str
     when dex then Player.dex
@@ -100,4 +108,13 @@ roll20 = (attribute) =>
 
   roll = Math.floor Math.random() * 20 + 1
   result = roll + bonus
-  return result
+  passed = roll >= result
+  say paragraph "[d20] #{roll} + #{bonus} (#{attribute}) = "
+  if passed
+    say green "#{result}"
+  else
+    say red "#{result}"
+  say " vs. #{dc}"
+  return passed
+
+debug = window.location.search is "?debug"
