@@ -40,7 +40,7 @@ Outmaneuver: =>
 
 RunFromFight: =>
   if (roll20 dex) >=25
-    say placeholder
+    say paragraph "You get second thoughts and run!"
     await scene @Escaped
   else
     say placeholder
