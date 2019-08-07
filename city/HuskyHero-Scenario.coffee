@@ -15,7 +15,7 @@ Fight: =>
 
   option "Overpower him (STR)": => await scene @Overpower
   option "Outmaneuver him (DEX)": => await scene @Outmaneuver
-  option "Run away (DEX)": => await scene @RunAway
+  option "Run from fight (DEX)": => await scene @RunFromFight
   await do choice
 
 Overpower: =>
@@ -36,6 +36,14 @@ Outmaneuver: =>
     say paragraph "You don't even see the husky's fist before it's too late. In one swift swing, you're knocked flat on your ass, your vision swimming from the force of the impact. Ringing erupts in your ears as the canine crouches down to meet your gaze, his cocksure smile and rock-hard cock spelling out his intent. Dazed as you are, it's all too easy for the dog to guide you down onto your back with a single firm, imploring press of his handpaw."
     say paragraph "You look up at the sky without word. Some part of you is worried you might have a concussion, another screaming to lift yourself up and run away before it's too late. Your head, on the other hand, is in far too much pain to want to move at all, content to just lie here and let whatever happens wash over you. He beat you fair and square, you rationalize dimly, seeking any excuse to limit the ache in your skull."
     say paragraph "The husky leans over you, his breath bathing your face in warmth as he stares deeply into your eyes. \"Thought you were some hot shit, didn't ya?\" he teases. \"Don't kid yourself. You're nothing but another bitch in the making. Nothing but a stupid little whore who needs a hot dose of cum to fix that head of yours. Now be a good slut and spread those legs for me.\" There's something about his assertive tone and the way his paws stroke along your sides that leaves you hard despite yourself, your cock twitching weakly in submissive resignation."
+    await scene @LostFight
+
+RunFromFight: =>
+  if (roll20 dex) >=25
+    say placeholder
+    await scene @Escaped
+  else
+    say placeholder
     await scene @LostFight
 
 Distract: =>
