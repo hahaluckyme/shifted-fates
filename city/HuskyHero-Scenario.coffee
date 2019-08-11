@@ -40,13 +40,8 @@ Outmaneuver: =>
 
 RunFromFight: =>
   if roll20 dex, 25
-<<<<<<< HEAD
-    say paragraph "You get second thoughts and run!"
-    await scene @Escaped
-=======
     say paragraph "Seeing the canine's tall and muscular body up close gives you ample reason to reconsider. Rather than fight him, you quickly turn and beat tracks before he gets the chance to smash you into a pulp. The husky doesn't take too kindly to this and forgoes his vulpine fucktoy to pursue you instead, starting into a four-legged sprint while growling and barking his contempt. It's a close race, the canine hot on your heels while you sprint through the streets, but your stamina eventually prevails. You hear a chilling howl as you turn a corner, continuing to run like your life depended on it until you're finally sure that the dog's out of sight."
     say paragraph "You wipe the sweat from your brow and bend over to catch your breath. The fox girl most likely took the opportunity to flee her rapist, but you never looked back at any point to know for sure. Even if she manages to find trouble elsewhere, you can't help but feel proud of yourself for doing a good thing today. Your nerves, however, are still frayed from the close encounter, the adrenaline coursing through you leaving you jittery and paranoid for a little while longer as you make your way back to relative safety."
->>>>>>> 14b8a83244cadb6a10d9058c55b0dc020699203d
   else
     say paragraph "Intimidated by the muscular husky, you decide that picking a fight with him was a mistake and quickly turn around to run away as fast as you can. Enraged by your cowardice, the canine forgets about his recent fucktoy and begins to pursue you instead, falling down on all fours to chase after you in loping strides. You make a valiant effort to lose him, twisting sharply around corners to slow him down, but the husky closes the distance when your legs begin to falter. His raucous, frenzied barking comes to a swift and jarring halt when he finally jumps forward, sealing his arms around your torso to tackle you to the ground."
     say paragraph "You struggle fiercely, kicking and crying out in fear as he maneuvers himself fully atop of you. Once certain you can't wriggle free, you're roughly flipped over your your back and your arms are pinned down on either side of you, giving you no room to maneuver beyond some impotent bucking and thrashing. \"Come on, now. Did you really think you could get up in my face and then run away like a bitch?\" His tone is harsh, but measured, calm in a way that feels strangely disarming. You try to look away from him, but all this yields is a sultry rumble as he leans down to lick along your cheek. \"Don't worry your little head off, slut. Let your alpha take good care of you instead.\" His teasing words make you shudder, your length already half-hard with arousal in spite of yourself."
@@ -93,8 +88,6 @@ SneakAway: =>
   else
     say @SneakAwayLostText
     await scene @LostFight
-
-Escaped: =>
 
 LostFight: =>
   say paragraph "Before you have a chance to oblige him, the larger male forces you legs apart with his own, keeping them spread as he kneels down between them. That thick, exposed cock brushes up against the impression of your lesser length, its steady pulsing palpable through the fabric of your jeans. The husky reaches below to press his swollen maleness against the underside of your own, frotting you through your clothes, his hips rocking slowly as his pre drizzles onto your shirt. \"That's a good little bitch,\" he teases. \"Now stop your pointless wandering and just give in to the need. I'll keep you well-fed and well-fucked, my pretty doggy slut.\" His voice comes in a sultry, baritone rumble that's as sexy as it disarming, distracting your lust-addled mind from those pesky thoughts of escape."

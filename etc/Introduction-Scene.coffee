@@ -1,6 +1,7 @@
 if debug
   say paragraph "Secret Shifted Fates Debug menu!"
   option "Husky Hero Scenario": => await scene HuskyHero
+  option "Examples": => await Player.location = ExampleRoom
   await do choice
 else
   say paragraph "A cold breeze blows gently against your skin, rousing your consciousness as your eyes flutter open. The light is painful at first, but you quickly adjust. Soon your blurred vision sharpens, allowing you to see the cracks in the steamy glass in front of you. You take a deep breath, letting the air fill your lungs as you try to remember what happened."
