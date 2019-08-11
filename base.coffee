@@ -108,7 +108,7 @@ roll20 = (attribute, dc) =>
 
   roll = Math.floor Math.random() * 20 + 1
   result = roll + bonus
-  passed = roll >= result
+  passed = result >= dc
   say paragraph "[d20] #{roll} + #{bonus} (#{attribute}) = "
   if passed
     say green "#{result}"

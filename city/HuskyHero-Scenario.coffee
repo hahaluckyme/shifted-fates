@@ -40,7 +40,7 @@ LookForOpening: =>
 
 RunFromFight: =>
   if roll20 dex, 25
-    say paragraph "Seeing the canine's tall and muscular body up close gives you ample reason to reconsider. Rather than fight him, you quickly turn and beat tracks before he gets the chance to smash you into a pulp. The husky doesn't take too kindly to this, starting into a four-legged sprint while growling and barking his contempt. It's a close race, the canine hot on your heels while you sprint through the streets, but your stamina eventually prevails. You hear a chilling howl as you turn a corner, continuing to run like your life depended on it until you're finally sure that the dog's out of sight."
+    say paragraph "Seeing the canine's tall and muscular body up close gives you ample reason to reconsider. Rather than fight him, you quickly turn and beat tracks before he gets the chance to smash you into a pulp. The husky doesn't take too kindly to this and forgoes his vulpine fucktoy to pursue you instead, starting into a four-legged sprint while growling and barking his contempt. It's a close race, the canine hot on your heels while you sprint through the streets, but your stamina eventually prevails. You hear a chilling howl as you turn a corner, continuing to run like your life depended on it until you're finally sure that the dog's out of sight."
     say paragraph "You wipe the sweat from your brow and bend over to catch your breath. The fox girl most likely took the opportunity to flee her rapist, but you never looked back at any point to know for sure. Even if she manages to find trouble elsewhere, you can't help but feel proud of yourself for doing a good thing today. Your nerves, however, are still frayed from the close encounter, the adrenaline coursing through you leaving you jittery and paranoid for a little while longer as you make your way back to relative safety."
   else
     say paragraph "Intimidated by the muscular husky, you decide that picking a fight with him was a mistake and quickly turn around to run away as fast as you can. Enraged by your cowardice, the canine forgets about his recent fucktoy and begins to pursue you instead, falling down on all fours to chase after you in loping strides. You make a valiant effort to lose him, twisting sharply around corners to slow him down, but the husky closes the distance when your legs begin to falter. His raucous, frenzied barking comes to a swift and jarring halt when he finally jumps forward, sealing his arms around your torso to tackle you to the ground."
@@ -94,13 +94,6 @@ Escape: =>
 #     say placeholder
 #   else
 #     say placeholder
-#     await scene @LostFight
-
-# SneakAway: =>
-#   if roll20 dex, 20
-#     say @SneakAwayWonText
-#   else
-#     say @SneakAwayLostText
 #     await scene @LostFight
 
 LostFight: =>
