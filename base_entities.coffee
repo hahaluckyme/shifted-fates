@@ -21,11 +21,11 @@ export Player = new class extends Character
   inventory: []
   sex: "male"
   name: "Player"
-  str: 5
-  dex: 5
-  per: 5
-  int: 5
-  cha: 5
+  str: 0
+  dex: 0
+  per: 0
+  int: 10
+  cha: 0
   luck: 0
 
 take = (...elems) => Player.inventory.push ...elems
