@@ -32,3 +32,4 @@ take = (...elems) => Player.inventory.push ...elems
 
 class NPC extends Character
 class Room extends Entity
+  discovered: false
