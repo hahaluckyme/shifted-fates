@@ -1,0 +1,2 @@
+Enter: =>
+    say paragraph "."
