@@ -1,6 +1,6 @@
 # Legend
 
-CL  = ObservatoryComputerLab
+CC  = ObservatoryComputerCenter
 GS  = ObservatoryGiftShop
 HE  = ObservatoryHallwayEast
 HFE = ObservatoryHallwayFarEast
@@ -37,7 +37,7 @@ Grid: [
   [   ,   ,   ,   ,   ,   ,'|',   ,'|',   ,'|',   ,'|',   ,   ]
   [ VE,'-', RR,'-', TH,'-', HW,'-', HI,'-', HE,'-',HFE,'-',  M]
   [   ,   ,   ,   ,   ,   ,'|',   ,'|',   ,'|',   ,'|',   ,   ]
-  [   ,   ,   ,   ,   ,   ,LIB,   , HS,   , GS,   , CL,   ,   ]
+  [   ,   ,   ,   ,   ,   ,LIB,   , HS,   , GS,   , CC,   ,   ]
   [   ,   ,   ,   ,   ,   ,   ,   ,'|',   ,   ,   ,   ,   ,   ]
   [   ,   ,   ,   ,   ,   ,   ,   , SE,   ,   ,   ,   ,   ,   ]
 ]
