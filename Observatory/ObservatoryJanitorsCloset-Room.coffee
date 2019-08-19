@@ -2,8 +2,8 @@ Enter: =>
     say paragraph "You look inside of a small, dark closet with some janitorial tools and cleaning chemicals. The space is large enough to stand in, but you see no reason to move past the threshold of the doorframe. A faint chemical scent wafts from the closet."
 
 Choices: =>
-    option "Tools": => await scene Tools
-    option "Chemicals": => await scene Chemicals
+    option "Tools": => await scene @Tools
+    option "Chemicals": => await scene @Chemicals
     await do choice
 
 Tools: =>
