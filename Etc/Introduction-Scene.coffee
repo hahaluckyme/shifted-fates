@@ -8,4 +8,4 @@ else
 
   # say paragraph "What's your name?"
 
-  await Player.location = ObservatoryLaboratory
+  await Player.location = ObservatoryMain
