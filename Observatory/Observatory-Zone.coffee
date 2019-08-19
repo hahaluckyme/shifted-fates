@@ -43,6 +43,3 @@ Grid: [
 ]
 
 # Additional Exits
-
-ObservatoryJanitorsCloset:
-  option Up: => await Player.location = Observatory2FHallway

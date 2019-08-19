@@ -33,3 +33,34 @@ take = (...elems) => Player.inventory.push ...elems
 class NPC extends Character
 class Room extends Entity
   discovered: false
+
+  GridChoices: =>
+    if @South then option South: => await do @South
+    if @North then option North: => await do @North
+    if @West then option West: => await do @West
+    if @East then option East: => await do @East
+
+  Choices: =>
+    await do choice
+
+class Zone extends Entity
+  constructor: ->
+    super()
+    for row, gy in @Grid
+      for elem, gx in row
+        # local scoping to freeze variables
+        `let y = gy`
+        `let x = gx`
+        if elem instanceof Room
+          elem.zone = @
+        else if typeof elem is 'string'
+          switch elem
+            when '|'
+              @Grid[y-1][x].South = => await Player.location = @Grid[y+1][x]
+              @Grid[y+1][x].North = => await Player.location = @Grid[y-1][x]
+            when '-'
+              @Grid[y][x-1].East = => await Player.location = @Grid[y][x+1]
+              @Grid[y][x+1].West = => await Player.location = @Grid[y][x-1]
+
+    for prop of @
+      console.log(prop)
