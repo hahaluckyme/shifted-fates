@@ -16,6 +16,7 @@ https://nodejs.org/en/
 1. In Github Desktop, click `File` -> `Clone repository...` or `Clone a repository from the Internet...`
 2. Click the `URL` tab
 3. Type `https://github.com/hahaluckyme/alphabet`
+4. Ensure that the `Local path` points to your `GitHub\alphabet` folder.
 
 ## 6. Fork and clone the `shifted-fates` game data repo
 1. `Fork` the project on the page https://github.com/hahaluckyme/shifted-fates by clicking `Fork`.
