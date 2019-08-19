@@ -1,2 +1,2 @@
 Enter: =>
-    say paragraph "."
+    say paragraph "You are standing in the visitor reception room."

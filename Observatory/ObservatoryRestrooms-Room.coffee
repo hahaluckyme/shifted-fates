@@ -1,7 +1,7 @@
 Enter: =>
-    say paragraph "."
+    say paragraph "You enter the restrooms."
 
 Choices: =>
-    option "Men's Restroom": => await Player.location = ObservatoryMensRestroom
-    option "Women's Restroom": => await Player.location = ObservatoryWomensRestroom
+    option "Men's Restroom": => await Player.location = ObservatoryRestroomsMen
+    option "Women's Restroom": => await Player.location = ObservatoryRestroomsWomen
     await do choice
