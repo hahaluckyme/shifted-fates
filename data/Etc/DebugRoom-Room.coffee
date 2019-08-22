@@ -3,7 +3,8 @@ Enter: =>
   say paragraph "Secret Shifted Fates Debug menu!"
 
 Choices: =>
-  option "Husky Hero Scenario": => await scene HuskyHero
+  option "Husky Hero": => await scene HuskyHero
+  option "Cattle Dog Encounter": => await scene CattleDogEncounter
   option "Example Room": => await Player.location = ExampleRoom
   option "Example Scenario": => await scene ExampleScenario
   option "Set main stat": => await scene @SetMainStat
