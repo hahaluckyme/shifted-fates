@@ -61,7 +61,7 @@ Choices: =>
       @waited = true
     else
       await scene Logan.Introduce
-  option South: =>
+  option East: =>
     if @take_pot or @take_chair or @take_bottles
       await scene @AngryMountaineer
     else

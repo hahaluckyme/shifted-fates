@@ -1,5 +1,6 @@
 # Legend
 
+CAF = ObservatoryCafeteria
 CC  = ObservatoryComputerCenter
 GS  = ObservatoryGiftShop
 HE  = ObservatoryHallwayEast
@@ -9,13 +10,12 @@ HN  = ObservatoryHallwayNorth
 HS  = ObservatoryHallwaySouth
 HW  = ObservatoryHallwayWest
 JC  = ObservatoryJanitorsCloset
-LAB = ObservatoryLaboratory
 LIB = ObservatoryLibrary
 M   = ObservatoryMain
-R   = ObservatoryRestrooms
-RR  = ObservatoryReceptionRoom
+REC = ObservatoryReception
+RL  = ObservatoryResearchLab
+RR  = ObservatoryRestrooms
 SE  = ObservatoryStaffEntrance
-STU = ObservatoryStudy
 TH  = ObservatoryTransitHouse
 VE  = ObservatoryVisitorEntrance
 
@@ -31,13 +31,13 @@ VE  = ObservatoryVisitorEntrance
 # 'v' = one-way south connection (no exit back)
 
 Grid: [
-  [   ,   ,   ,   ,   ,   ,   ,   ,LAB,   ,   ,   ,   ,   ,   ]
+  [   ,   ,   ,   ,   ,   ,   ,   , RL,   ,   ,   ,   ,   ,   ]
   [   ,   ,   ,   ,   ,   ,   ,   ,'|',   ,   ,   ,   ,   ,   ]
-  [   ,   ,   ,   ,   ,   ,STU,'-', HN,   ,  R,   , JC,   ,   ]
+  [   ,   ,   ,   ,   ,   ,LIB,'-', HN,   , RR,   , JC,   ,   ]
   [   ,   ,   ,   ,   ,   ,'|',   ,'|',   ,'|',   ,'|',   ,   ]
-  [ VE,'-', RR,'-', TH,'-', HW,'-', HI,'-', HE,'-',HFE,'-',  M]
+  [ VE,'-',REC,'-', TH,'-', HW,'-', HI,'-', HE,'-',HFE,'-',  M]
   [   ,   ,   ,   ,   ,   ,'|',   ,'|',   ,'|',   ,'|',   ,   ]
-  [   ,   ,   ,   ,   ,   ,LIB,   , HS,   , GS,   , CC,   ,   ]
+  [   ,   ,   ,   ,   ,   ,CAF,   , HS,   , GS,   , CC,   ,   ]
   [   ,   ,   ,   ,   ,   ,   ,   ,'|',   ,   ,   ,   ,   ,   ]
   [   ,   ,   ,   ,   ,   ,   ,   , SE,   ,   ,   ,   ,   ,   ]
 ]
