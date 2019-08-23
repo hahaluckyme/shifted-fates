@@ -1,5 +1,7 @@
+name: "Restrooms"
+
 Enter: =>
-    say paragraph "You enter the restrooms."
+    say paragraph "You walk up to the restrooms. Each door is marked with the standard white silhouette of a male or female figure. Given that no one is around, you have free reign to enter either without repercussion."
 
 Choices: =>
     option "Men's Restroom": => await Player.location = ObservatoryRestroomsMen

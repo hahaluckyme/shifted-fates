@@ -1,5 +1,3 @@
-discovered: false
-
 Enter: =>
   if not @discovered
     say paragraph "You travel down the road a bit and see a house covered in toilet paper and graffiti. It seems a bit raucous and there are several husky creatures wandering outside, some obviously very drunk. There are plenty of girls, collared and leashed, and a few lithe husky boys in a similar but slightly less oppressed role."

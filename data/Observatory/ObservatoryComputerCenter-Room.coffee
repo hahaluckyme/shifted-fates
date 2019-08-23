@@ -1,3 +1,5 @@
+name: "Computer Center"
+
 Enter: =>
     say paragraph "A small, well-kept computer center. Long wooden desks have been set up on opposite ends of the room with equidistant multi-monitor workspaces. The system units stowed beneath the desks look more bulky than standard towers, though not so large that they'd seem out of place in an expensive home office. It's all appreciably high-end without feeling like a server cluster; whoever was in charge of distributing funds for the facility must have weighed the right balance between price point and processing power."
     say paragraph "In the center of the room is a low, square table covered in several piles of technical-looking documents and printouts. The area was most likely used as a shared space for the researchers who manned this facility, or it may have just been a convenient way to offload loose paper without cluttering the primary work area. Regardless of the original purpose, the desk remains a treasure trove of data that you doubt will be of any use for a layman like yourself."

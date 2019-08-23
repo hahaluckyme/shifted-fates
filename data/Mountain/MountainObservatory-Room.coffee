@@ -1,5 +1,3 @@
-discovered: false
-
 Enter: =>
   if not @discovered
     say paragraph "You shiver as cold air blows past you, raising the hairs on your skin. It's chilly out here and fairly windy. The sky is speckled with wispy clouds, and the grass beneath you feet rustles in the breeze. You can see mountains in the distance, and judging from your perspective, you must be on a lower ridge. The treeline of a dense conifer forest lies just ahead."
@@ -9,7 +7,7 @@ Enter: =>
 
 Choices: =>
   option "Visitor Entrance": => await Player.location = ObservatoryVisitorEntrance
-  option "Staff Entrance": => await Player.location=ObservatoryStaffEntrance
+  option "Staff Entrance": => await Player.location = ObservatoryStaffEntrance
   option West: =>
     say paragraph "You walk down the trail, treading carefully with each step. It's definitely better than walking through the underbrush, but it's not an easy hike even with it being downhill. You let your mind wander in the meanwhile, wondering what exactly happened to you or the lab you woke up in."
     await Player.location = CampsiteEmpty

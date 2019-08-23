@@ -1,3 +1,5 @@
+name: "Gift Shop"
+
 Enter: =>
     say paragraph "A rather large room stocked with several aisles of gifts. To the southeast corner is a section for children with informational posters about astronomy and chintzy space-themed toys. To the southwest corner is a unisex, single-person dressing room for trying on souvenir shirts in relative privacy. To the northwest corner is an empty counter with an unattended cash register. There's a white-on-black sign behind it that reads \"NO CHECKS! NO TRADE-INS! NO REFUNDS!\", suggesting that they've had more than a few problem customers before."
 
