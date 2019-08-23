@@ -5,3 +5,4 @@ Enter: =>
 
 Choices: =>
     option "Exit": => await Player.location = MountainObservatory
+    await do choice
