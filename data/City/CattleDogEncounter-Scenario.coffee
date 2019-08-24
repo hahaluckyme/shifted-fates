@@ -6,7 +6,7 @@ Start: =>
   await do choice
 
 Fight: =>
-  if roll20 str, 20
+  if roll str, 20
     say paragraph "Determined to grab that food for yourself, you move from the window and take a deep breath. You may be starved, but that's only going to make you fight harder for your meal. You take another moment to brace yourself and then head through the doorway. The dog lets out a tired sigh while he bundles up a sleeping mat. He's so distracted that he scarcely registers your presence until you're a few steps away. His head turns and his eyes go wide just before you slug him in the jaw so hard that you can hear a vicious CRACK."
     say paragraph "He howls in pain as he crashes to the ground onto his belly. His expression is one of equal parts fury and confusion, a paw cradling his muzzle while you snatch up the bag. Somehow he manages to fight through the daze and struggle back onto his feet. He turns to you and growls, \"Well, that's a fine how do you fucking-well do. Hell of an arm for a human... but lemme show you how it's done.\" Powerful canine legs carry him toward you at an alarming speed. Unfortunately for him, you're ready for it. He launches into a swing, but you easily sidestep, plant your palm firmly on his back, and shove him right back onto the ground."
 
@@ -26,7 +26,7 @@ WalkAway: =>
   say paragraph "You leave before he even has the chance to get back up, hastily making your escape while he's down. When the howls and barks of anger fade into the distance, you stop to check your loot."
 
 Steal: =>
-  if roll20 dex, 20
+  if roll dex, 20
     say paragraph "Opportunity calls, and you are eager to answer. With a little extra caution to quiet your steps, it's criminally easy to sneak through the doorway and reach the bag while the dog struggles to roll up a sleeping mat. You delicately lift the knapsack from the floor without a sound. Before you step away, you realize that there's more around his camp than what you first saw. Various salvage is scattered about that could prove useful: Fresh water bottles sit near a primitive filter, scrap metal is laid out neatly on a cloth, and there's still a bindle of who-knows-what waiting to be snatched."
     say paragraph "Unfortunately, your traitorous stomach growls at the very concept of delaying your meal. The sound makes the cattle dog's ears perk, and you take that as the signal to make your retreat before he can turn around. Once you're well clear of the building, you examine the contents of the knapsack."
   else
@@ -41,7 +41,7 @@ Approach: =>
     await do choice
 
 Talk: =>
-  if roll20 cha, 20
+  if roll cha, 20
     say paragraph "You explain that you found his camp and thought he could use some company. He just chuckles at the notion. \"Really? Your kind really ought to stay far away from mine, if you know what's good for you.\" He stops folding the mat and opts instead to settle down on it. \"But you obviously don't. You know what? Why not!\" He makes a vague, noncommittal gesture with his hand. \"Have a seat wherever, it's gonna be uncomfortable no matter where you pick. Welcome to my camp, I guess.\" You settle down nearby and ask him what he's doing around this part of the city with so many supplies."
     say paragraph "\"Well, not that it's any business of yours... buuut, I'm mostly just scavenging extra supplies for the Pack. Scrap metal and electronics, the rare bit of old food that hasn't gone bad - that sort of thing. More the former than the latter.\" He nods towards the knapsack of rations. \"Already loaded up on meal bars before I came. Last thing I'd ever want is to be stuck out here hungry. Y'know, you're looking kinda thin yourself.\" The cattle dog gives you a once-over, and you do the same. He's built like an athlete and has a healthy sheen to his brown and black mottled fur, flecked with the grizzled gray and white of age. There's not a shred of clothes covering his body. Your eyes are inevitably drawn between his legs, where a plump and inviting sheath lies, though you look away just as quickly."
     say paragraph "He crosses his arms over his powerful chest and tilts his head as curious dogs often do. \"My turn, though. How'd you end up out here? Hell, better question: How are you not somebody's slave or pet yet?\" He draws a thumb across his jaw in thought. \"Can't remember the last time I saw a human that wasn't about to be railed into something else.\" His eyes narrow. \"Can't remember the last time I... was... hm,\" he trails off. You tell him about how you woke up, then about how circumstances led to your current struggle with starvation. He lets out a long sigh. \"Ahhh, hell. No wonder you decided to stop by an old dog's camp! Must be so hungry you can't think straight.\" There's an awkward silence that lasts for all of a few seconds before he clicks his tongue against the roof of his mouth in frustration."

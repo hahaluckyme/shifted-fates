@@ -9,6 +9,7 @@ Start: =>
   option "Make conversation": => await scene @Talk
   option "Offer sex": => await scene @Sex
   option "Leave": => await scene @Leave
+  option "Destroy universe": => await scene @DestroyUniverse
   await do choice
 
 Talk: =>
@@ -16,12 +17,29 @@ Talk: =>
 
 Sex: =>
   # This is how you can test the player on a stat roll, and must roll at least a 10.
-  if roll20 cha, 10
+  if roll cha, 10
     say paragraph "You convince the stag to have sex with you."
   else
     say paragraph "You offer sex, but the stag is not interested."
 
+Reaction: =>
+  if Player.sex is "female"
+    bonus -= 3
+
 Leave: =>
-  say paragraph "You leave the entire universe and disappear into the void."
+  if roll @Reaction, 4
+    await scene @Forgiving
+  else
+    await scene @Punishing
+
+Forgiving: =>
+  say paragraph "The stag eyes you but lets you go."
+
+Punishing: =>
+  say paragraph "The stag says, \"Actually, I think I'd like to fuck you.\""
+
+DestroyUniverse: =>
+  say paragraph "You destroy the entire universe and disappear into the void."
+
   # This next line ends the game. OMIT this if you want the Scenario to peacefully resolve and let the player return to their previous room to continue playing.
   await do end

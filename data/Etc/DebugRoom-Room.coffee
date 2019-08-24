@@ -6,7 +6,6 @@ Choices: =>
   option "Husky Hero": => await scene HuskyHero
   option "Cattle Dog Encounter": => await scene CattleDogEncounter
   option "Example Room": => await Player.location = ExampleRoom
-  option "Example Scenario": => await scene ExampleScenario
   option "Set main stat": => await scene @SetMainStat
   await do choice
 

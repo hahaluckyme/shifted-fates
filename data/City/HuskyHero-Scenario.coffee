@@ -19,7 +19,7 @@ Fight: =>
   await do choice
 
 Overpower: =>
-  if roll20 str, 25
+  if roll str, 25
     say paragraph "Intent on giving the husky a lesson he won't soon forget, you jump forward and tackle him before he has a chance to gain the upper hand. The force of the impact startles the dog and knocks him flat on his back. You immediately wail away at his muzzle with harsh, fast punches. He growls and attempts to shove you off the whole time, but you have none of it, continuing to pummel his head until his snarls degrade into fearful whimpers and cries. Only once the last ounce of machismo is forcibly knocked from the husky's head do you relent, the raising his arms to shield his face before you can do any irreparable damage."
     say paragraph "Satisfied with the bad dog's scolding, you rise to your feat, breathing heavily from the adrenaline and exertion. The husky is quick to scamper off, running on all fours like the cowed dog he is. Once he's out of sight, you let out a sigh of relief and make your way back to a safer area of the city. You can't help but feel like maybe you went overboard, but you assure yourself that you did what was necessary and push the disquieting thought from your mind. You just hope that you don't have to play hero like this again any time soon."
   else
@@ -29,7 +29,7 @@ Overpower: =>
     await scene @LostFight
 
 LookForOpening: =>
-  if roll20 per, 20
+  if roll per, 20
     say paragraph "Waiting for the husky to act, you catch sight of his arm winding back and use this tell to weave under a fierce right hook. Having failed to anticipate this, the canine's momentum carries him forward, knocking him off-balance. You quickly slip behind him and drive a firm kick into his ass that knocks him the rest of the way down, a painful pratfall onto pavement leaving the husky immobilized as he groans and whimpers on the ground. You don't hesitate to book it in his moment of weakness, fleeing before he can recover and exact his rage-fueled revenge."
     say paragraph "Adrenaline pumping through your veins, you run for a long time before finally coming to a stop around several city blocks. You're still worried that the husky will be able to scent you, but bank on the rank stank of the city-folk to mask your own smell. Wiping your brow, you continue walking back to safety, fingers crossed that you'll never meet the same man again."
   else
@@ -39,7 +39,7 @@ LookForOpening: =>
     await scene @LostFight
 
 RunFromFight: =>
-  if roll20 dex, 25
+  if roll dex, 25
     say paragraph "Seeing the canine's tall and muscular body up close gives you ample reason to reconsider. Rather than fight him, you quickly turn and beat tracks before he gets the chance to smash you into a pulp. The husky doesn't take too kindly to this and forgoes his vulpine fucktoy to pursue you instead, starting into a four-legged sprint while growling and barking his contempt. It's a close race, the canine hot on your heels while you sprint through the streets, but your stamina eventually prevails. You hear a chilling howl as you turn a corner, continuing to run like your life depended on it until you're finally sure that the dog's out of sight."
     say paragraph "You wipe the sweat from your brow and bend over to catch your breath. The fox girl most likely took the opportunity to flee her rapist, but you never looked back at any point to know for sure. Even if she manages to find trouble elsewhere, you can't help but feel proud of yourself for doing a good thing today. Your nerves, however, are still frayed from the close encounter, the adrenaline coursing through you leaving you jittery and paranoid for a little while longer as you make your way back to relative safety."
   else
@@ -56,7 +56,7 @@ Distract: =>
   await do choice
 
 MimicHowl: =>
-  if roll20 cha, 20
+  if roll cha, 20
     say paragraph "Maybe a convincing howl will turn his head long enough to give the girl time to escape? Looking first to obscure the source, you skulk out of sight of the couple, slipping behind a dumpster in a nearby alley. After taking a moment to steady your nerves, you crane your head back, take a deep breath, and release the air in your lungs as a low, resounding howl. The call echoes hauntingly through the streets and between buildings, sure to be heard by the lusty male husky. You notice his growls abruptly stop, but don't dare to step out to check on them, instead peeking past the safety of your cover. Sure enough, you catch a glimpse of gray and white fur sprinting by on all fours, the canine's tongue lolling out as he looks for the source of the sound."
     say paragraph "Once certain that the canine's out of earshot, you slip out of the alley and look back to where the fox girl was being claimed. It seems like she fled the moment her aggressor ran off, no signs of her or the man she was being molested by save for scarce bits of fur and clear fluids. You'd rather not stick around for much longer in case the dog wanders back, so you quickly make your way out of the neighborhood and back toward a safer zone of the city. You feel proud of yourself for thinking quick on your feet, but a little worried that the fox girl found herself in more trouble elsewhere. If nothing else, you acted with good intentions, and that's worth more than just fleeing without making an effort."
   else
@@ -66,7 +66,7 @@ MimicHowl: =>
     await scene @LostFight
 
 ShoutAndFlee: =>
-  if roll20 dex, 20
+  if roll dex, 20
     say paragraph "It's time to find the courage inside of you to stand up for someone in need. Taking a low stance to make a quick getaway, you draw from the rush of adrenaline coursing through you and let out a piercing, primal shout. The husky abruptly jolts up from the fox girl, who whimpers and yips fearfully as she scrambles away on all fours. Turning his head to face the origin of the sound, his expression quickly sours when he spots you. That's your cue to make a run for it, sprinting away from the furious dog with every ounce of energy in your body."
     say paragraph "The husky is quick to drop on all fours to pursue you. His quadrupedal lopes are frighteningly fast and his furious barking is a constant source of motivation. You run as quickly as your legs and lungs can carry you, but the husky remains hot on your heels for several city streets, swerving deftly around corners as he chases you like a car driven by a squirrel. His endurance does finally reach its limits, the dog petering to a halt behind you and letting out a frustrated howl as you leave him in the dust. You continue to run until you're certain that the husky's out of sight and earshot, then bend down to pause for some much-needed breath."
     say paragraph "You can't help but feel a great sense relief for both yourself and the husky's poor victim. Who knows what might have happened if her aggressor continued if you didn't stop him? You shake the chilling thought from your head and remind yourself to remain wary out here. If you ever let your guard down, you might just end up pinned beneath a horny hound and fucked like she was. You can only hope that someone would be as brave as you were and step in to prevent that."
@@ -76,7 +76,7 @@ ShoutAndFlee: =>
     await scene @LostFight
 
 ThrowSomething: =>
-  if roll20 per, 10
+  if roll per, 10
     say paragraph "If you can scrounge up something to throw, you might be able to distract the dog without alerting him to your presence. You start looking around the immediate vicinity, scanning for anything that could make a loud enough sound to startle the hump-happy husky. Your keen eyes catch the lustre of metal inside of a discarded black trash bag, and you hastily fish out the empty tin can. Backing away near the cover of an alley, you angle your arm back, then throw the can with all of your might, sending it flying well above the canine's head. You duck back behind a building before it falls back to the ground, your heart racing in your chest as the wait for the clang of metal colliding with pavement."
     say paragraph "The instant the can hits the ground, the sounds of the husky's rutting stops. Daring a glance around the corner, you can see that the male has let go of his unwilling prey, his head turned toward the source of the sudden noise. The fox girl seizes the opportunity to spring to all fours and scamper away in a blur of auburn fur. A low growl emanates from the husky's throat as he looks between the fleeing vixen and potential threat, though he thankfully decides to pursue the latter instead, territorial aggression overruling any mating impulse. You take this as your cue to leave, careful to limit the noise you make as you furtively slip out of the alley and around the nearest street corner.\""
     say paragraph "Once safely out of sight, you heave a sigh a relief and bend down to catch your breath. Even though you didn't break into a run, you find yourself feeling exhausted after the dangerous encounter. Maybe you shouldn't have risked it all like that, but who knows what might happened to the poor fox girl if you didn't step in to create an opening? You shake your head to rid yourself of that disquieting train of thought. You did a good thing today, you figure, and you'd rather not dwell too much on those unsavory what-ifs."
@@ -84,7 +84,7 @@ ThrowSomething: =>
     say paragraph "There has to be something around here that you could distract the horny husky. You scan the immediate vicinity, looking for any rocks, trash, or debris that's small enough to throw but heavy enough to create a sound. The first place you check is a nearby pile of rubble, but you fail to find any loose chunks to pry free. You then check a pile of tattered trash bags, though nothing around or inside of them catches your eye. Maybe that bed of dirty newspapers over there has something you could use, or maybe there's something in a nearby alley?"
     say paragraph "Your searching feels increasingly like a waste of precious, fleeting time. By the time you look back to the pair, the husky's on the precipice of tying with the smaller fox woman, your window to save her quickly disappearing. Running out of options, you unthinkingly push over a metal trash can, which hits the ground with a clang as its contents spill over the sidewalk. The husky's head immediately snaps toward you, a ferocious look on his muzzle as he stares at the intruder."
     say paragraph "\"What the fuck are you doing?\" he calls out to you. Caught off-guard, you stare back at him like a deer in the headlights. Your lower lip quivers as you stammer out a response, equal parts excuse and apology, but the dog-man is having none of it. He shoves his vulpine cocksleeve to the ground, then stands up tall and starts to walk toward you. The fox girl scampers away, yipping and whimpering as she flees to relative safety. You try to do the same, but your legs lock up in fear as his towering form treads closer."
-    say paragraph "His muzzle crooks in a malevolent smirk as he tilts your chin with a claw. \"What's wrong, little bitch? Are you afraid I'm going to hurt you?\" You nod timidly, the knot in your throat making it hard to muster anything more. \"Don't worry about a thing,\" the large dog assures you. \"Just settle down and let your alpha take care of you. I'll make sure you're niiice and comfortable beneath me...\" Scared stiff, you are unable to fight back as the husky envelops you in his arms, lifts you against his chest, and then lowers you down onto your back atop a warm bed of pavement." 
+    say paragraph "His muzzle crooks in a malevolent smirk as he tilts your chin with a claw. \"What's wrong, little bitch? Are you afraid I'm going to hurt you?\" You nod timidly, the knot in your throat making it hard to muster anything more. \"Don't worry about a thing,\" the large dog assures you. \"Just settle down and let your alpha take care of you. I'll make sure you're niiice and comfortable beneath me...\" Scared stiff, you are unable to fight back as the husky envelops you in his arms, lifts you against his chest, and then lowers you down onto your back atop a warm bed of pavement."
     await scene @LostFight
 
 Escape: =>
@@ -158,7 +158,7 @@ LostFight: =>
 # export HuskyHeroEscape = =>
 #   say paragraph "You run as fast as you can to get away from the angry husky."
 
-#   await roll20 dex, =>
+#   await roll dex, =>
 #     0: =>
 #       await scene HuskyHeroFailedEscape
 #     23: =>

@@ -97,19 +97,30 @@ red = (inner) =>
 green = (inner) =>
   <b style={{color: 'green'}}>{inner}</b>
 
-roll20 = (attribute, dc) =>
-  bonus = switch attribute
-    when str then Player.str
-    when dex then Player.dex
-    when per then Player.per
-    when int then Player.int
-    when cha then Player.cha
-    when luck then Player.luck
+bonus = 0
+roll = (attribute, dc) =>
+  if typeof attribute is 'function'
+    bonus = 0
+    attribute()
+    attribute = 'Reaction'
+  else
+    bonus = switch attribute
+      when str then Player.str
+      when dex then Player.dex
+      when per then Player.per
+      when int then Player.int
+      when cha then Player.cha
+      when luck then Player.luck
 
-  roll = Math.floor Math.random() * 20 + 1
-  result = roll + bonus
+  die = Math.floor Math.random() * 20 + 1
+  result = die + bonus
   passed = result >= dc
-  say paragraph "[d20] #{roll} + #{bonus} (#{attribute}) = "
+  say paragraph "[#{attribute}] d20(#{die}) "
+  if bonus > 0
+    say "+ #{bonus}"
+  else
+    say "- #{-bonus}"
+  say " = "
   if passed
     say green "#{result}"
   else
