@@ -31,7 +31,7 @@ Computer: =>
         @player_knows_power_is_out = true
         say paragraph "You attempt to turn on the system unit, then the monitor, but to no avail. You check the wall outlet where the cords lead to, but plugging the connectors into different sockets doesn't seem to fix anything. Looks like power isn't reaching this room at all."
 
-Filing Cabinet: =>
+FilingCabinet: =>
     say paragraph "PLACEHOLDER"
 
 Spectrometer: =>
