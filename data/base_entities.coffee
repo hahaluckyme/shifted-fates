@@ -43,7 +43,7 @@ class Room extends Entity
   Choices: =>
     await do choice
 
-class Quest extends Entity
+class Questline extends Entity
 
 class Zone extends Entity
   constructor: ->
