@@ -1,3 +1,5 @@
+name: "Observatory"
+
 # Legend
 # Acronyms on the map are linked to room file names
 # Acronyms use the first three letters of a single-world room
