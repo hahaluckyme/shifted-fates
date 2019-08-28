@@ -11,13 +11,14 @@ const fs = require('fs');
   const zones = [];
 
   for (const filepath of filepaths) {
-    const match = filepath.match(/([^/]+?)(|-(NPC|Zone|Scenario|Room|Scene)).coffee$/);
+    const match = filepath.match(/([^/]+?)(|-(NPC|Zone|Scenario|Room|Questline|Scene)).coffee$/);
     const filename = match[1];
     const type = match[3];
 
     switch (type) {
       case 'NPC':
       case 'Scenario':
+      case 'Questline':
       case 'Room': {
         temp_file.write(`export ${filename} = new class extends ${type}\n`);
         const a = fs.readFileSync(filepath, 'utf8');
