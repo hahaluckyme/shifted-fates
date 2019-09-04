@@ -5,7 +5,7 @@ Start: =>
 
   option "Fight him": => await scene @Fight
   option "Distract him": => await scene @Distract
-  # option "Hide and watch": => await scene @Hide
+  option "Hide": => await scene @Hide
   option "Escape unseen (DEX)": => await scene @Escape
   await do choice
 
@@ -110,6 +110,33 @@ ThrowSomething: =>
       await scene @FuckAndDump
     else
       await scene @BadEnd1
+
+Hide: =>
+  say paragraph "You decide that you're going to sit tight, stay unseen, and only make your move when you find the right opening. If the fox girl's fucked into a babbling heap by the time that opportunity comes, then so be it. All that matters right now is looking out for yourself, lest you're caught by the sex-crazed canine and reduced to nothing more than his broken husky bimbo."
+  say paragraph "You quickly skulk into a nearby alley and hide behind a dumpster. It's a little close to the husky for comfort, but at least he won't scent you downwind from here. Nerves on edge, you settle low until your galloping heart relaxes, then take a deep breath to center your scattered thoughts. You remind yourself not to do anything too hasty; even if you fail to find an opening, you'll still have a window to escape while the two are tied together."
+  say paragraph "Peeking out from the alley, you cautiously observe the male as he drives into his vulpine victim. He ravages the girl with no regard for her struggles, completely apathetic to her crying and thrashing. Every plea is met with another harsh thrust into her sex, stuffing her gripping hole to the brink before withdrawing. The sight of her torment sits ill with your stomach. You turn your head from the scene, trying your best to stay calm in spite of what you're witness to."
+  
+  if Player.is_aroused
+    option "Watch and masturbate": => await scene @WatchAndMasturbate
+  option "Watch for an opening": => await scene @WaitForOpening
+  option "Stay hidden": => await scene @HideAndWait
+  option "Flee now": => await scene @FleeFromHiding
+  await do choice
+
+WatchAndMasturbate: =>
+  say paragraph "Shame burns bright when you realize that your arousal is making it difficult to focus. Her violation is bad enough, but the urge to tend to your length while witnessing brutal rape is downright disturbing. While you may be horrified, your length throbs imploringly, a steady, goading pulse from base to glans that whittles away at your will to resist. You realize glumly that even if you wanted to help, there's a risk your lust-addled body would just end up betraying you instead, so you may as well relieve this tension now before you do something you might regret."
+  say paragraph "Swallowing your pride, you hastily pull down the hem of your pants and fish your cock from your briefs. You brush your fingers over the dribbling tip, then slide your hand below to envelop the stock-stiff shaft. Pleasure ripples through you as your pre lubricates your grip. If it weren't for the context of your situation, you'd draw this out for as long as you could, but you need to act quick if you don't want to be caught. You hasten your pumping to expedite the build-up, hoping to reach climax as quickly as your eager length allows."
+  say paragraph "Try as you might to shift your focus from the fox girl's rape, you can't help but find yourself transfixed by the scene before you. There's something intrinsically erotic about the husky overpowering her, taking what he wants and laying his claim on her body. Your sex-fogged mind can't discern which role you'd rather fill: the virile dog-man pounding away at a tight vixen cunt, or his lusty little bitch who hasn't learned her place beneath him yet? These thoughts feel intrusive and alien, yet sink their sweet fangs into your consciousness, hooking you like the first hit of a drug. You start to feel less like a would-hero and more like a lowlife voyeur, some part of you deriving twisted pleasure from their hot, unwilling coupling."
+  say paragraph ""
+
+WatchForAnOpening: =>
+  say paragraph ""
+
+StayHidden: =>
+  say paragraph ""
+
+FleeNow: =>
+  say paragraph ""
 
 Escape: =>
   say paragraph "You're not keen on risking hide and hair to protect someone you don't even know, especially when her aggressor looks so much larger and stronger than you. Even if you confronted him, there's a chance the fox girl would be so out of sorts from the assault that she'd flee deeper into husky territory. Worst case scenario, the husky could turn his attention to you instead, and you don't even want to think about what he'd do to you for interrupting him."
