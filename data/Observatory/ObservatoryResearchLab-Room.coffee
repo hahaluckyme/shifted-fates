@@ -11,15 +11,16 @@ Enter: =>
 
 Choices: =>
     option "Computer": => await scene @Computer
-    option "Filing Cabinet": => await scene @FilingCabinet
+    option "Posters": => await scene @Posters
     if CrystalSpectrometer.player_made_plan
         option "Spectrometer": => await scene @Spectrometer
     else
         option "Strange Device": => await scene @Spectrometer
+    option "Filing Cabinet": => await scene @FilingCabinet
     await do choice
 
 Computer: =>
-    say paragraph "You take a closer look at the computer. The system unit is a medium-sized tower that's been sequestered under the desk for space. Hooked up to it is an LCD monitor, a wired mouse, a simple black keyboard, and a #{do SpectrometerDescription}. The hardware is nothing remarkable, most likely used by the researchers for browsing, printing, or data entry while more intensive tasks are handled elsewhere."
+    say paragraph "You take a closer look at the computer. The system unit is a medium-sized tower that's been sequestered under the desk for space. Hooked up to it is an LCD monitor, a wired mouse, a simple black keyboard, and a #{do @SpectrometerDescription}. The hardware is nothing remarkable, most likely used by the researchers for browsing, printing, or data entry while more intensive tasks are handled elsewhere."
     if @player_knows_power_is_out
         say paragraph "You try to turn on the computer or monitor, but power is still out in this room."
     else
@@ -29,7 +30,7 @@ Computer: =>
 FilingCabinet: =>
     say paragraph "PLACEHOLDER"
 
-Poster: =>
+Posters: =>
     if CrystalSpectrometer.player_made_plan
         say paragraph "You take another look at the posters on the walls. The writing on them is surprisingly clear and concise, detailing the exact names, functions, and individual components of each piece of equipment in the laboratory. These must have been made with visitors in mind, as there's little in the way of technical jargon that would confuse a layman reader."
         say paragraph "With nothing more to gleam from them, you turn away from the posters."
