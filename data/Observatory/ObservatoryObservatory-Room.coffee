@@ -10,14 +10,3 @@ Enter: =>
     say paragraph "The only exit out of this room is a wooden door to the west, currently standing ajar."
   else
     say paragraph "The room you woke up in feels eerie to return to. The equipment doesn't seem to have been touched since you were last here, and the floor is still covered in glass from when you shattered the containment pod's pane. It's hard not to admire the gigantic reflector telescope standing unfazed amidst the chaos."
-
-# Choices: =>
-#   if not @scavenged then option "Scavenge": => await scene @Scavenge
-#   option West: =>
-#     say paragraph "You take a cautious look around the door to ensure that nothing is lying in wait beyond it. Not seeing or hearing any threats, you walk through the open door and quietly shut it behind you."
-#     await Player.location = ObservatoryHallwayFarEast
-#   await do choice
-
-# Scavenge: =>
-#   @scavenged = true
-#   say paragraph "You find some broken lab equipment on a nearby table. It doesn't look to be of much use."
