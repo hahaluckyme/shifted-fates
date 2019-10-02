@@ -1,3 +1,5 @@
+name: "Empty Camp"
+
 discovered: false
 take_chair: false
 take_pot: false
@@ -6,23 +8,7 @@ waited: false
 # TODO: Rewrite to prioritize survival-oriented items, such as water, food, some kind of knife, etc.
 
 Enter: =>
-  say paragraph "After half an hour of walking, you spot a small clearing through the trees where somebody set up camp."
-  switch
-    when not @take_chair and not @take_pot and not @take_bottles
-      say "Within the campsite are a tent, chair, and basic supplies, including cookware and two bottles of water."
-    when not @take_chair and not @take_pot
-      say "Within the campsite are a tent, chair, and a pot with some silverware next to it."
-    when not @take_chair and not @take_bottles
-      say "Within the campsite are a tent, chair, and two water bottles standing near the base of the fire pit."
-    when not @take_pot and not @take_bottles
-      say "Within the campsite are a tent, some basic cookware, and two water bottles."
-    when not @take_chair
-      say "Within the campsite are a tent and a chair."
-    when not @take_pot
-      say "Within the campsite are a tent and a pot with some silverware."
-    when not @take_bottles
-      say "Within the campsite are a tent and two water bottles."
-  say "The fire is burning lightly."
+    say paragraph "Interest piqued by hunger and curiosity, you wander through the clearing into the empty campsite. As you approach, you hesitate at the sight of some glowing embers in the fire pit. It looks like someone still lives here. Maybe it'd be best to leave before they come back? On the other hand, you're not sure how much longer you can survive out here without any supplies."
 
 Choices: =>
   option "Take the tent": =>
@@ -61,11 +47,11 @@ Choices: =>
       @waited = true
     else
       await scene Logan.Introduce
-  option East: =>
+  option South: =>
     if @take_pot or @take_chair or @take_bottles
       await scene @AngryMountaineer
     else
-      await Player.location = ObservatoryOutside
+      await Player.location = MountainTrail2
   await do choice
 
 AngryMountaineer: =>
