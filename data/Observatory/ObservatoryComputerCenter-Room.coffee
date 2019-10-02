@@ -11,12 +11,20 @@ Choices: =>
     await do choice
 
 Documents: =>
-    say paragraph "You pick up one of the stacks and begin to read the researchers' work. If any of these people were involved in your sudden relocation, you might be able to gleam some valuable information from their findings. Unfortunately, the copious technical jargon may as well be a foreign language to you. Even the charts are borderline incomprehensible, featuring all manner of acronyms and numbers without any legend to decipher what they mean. You decide to start skimming over anything not written in plain English to avoid wasting your time on subjects you know nothing about."
-    say paragraph "After a while, you find a neatly formatted memo. The memo concerns yearly funding and distribution, outlining their sources of income and expected expenses in great detail. Most of the money is set to flow into wages and facility maintenance, although a good chunk is set aside for miscellaneous fees. To your dismay, there's nothing to be found regarding the crystal-powered machinery in the observatory dome, nor is there any information pertaining to your capture and containment within the futuristic pod."
-    say paragraph "You finish browsing through the other documents, but find nothing else of interest. Mentally exhausted, you step away from the central desk."
+    if @player_searched_documents
+        say paragraph "You've already rifled through these documents. It's unlikely that you'll find anything more on a second pass."
+    else
+        @player_searched_documents = true
+        say paragraph "You pick up one of the stacks and begin to read the researchers' work. If any of these people were involved in your sudden relocation, you might be able to gleam some valuable information from their findings. Unfortunately, the copious technical jargon may as well be a foreign language to you. Even the charts are borderline incomprehensible, featuring all manner of acronyms and numbers without any legend to decipher what they mean. You decide to start skimming over anything not written in plain English to avoid wasting your time on subjects you know nothing about."
+        say paragraph "After a while, you find a neatly formatted memo. The memo concerns yearly funding and distribution, outlining their sources of income and expected expenses in great detail. Most of the money is set to flow into wages and facility maintenance, although a good chunk is set aside for miscellaneous fees. To your dismay, there's nothing to be found regarding the crystal-powered machinery in the observatory dome, nor is there any information pertaining to your capture and containment within the futuristic pod."
+        say paragraph "You finish browsing through the other documents, but find nothing else of interest. Mentally exhausted, you step away from the central desk."
 
 Computers: =>
-    say paragraph "You take a closer look at the computers to determine if any of them are currently active. Attempting to rouse the systems from sleep or turn them on yields no result, so you check the extension strips. The translucent switches are clearly pushed toward the \"ON\" symbols, but there's no backlights to signify that current is flowing through them."
+    if @player_knows_power_is_out
+        say paragraph "It doesn't seem like power has been restored to the building, so there's not much use in checking again."
+    else
+        @player_knows_power_is_out = true
+        say paragraph "You take a closer look at the computers to determine if any of them are currently active. Attempting turn them on or rouse them from sleep yields no result, so you check the extension strips. The translucent switches are clearly pushed toward the \"ON\" symbols, but there's no backlights to signify that current is flowing through them."
 
 Printer: =>
-    say paragraph "The printer is a mid-2000s home office inkjet with a plastic exterior and a supply of blank paper in a slanted tray. It looks a little roughshod, like it was run more often than intended by whoever worked at this facility. You'd think they'd spring for something a little more robust, but decide not to question it."
+    say paragraph "The printer is a mid-2000s home office inkjet with a plastic exterior and a supply of blank paper in a slanted tray. It looks a little roughshod, like it was run more often than intended by whoever worked at this facility."
