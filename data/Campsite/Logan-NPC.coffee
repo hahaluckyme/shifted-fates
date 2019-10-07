@@ -97,6 +97,7 @@ SupplyOfferDecline: =>
 
 SupplyOfferInsist: =>
   say paragraph "\"Suit yourself,\" Logan says dismissively. \"I'm not going to claim responsibility when someone finds your body on the side of the road.\" His comment strikes you as uncharacteristically dark, only affirming your growing distrust of the man. With your hunger still a pressing concern, you head on your way, making sure to look over your shoulder every now and then to make sure you're not being followed."
+  await Player.location = MountainTrail2
 
 SupplyOfferRelent: =>
   say paragraph "Oh, what the hell. There's no point in being difficult here. You let Logan know that - fine - he can go ahead and give you some of his supplies if he wants. The wolf smirks to himself at the news. \"Great,\" he rumbles. \"I'll be right back.\""
@@ -107,6 +108,7 @@ SupplyOfferRelent: =>
 
 SupplyOfferFlee: =>
   say paragraph "You may have spilled your guts to him already, but you're not about to let that become literal. You nod your assent to the wolf, wait for him to disappear halfway into the tent, then turn heel to sprint from the campsite as fast as your feet will carry you. You take a sharp turn once past the clearing to run down the mountain pathway, determined to put as much distance between yourself and the imposing wolf man. You hear Logan call after you, but he doesn't seem to pursue, his voice growing distant before trailing off completely. Exhausted, you find a seat on a nearby stump to catch your breath and recenter. It may have been presumptuous to beat tracks without more concrete reasons to suspect him, but hey, better safe than slaughtered by a werewolf."
+  await Player.location = MountainTrail3
 
 # TODO: talk more about the world maybe? idk
 # Song advice: Probably want to focus on the player asking for basic things. Landmarks, how to survive, etc.

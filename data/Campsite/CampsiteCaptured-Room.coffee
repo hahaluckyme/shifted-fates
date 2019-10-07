@@ -1,8 +1,3 @@
-cried: false
-times_begged: 0
-times_called: 0
-times_examined_collar: 0
-
 Enter: =>
   say paragraph "You wake up with a throbbing headache. You find yourself still at the campsite, but night has fallen and you have a heavy collar around your neck, keeping you locked to a tree. The wolf man is cooking something at the fire, unaware that you have just awoken."
 
