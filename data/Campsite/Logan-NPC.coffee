@@ -87,7 +87,7 @@ SupplyOfferTrusting: =>
   say paragraph "The wolf disappears inside of his tent. You hear the rustling of supplies being moved, but can't see exactly what he's up to. You have to admit that the excited wag of his tail is pretty cute, but don't let it distract you from the pit in your gut. After a few seconds, he reemerges with a large canteen and two MREs in hand."
   say paragraph "Try as you might, you have trouble hiding the concern in your face about the contents of the opaque canteen and ages-old MREs. Logan picks up on your expression and gives you sympathetic look. \"Food's food. You can't afford to be a picky eater these days. Let's dig in.\""
   await do pause
-  await scene @SharingSupplies
+  await scene @SharingCanteen
 
 SupplyOfferDecline: =>
   say paragraph "The wolf man gives you an incredulous look. \"Well, I guess I can't blame you. You must be all kinds of paranoid after everything you just heard. Still, you really shouldn't look a gift horse in the mouth. I think you'll feel a *lot* better with something in your belly...\""
@@ -104,19 +104,66 @@ SupplyOfferRelent: =>
   say paragraph "The wolf disappears inside of his tent. You hear the rustling of supplies being moved, but can't see exactly what he's up to. The pit in your gut grows more prominent as you anxiously wait for him to find what he's looking for. After a few seconds, he reemerges with a large canteen and two MREs."
   say paragraph "On one hand, you're relieved that he wasn't just biding time to look for a knife or something. On the other, you're still concerned about the contents of the opaque canteen and most-likely-expired MREs. Noticing your expression, Logan gives you a knowing look. \"Food's food. You can't afford to be a picky eater these days. Let's dig in.\""
   await do pause
-  await scene @SharingSupplies
+  await scene @SharingCanteen
 
 SupplyOfferFlee: =>
-  say paragraph "You may have spilled your guts to him already, but you're not about to let that become literal. You nod your assent to the wolf, wait for him to disappear halfway into the tent, then turn heel to sprint from the campsite as fast as your feet will carry you. You take a sharp turn once past the clearing to run down the mountain pathway, determined to put as much distance between yourself and the imposing wolf man. You hear Logan call after you, but he doesn't seem to pursue, his voice growing distant before trailing off completely. Exhausted, you find a seat on a nearby stump to catch your breath and recenter. It may have been presumptuous to beat tracks without more concrete reasons to suspect him, but hey, better safe than slaughtered by a werewolf."
+  say paragraph "You may have spilled your guts to him already, but you're not about to let that become literal. You nod your assent to the wolf, wait for him to disappear halfway into the tent, then turn heel to sprint from the campsite as fast as your feet will carry you. You take a sharp turn once past the clearing to run down the mountain pathway, determined to put as much distance between yourself and the imposing wolf man. You hear Logan call after you, but he doesn't seem to pursue, his voice growing distant before trailing off completely. Exhausted, you find a seat on a nearby stump to catch your breath and recenter. It may have been presumptuous to beat tracks without more reason to suspect him, but hey, better safe than slaughtered by a werewolf."
   await Player.location = MountainTrail3
 
 # TODO: talk more about the world maybe? idk
 # Song advice: Probably want to focus on the player asking for basic things. Landmarks, how to survive, etc.
 # Logan gives you a bit of supplies but is otherwise not really going to help you whatsoever
 
-SharingSupplies: =>
-  say paragraph "Placeholder."
-  take "Water Bottle"
-  take "Food"
-  say paragraph "\"Here's a bit of supplies. Bye now.\""
-  do end
+SharingCanteen: =>
+  say paragraph "Before you have a chance to reconsider, Logan unscrews the top of his canteen and passes it to you. \"Drink. All of it.\" You tentatively take the bottle from him and give it a little swish. Half-full. The water inside doesn't have any noticeable discoloration or odor. \"Well, what are you waiting for?\" the wolf asks, coaxingly."
+  say paragraph "Your lips feel dry, but should you really go through with this? Logan stares at you expectantly. You're running out of time to make a decision."
+
+  option "Put your inhibitions aside and take a hearty swig.": => @CanteenEager
+  option "Take a small sip first.": => @CanteenHesitant
+  option "Request that Logan have a drink before you.": => @CanteenLogan
+  option "Decline to drink and pass the canteen back.": => @CanteenDeclined
+  await scene @SharingMREs
+
+CanteenEager: =>
+  say paragraph "What's the worst that happen, you figure. You crane your neck back and swallow the contents whole. The water inside is cool and pure, coating the back of your throat as you drink it all down. By the time you finish, Logan meets your gaze with a smile that doesn't quite reach his eyes. He holds a hand out to you, curling a finger to motion you to return the canteen. Feeling refreshed, you pass it back to the wolf and let out a quiet sigh."
+  say paragraph "\"Tastes pretty good, right?\" Logan asks with a soft chuckle. \"You must have been pretty parched from the way you just inhaled that.\" You tell him you appreciate the drink, but wonder where he got it from. \"Rainwater, mostly. Dry seasons, I get it from clean, running streams. I've got a makeshift purifier not far from here to drip it through just in case.\" He seems to have thought this through. You thank him for the explanation and lick your lips, feeling a good deal better after hydrating, but still quite hungry."
+
+CanteenHesitant: =>
+  say paragraph "You don't necessarily want to insult your host, but you're not fully convinced that the contents haven't been tainted in some way, either. Rather than risk annoying him, you take a cautious first sip. The water is cool, but not icy, and you don't taste anything out of the ordinary. \"That all?\" Logan asks. \"You're still going to be parched if you don't drink up.\" He's right. Your thirst is nowhere near slaked. Still, you can't help but wonder if making you drink this has some kind of ulterior motive behind it."
+
+  option "Drink down the risk of the canteen's contents.": => @CanteenContinued
+  option "Hand the canteen back.": => @CanteenStropped
+
+CanteenContinued: =>
+  say paragraph "You hesitate for a moment, but eventually relent. If it hasn't made you feel off yet, chances are a little more of the fluid won't do any significant harm. Watching the wolf pensively, you drink down the rest. Logan looks visibly relieved. \"Good. I get that you're still on edge, but a little water won't kill you. I even go through the trouble of purifying it just to be safe.\" You wipe your mouth and ask him what he means by that. \"I've got a filter system I made myself a little deeper in the woods. That water comes from rain and little streams, which isn't always the cleanest.\" You nod in response. He seems to have thought this through, and his transparency assuages your distrust."
+
+CanteenStopped: =>
+  say paragraph "You err on the side of caution and hand the canteen back to the wolf. Logan looks at you incredulously. \"Well, can't say I blame you,\" he admits, visibly disappointed. \"No harm in being cautious around strangers, 'specially someone who looks like me.\" He might be self-deprecating to garner your sympathy, but there's a mote of truth to his words as well. A man-sized wolf isn't exactly the most trustworthy figure around."
+
+CanteenLogan: =>
+  say paragraph "Even though there's no obvious signs of contamination, you just can't be certain that the canteen's contents haven't been tainted in some way. You'd rather risk the ire of your mutated host than drink something which may or may not have been poisoned. Logan looks at you incredulously when you hand the canteen back to him, only to glower at the suggestion that he drink from it first."
+  say paragraph "\"Absolutely not,\" the wolf man growls. \"I've already had half before you arrived. It's only fair that someone more in need can have the rest. Besides, I can always gather more from rain water and streams.\" You argue that you're validated in your suspicions. There *are* such things as clear, odorless poisons, and you were not witness to him gathering the water at all. The risk you'd be exposed to far outweighs the burden of being thirsty for a few more hours."
+  say paragraph "\"Poison? What the hell are you on about?\" Logan scoffs. There's a pregnant pause between the two of you before the wolf looks down with an exasperated sigh. \"I can't fault you for being suspicious, but I'm not some conniving bastard. Please, just have a drink. I don't want you to run yourself dry because you don't have anyone around who you can trust.\""
+
+  option "If he's so intent on proving he's trustworthy, demand that the wolf drinks from the canteen first.": => @CanteenLoganDemand
+  option "He seems genuinely offended by your distrust. Maybe there's no ulterior motive after all? Relent and take a swig.": => @CanteenLoganRelent
+  option "Staunchly refuse to drink.": => @CanteenLoganRefuse
+
+CanteenLoganDemand: =>
+  say paragraph "Logan rolls his eyes. \"If it'll make you feel better about it,\" he grumbles. The wolf says something along the lines of \"bottoms up\" as he tips the canteen back and drinks. Once finished, he hands the bottle back to you with a look of unaffected indifference. \"See? Nothing to worry about. Purified water, fresh from recent rainfall.\""
+  say paragraph "Suspicious somewhat alleviated, you cautiously drink the canteen, mindful to avoid the part of the ridge that just came into contact with the werewolf's mouth. The water is cool and clear, a soothing balm that eases the tension in your muscles. By the time you've swallowed every last drop, Logan looks noticeably relieved. \"There. You didn't have to make it so difficult, but I'm glad you're feeling better now.\" You wipe your mouth with your arm and thank him for the drink, though the hunger in your gut is only growing more prominent."
+
+CanteenLoganRelent: =>
+  say paragraph "Everything about the way Logan is reacting seems to reach his eyes. There's no way in hell that his umbrage isn't being genuine, and you're not exactly keen on making an enemy out of someone so soon. Rather than risk being injury for pushing his buttons, you tell the wolf that you trust him and ask for him to return the canteen. \"Alright,\" he rumbles. Logan still seems upset, but hands the bottle back to you without word."
+  say paragraph "You look down into the canteen. The fluid inside is clear and odorless. Nothing about the way it swishes in its container suggests there's anything other than pure, clean water. Worries somewhat alleviated, you down it back. It's cool and fresh, soothing your throat as you drink it all. Once you've had your fill, you look back at Logan, who seems visibly relieved. \"Hope that hit the spot,\" he rumbles, and you nod."
+
+CanteenLoganRefuse: =>
+  say paragraph "If the wolf is deflecting and feigning umbrage, you have a pretty good sense that something is awry with the contents of the canteen. Besides, you can't be certain if there's any bodily fluids on or inside the bottle. Who knows what kind of bacteria it could be carrying? Worse, what if his condition is infectious? You shudder inwardly at the thought and shake your head at him."
+  say paragraph "Logan looks frustrated with your insistence as he screws the lid back on the canteen. \"Suit yourself. Can't say I'm surprised that you don't trust me, but at least I offered.\" You sigh profusely and tell the wolf you didn't mean an anything by it. You just have your own skin to worry about, and you can't put your faith in strangers, no matter who they are. \"It's fine. Forgive and forget,\" the wolf grumbles. He looks genuinely hurt, but the skeptic inside of you is telling you to remain wary."
+
+CanteenDeclined: =>
+  say paragraph "You politely decline a drink from the canteen. \"What? Why?\" Logan asks, a confused look on his muzzle. You explain that he's still a stranger, and there's any number of things he could have done to spike or contaminate the contents without your knowledge. Moreover, you have no idea whether or not residue of his saliva could infect you with whatever caused him to change in the first place. As far as you're concerned, his word is moot on the matter until you see the effects for yourself firsthand."
+  say paragraph "\"That's... fair,\" the wolf grumbles. He seems annoyed by your decision. \"But, just so you know, I've done nothing to the water inside except purify it after collecting it. Also, what *I* have isn't something you can just passively 'catch', if that makes sense. Takes intent to pass it along.\" You'd ask him what he means by that, but reckon he is just falling into the trappings of an urban myth. You know enough about infections to understand that aspects like \"energy\" and \"mindset\" have jack-shit to do with a strictly physical process. Logan picks up on your doubt, but doesn't push the subject further."
+
+SharingMREs: =>
+  say paragraph ""
