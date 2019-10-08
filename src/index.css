@@ -153,11 +153,15 @@ button:active, button.active {
 }
 
 .link {
-  color: #569cca;
+  color: gray;
   text-decoration: none;
 }
 
-.link:hover {
+.link.active {
+  color: #569cca;
+}
+
+.link.active:hover {
   color: #9cdcfe;
 }
 

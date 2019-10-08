@@ -140,7 +140,7 @@ class GameWindow extends React.Component {
     }));
     const label_map = this.getLabelMap();
     const label = label_map[hotkey];
-    if (label) {
+    if (label && this.state.cur_choices[label]) {
       this.pickChoice(label);
     }
   }
@@ -155,10 +155,11 @@ class GameWindow extends React.Component {
   }
 
   async onKeyDown(event) {
+    const key = event.key.toLowerCase();
     if (!event.ctrlKey) {
-      if ('12345qwertasdfg'.includes(event.key)) {
-        await this.onKeyDownImpl(event.key);
-      } else if (event.key === ' ') {
+      if ('12345qwertasdfg'.includes(key)) {
+        await this.onKeyDownImpl(key);
+      } else if (key === ' ') {
         if (
           Object.keys(this.state.choices).length === 1
           && Object.keys(this.state.directions).length === 0
@@ -173,8 +174,9 @@ class GameWindow extends React.Component {
   }
 
   onKeyUp(event) {
-    if ('12345qwertasdfg'.includes(event.key)) {
-      this.onKeyUpImpl(event.key);
+    const key = event.key.toLowerCase();
+    if ('12345qwertasdfg'.includes(key)) {
+      this.onKeyUpImpl(key);
     }
   }
 
@@ -229,9 +231,18 @@ class GameWindow extends React.Component {
       if (!label) {
         return null;
       }
+      if (!this.state.cur_choices[label]) {
+        return (
+          <a
+            className="link"
+          >
+            [{props.hotkey.toUpperCase()}] {label}
+          </a>
+        );
+      }
       return (
         <a
-          class="link"
+          className="link active"
           href="#"
           onClick={async () => {
             await this.onKeyDownImpl(props.hotkey);
@@ -257,7 +268,7 @@ class GameWindow extends React.Component {
             history={this.state.history}
             seen={this.state.history_seen}
           >
-            <div class="text unseen column">
+            <div className="text unseen column">
               <LinkedGameLink hotkey="1" />
               <LinkedGameLink hotkey="2" />
               <LinkedGameLink hotkey="3" />

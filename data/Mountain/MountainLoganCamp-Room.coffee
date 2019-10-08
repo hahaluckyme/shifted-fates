@@ -19,7 +19,7 @@ Choices: =>
     if not @take_sleeping_bag then option "Take the sleeping bag": =>
       say paragraph "It's not the most immediately useful item, but a sleeping bag would help keep you warm at night. You roll it tight to the best of your abilities and cram it inside of its bag. It's a little bulky, but very light."
       @take_sleeping_bag = true
-    if not @take_canteen then option "Take the canteen": =>
+    option "Take the canteen": if not @take_canteen then =>
       say paragraph "You push aside a twang of guilt and pick the canteen up off the ground. By the way it sloshes when you lift it, you can tell that it's at least partially filled. You dare to unscrew the top and drip a little of its contents on your fingers to sample. The fluid smells and tastes like water, and you can't immediately discern anything impure about it. You suppress your conscience as you pocket the canteen, convincing yourself that whoever lives here must have some sort of contingency plan."
       @take_canteen = true
     if not @take_MRE then option "Take the MREs": =>

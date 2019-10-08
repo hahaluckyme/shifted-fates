@@ -79,7 +79,7 @@ choice = =>
   await new Promise (resolve) => game.showChoices tmp_options, resolve
 
 pause = =>
-  option "...": =>
+  option "(...)": =>
   await do choice
 
 placeholder = "<PLACEHOLDER>"
