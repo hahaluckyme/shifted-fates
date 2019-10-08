@@ -107,7 +107,7 @@ SupplyOfferRelent: =>
   await scene @SharingCanteen
 
 SupplyOfferFlee: =>
-  say paragraph "You may have spilled your guts to him already, but you're not about to let that become literal. You nod your assent to the wolf, wait for him to disappear halfway into the tent, then turn heel to sprint from the campsite as fast as your feet will carry you. You take a sharp turn once past the clearing to run down the mountain pathway, determined to put as much distance between yourself and the imposing wolf man. You hear Logan call after you, but he doesn't seem to pursue, his voice growing distant before trailing off completely. Exhausted, you find a seat on a nearby stump to catch your breath and recenter. It may have been presumptuous to beat tracks without more reason to suspect him, but hey, better safe than slaughtered by a werewolf."
+  say paragraph "You may have spilled your guts to him already, but you're not about to let that become literal. You nod your assent to the wolf, wait for him to disappear halfway into the tent, then turn heel to sprint from the campsite as fast as your feet will carry you. You take a sharp turn once past the clearing to run down the mountain pathway, determined to put as much distance between yourself and the imposing wolf man as possible. You hear Logan call after you, but he doesn't seem to pursue, his voice growing distant before trailing off completely. Exhausted, you find a seat on a nearby stump to catch your breath and recenter. It may have been presumptuous to beat tracks without more reason to suspect him, but hey, better safe than slaughtered by a werewolf."
   await Player.location = MountainTrail3
 
 # TODO: talk more about the world maybe? idk
@@ -122,6 +122,8 @@ SharingCanteen: =>
   option "Take a small sip first.": => @CanteenHesitant
   option "Request that Logan have a drink before you.": => @CanteenLogan
   option "Decline to drink and pass the canteen back.": => @CanteenDeclined
+  await do choice
+  await do pause
   await scene @SharingMREs
 
 CanteenEager: =>
