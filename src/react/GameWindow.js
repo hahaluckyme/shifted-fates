@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 const ReactGA = require('react-ga').default;
 if (process.env.NODE_ENV === 'production') {
   ReactGA.initialize('UA-143865453-3');
@@ -223,6 +224,25 @@ class GameWindow extends React.Component {
       );
     };
 
+    const LinkedGameLink = (props) => {
+      const label = label_map[props.hotkey];
+      if (!label) {
+        return null;
+      }
+      return (
+        <a
+          class="link"
+          href="#"
+          onClick={async () => {
+            await this.onKeyDownImpl(props.hotkey);
+            await this.onKeyUpImpl(props.hotkey);
+          }}
+        >
+          [{props.hotkey.toUpperCase()}] {label}
+        </a>
+      );
+    };
+
     return (
       <div className="game row fill">
         {/* <div className="sidebar column">
@@ -236,17 +256,31 @@ class GameWindow extends React.Component {
           <ScrollBox
             history={this.state.history}
             seen={this.state.history_seen}
-          />
+          >
+            <div class="text unseen column">
+              <LinkedGameLink hotkey="1" />
+              <LinkedGameLink hotkey="2" />
+              <LinkedGameLink hotkey="3" />
+              <LinkedGameLink hotkey="4" />
+              <LinkedGameLink hotkey="5" />
+              <LinkedGameLink hotkey="r" />
+              <LinkedGameLink hotkey="t" />
+              <LinkedGameLink hotkey="f" />
+              <LinkedGameLink hotkey="g" />
+            </div>
+          </ScrollBox>
           <div className="buttons row">
             <div className="column fill">
-              <LinkedGameButton hotkey='1' />
-              <LinkedGameButton hotkey='2' />
-              <LinkedGameButton hotkey='3' />
-              <LinkedGameButton hotkey='4' />
-              <LinkedGameButton hotkey='5' />
+              <LinkedGameButton hotkey='q' />
+              <LinkedGameButton hotkey='a' />
             </div>
-            <div>
-              Minimapminimap
+            <div className="column fill">
+              <LinkedGameButton hotkey='w' />
+              <LinkedGameButton hotkey='s' />
+            </div>
+            <div className="column fill">
+              <LinkedGameButton hotkey='e' />
+              <LinkedGameButton hotkey='d' />
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ class ScrollBox extends React.Component {
     if (prevProps.seen !== this.props.seen) {
       this.scrollRef.scrollTop = this.state.prevHeight;
       this.setState({
-        prevHeight: this.contentRef.offsetHeight,
+        prevHeight: this.contentRef.offsetHeight - 20,
       });
     }
     if (prevProps.history.length !== this.props.history.length) {
@@ -57,6 +57,7 @@ class ScrollBox extends React.Component {
                 return <div className="text unseen" key={i}>{e}</div>;
               }
             })}
+            {this.props.children}
           </div>
         </div>
         <div

@@ -61,6 +61,10 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+.scroll > div {
+  margin-bottom: 85vh;
+}
+
 .scroll::-webkit-scrollbar
 {
     width: 12px;
@@ -141,11 +145,20 @@ button {
   border: 1px solid #424242;
   background-color: #3c3c3c;
   color: inherit;
-  height: 8vh;
+  min-height: 8vh;
 }
 
 button:active, button.active {
   background-color: #333333;
+}
+
+.link {
+  color: #569cca;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #9cdcfe;
 }
 
 .pink {
