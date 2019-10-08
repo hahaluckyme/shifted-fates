@@ -141,7 +141,6 @@ button {
   border: 1px solid #424242;
   background-color: #3c3c3c;
   color: inherit;
-  overflow: hidden;
   height: 8vh;
 }
 

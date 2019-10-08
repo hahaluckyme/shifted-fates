@@ -237,27 +237,16 @@ class GameWindow extends React.Component {
             history={this.state.history}
             seen={this.state.history_seen}
           />
-          <div className="buttons column">
-            <div className="row">
+          <div className="buttons row">
+            <div className="column fill">
               <LinkedGameButton hotkey='1' />
               <LinkedGameButton hotkey='2' />
               <LinkedGameButton hotkey='3' />
               <LinkedGameButton hotkey='4' />
               <LinkedGameButton hotkey='5' />
             </div>
-            <div className="row">
-              <LinkedGameButton hotkey='q' />
-              <LinkedGameButton hotkey='w' />
-              <LinkedGameButton hotkey='e' />
-              <LinkedGameButton hotkey='r' />
-              <LinkedGameButton hotkey='t' />
-            </div>
-            <div className="row">
-              <LinkedGameButton hotkey='a' />
-              <LinkedGameButton hotkey='s' />
-              <LinkedGameButton hotkey='d' />
-              <LinkedGameButton hotkey='f' />
-              <LinkedGameButton hotkey='g' />
+            <div>
+              Minimapminimap
             </div>
           </div>
         </div>

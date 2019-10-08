@@ -118,11 +118,12 @@ SharingCanteen: =>
   say paragraph "Before you have a chance to reconsider, Logan unscrews the top of his canteen and passes it to you. \"Drink. All of it.\" You tentatively take the bottle from him and give it a little swish. Half-full. The water inside doesn't have any noticeable discoloration or odor. \"Well, what are you waiting for?\" the wolf asks, coaxingly."
   say paragraph "Your lips feel dry, but should you really go through with this? Logan stares at you expectantly. You're running out of time to make a decision."
 
-  option "Put your inhibitions aside and take a hearty swig.": => @CanteenEager
-  option "Take a small sip first.": => @CanteenHesitant
-  option "Request that Logan have a drink before you.": => @CanteenLogan
-  option "Decline to drink and pass the canteen back.": => @CanteenDeclined
+  option "Put your inhibitions aside and take a hearty swig.": => await scene @CanteenEager
+  option "Take a small sip first.": => await scene @CanteenHesitant
+  option "Request that Logan have a drink before you.": => await scene @CanteenLogan
+  option "Decline to drink and pass the canteen back.": => await scene @CanteenDeclined
   await do choice
+
   await do pause
   await scene @SharingMREs
 
@@ -133,8 +134,9 @@ CanteenEager: =>
 CanteenHesitant: =>
   say paragraph "You don't necessarily want to insult your host, but you're not fully convinced that the contents haven't been tainted in some way, either. Rather than risk annoying him, you take a cautious first sip. The water is cool, but not icy, and you don't taste anything out of the ordinary. \"That all?\" Logan asks. \"You're still going to be parched if you don't drink up.\" He's right. Your thirst is nowhere near slaked. Still, you can't help but wonder if making you drink this has some kind of ulterior motive behind it."
 
-  option "Drink down the risk of the canteen's contents.": => @CanteenContinued
-  option "Hand the canteen back.": => @CanteenStropped
+  option "Drink down the risk of the canteen's contents.": => await scene @CanteenContinued
+  option "Hand the canteen back.": => await scene @CanteenStropped
+  await do choice
 
 CanteenContinued: =>
   say paragraph "You hesitate for a moment, but eventually relent. If it hasn't made you feel off yet, chances are a little more of the fluid won't do any significant harm. Watching the wolf pensively, you drink down the rest. Logan looks visibly relieved. \"Good. I get that you're still on edge, but a little water won't kill you. I even go through the trouble of purifying it just to be safe.\" You wipe your mouth and ask him what he means by that. \"I've got a filter system I made myself a little deeper in the woods. That water comes from rain and little streams, which isn't always the cleanest.\" You nod in response. He seems to have thought this through, and his transparency assuages your distrust."
@@ -147,9 +149,10 @@ CanteenLogan: =>
   say paragraph "\"Absolutely not,\" the wolf man growls. \"I've already had half before you arrived. It's only fair that someone more in need can have the rest. Besides, I can always gather more from rain water and streams.\" You argue that you're validated in your suspicions. There *are* such things as clear, odorless poisons, and you were not witness to him gathering the water at all. The risk you'd be exposed to far outweighs the burden of being thirsty for a few more hours."
   say paragraph "\"Poison? What the hell are you on about?\" Logan scoffs. There's a pregnant pause between the two of you before the wolf looks down with an exasperated sigh. \"I can't fault you for being suspicious, but I'm not some conniving bastard. Please, just have a drink. I don't want you to run yourself dry because you don't have anyone around who you can trust.\""
 
-  option "If he's so intent on proving he's trustworthy, demand that the wolf drinks from the canteen first.": => @CanteenLoganDemand
-  option "He seems genuinely offended by your distrust. Maybe there's no ulterior motive after all? Relent and take a swig.": => @CanteenLoganRelent
-  option "Staunchly refuse to drink.": => @CanteenLoganRefuse
+  option "If he's so intent on proving he's trustworthy, demand that the wolf drinks from the canteen first.": => await scene @CanteenLoganDemand
+  option "He seems genuinely offended by your distrust. Maybe there's no ulterior motive after all? Relent and take a swig.": => await scene @CanteenLoganRelent
+  option "Staunchly refuse to drink.": => await scene @CanteenLoganRefuse
+  await do choice
 
 CanteenLoganDemand: =>
   say paragraph "Logan rolls his eyes. \"If it'll make you feel better about it,\" he grumbles. The wolf says something along the lines of \"bottoms up\" as he tips the canteen back and drinks. Once finished, he hands the bottle back to you with a look of unaffected indifference. \"See? Nothing to worry about. Purified water, fresh from recent rainfall.\""
