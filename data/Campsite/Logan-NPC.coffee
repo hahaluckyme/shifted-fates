@@ -167,8 +167,8 @@ CanteenDeclined: =>
   say paragraph "\"That's... fair,\" the wolf grumbles. He seems annoyed by your decision. \"But, just so you know, I've done nothing to the water inside except purify it after collecting it. Also, what *I* have isn't something you can just passively 'catch', if that makes sense. Takes intent to pass it along.\" You'd ask him what he means by that, but reckon he is just falling into the trappings of an urban myth. You know enough about infections to understand that aspects like \"energy\" and \"mindset\" have jack-shit to do with a strictly physical process. Logan picks up on your doubt, but doesn't push the subject further."
 
 SharingFood: =>
-  say paragraph "\"'Bout time we get you something to eat, huh?\" Logan offers. You look between him and the packets of freeze-dried fruit. Your stomach growls your assent for you. \"Worth a thousand words,\" the wolf teases, making you feel self-conscious about your body betraying your needs. He hands you a plastic bag full of strawberries and smiles. \"Now eat up. It's not the tastiest food, but you don't want to hungry, do you?\""
-  say paragraph "Hunger getting the better of you, you don't even think about refuting his offer as you tear open the plastic packet and start chewing on the contents. It's not unpalatable, per se, but it's not exactly fulfilling, either. The crunchy texture and absence of water makes it taste more akin to dry flakes than a fulfilling meal. Logan eats from his own packet in the meanwhile, his bushy tail wagging behind him as he watches and makes sure you get your fill."
+  say paragraph "\"'Bout time we get you something to eat, huh?\" Logan offers. You look between him and the packets of freeze-dried fruit. Your stomach growls your assent for you. \"Worth a thousand words,\" the wolf teases, making you feel self-conscious about your body betraying your needs. He hands you a plastic bag full of strawberries and smiles. \"Now eat up. It's not the tastiest food, but it'll keep you going.\""
+  say paragraph "Hunger getting the better of you, you don't even think about refuting his offer as you tear open the plastic packet and start chewing on the contents. It's not unpalatable per se, but it's not exactly fulfilling, either. The crunchy texture and absence of water makes it taste more akin to dry flakes than a fulfilling meal. Logan eats from his own packet in the meanwhile, his bushy tail wagging behind him as he watches and makes sure you get your fill."
   say paragraph "Once you've finished, you lean back in your seat and close your eyes for a moment. That really hit the spot. The wolf clears his throat to get your attention. \"You should keep your eyes open for more of that stuff. I know some people in the city will trade for it. It keeps for decades and it's real lightweight. Just know that it'll also paint a big red target on your back if anyone notices that you're carrying it.\" You nod to the wolf and thank him for the advice. He seems pleased to have helped."
   await do pause
   await scene @QA
@@ -223,16 +223,16 @@ ShelterOffer: =>
   await do choice
 
 ShelterOfferDirect: =>
-  say paragraph "\"What I'm saying is, I could use a friendly face around camp. It gets pretty lonely up here, and having someone to talk to is a good way to keep yourself centered.\" The wolf pauses for a moment, mulling over his words. \"From what you told me earlier, you may have already made some pretty powerful enemies. You could use someone with a little more experience in this world to help keep you safe. 'Course, you'd have your share of responsibilities as well. That's not to say I'd make you do all the work, just that we could split it in a way that makes this easier for the both of us.\""
+  say paragraph "\"What I'm saying is, I could use a friendly face around camp. It gets pretty lonely up here, and having someone to talk to is a good way to keep yourself centered.\" The wolf pauses for a moment, mulling over his words. \"From what you told me earlier, you may have already made an enemy of whoever was running the lab you escaped from. You could use someone with a little more experience in this world to help keep you safe. 'Course, you'd have your share of responsibilities as well. That's not to say I'd make you do all the work, just that we could split it in a way that makes this easier for the both of us.\""
   await scene @ShelterOfferOptions
 
 ShelterOfferWary: =>
-  say paragraph "\"What's that look for?\" Logan asks with a laugh. \"I'm not asking anything shady. What's I'm trying to get it is that I see an opportunity for both of us to benefit here. You need some kind of shelter and protection, and I could use help around camp and a friendly face to talk to."
-  say paragraph "You understand what the wolf is asking, but continue to give him a pointed look in the hope that he'll explain himself further. \"Ugh. Listen. Now that you escaped that lab, chances are someone's going to start looking for you, right? I think you could use someone who's lived in this world and better understands its dangers to watch your back. All I'd ask for in return is some help with basic tasks to make survival easier for the both of us.\""
+  say paragraph "\"What's that look for?\" Logan asks with a laugh. \"I'm not asking anything shady. What's I'm trying to get at is that I see an opportunity for both of us to benefit here. You need some kind of shelter and protection, and I could use help around camp and a friendly face to talk to."
+  say paragraph "You understand what the wolf is asking, but continue to give him a pointed look in the hope that he'll explain himself further. \"Ugh. Listen. Now that you escaped from that lab, chances are someone's going to start looking for you, right? I think you could use someone who's lived in this world and better understands its dangers to watch your back. All I'd ask for in return is some help with basic tasks to make survival easier for the both of us.\""
   await scene @ShelterOfferOptions
 
 ShelterOfferUninterested: =>
-  say paragraph "You tell Logan to stop before he gets ahead of himself. You have a pretty good idea of what he's about to ask, and you're not simply interested."
+  say paragraph "You tell Logan to stop before he gets ahead of himself. You have a pretty good idea of what he's about to ask, and you're simply not interested."
   say paragraph "\"At least hear me out!\" the wolf grumbles. \"I get that you're skeptical, so I'll be blunt with you. I could use some help around camp, and you could definitely use shelter and protection. Also, that lab you escaped from? I don't think they'd just let a test subject get away without chasing it down. You should *really* consider settling down and staying low if you don't want to end up dead in a ditch somewhere - or worse.\""
   await scene @ShelterOfferOptions
 
@@ -250,7 +250,7 @@ ShelterOfferAccept: =>
 ShelterOfferSkeptical: =>
   say paragraph "\"Nothing,\" he states plainly. \"You just would have to trust my word that I wouldn't hurt a fly - 'least, not if they don't intend to wrong me first.\""
   say paragraph "*Intend* to wrong him first? There's something off about the way he phrased that. You cautiously ask Logan if he'd really hurt someone not due to their actions, but because of perceived intent."
-  say paragraph "\"Oh. Right. You never had to deal with people who want to dead before, have you?\" You shake your head. \"Figures. I've had my share of it over the years. Big reason why I moved up here in the first place. In some ways, it's easier for me to trust a stranger than someone from back home.\" His last words trail off a bit, and he looks to the side as if he'd rather change the subject."
+  say paragraph "\"Oh. Right. You never had to deal with people who wanted to see you dead before, have you?\" You shake your head. \"Figures. I've had my share of it over the years. Big reason why I moved up here in the first place. In some ways, it's easier for me to trust a stranger than someone from back home.\" His last words trail off a bit, and he looks to the side as if he'd rather change the subject."
 
   option "Don't push him. Everyone's got a hatchet to bury somewhere. Besides, the last thing you need is to make an enemy out of a potential ally.": => await scene @ShelterOfferNoPress
   option "Press him on the matter. If he's offering you stay here, you need to know exactly what kind of threats you might have to deal with.": => await scene @ShelterOfferPress
@@ -258,11 +258,11 @@ ShelterOfferSkeptical: =>
 
 ShelterOfferNoPress: =>
   say paragraph "You politely inform Logan that any past transgressions are irrelevant to you. It's none of your business, and you respect the wolf's privacy. \"Thank you, but I wouldn't say I've made any 'transgressions'. More like some simple mistakes that landed me in hot water with the wrong crowd.\" You let Logan know that that 'hot water' is under the bridge now and not pertinent to your situation. Logan nods and gives you an gentle, appreciative look."
-  say paragraph "\"So, are you open to joining me, then?\" he asks. You consider it for a moment. There might be merit to keeping safe from the devil you don't know, but you also run the risk by putting all your eggs in the wrong basket by putting too much faith what still amounts to an acquaintance."
+  say paragraph "\"So, are you open to joining me, then?\" he asks. You consider it for a moment. There might be merit to keeping safe from the devil you don't know, but you also run the risk by putting your eggs in the wrong basket by placing too much faith in what still amounts to an acquaintance."
 
   option "At this point, you trust Logan enough to consider him an ally. Tell the wolf that you'd like to stay with him at his camp.": => await scene @ShelterOfferNoPressAccept
   option "You're still not certain about all this. Tell Logan that you'll consider his offer and get back to him on it.": => await scene @ShelterOfferNoPressMaybeLater
-  option "You don't think you can shoulder the risk of trusting a werewolf. Tell Logan that you're not interested in joining him here.": => await scene @ShelterOfferNoPressDecline
+  option "You don't think you can shoulder the risk of trusting someone you met less than an hour ago. Tell Logan that you're not interested in joining him here.": => await scene @ShelterOfferNoPressDecline
   await do choice
 
 ShelterOfferNoPressAccept: =>
@@ -276,7 +276,7 @@ ShelterOfficeNoPressDecline: =>
   say paragraph ""
 
 ShelterOfferPress: =>
-  say paragraph "Logan shakes his head adamantly. \"It's a sore spot for me. Sorry. I know I'm the one being difficult here, but talking about the past puts me in a mighty foul mood.\" You see the wolf's fists clench by his sides, the muscles under his furry hide starting to strain as he suppresses his anger. \"It's not something you'd need to worry about. All that crap hasn't mattered since I left the city. Up here, the worst I've got to worry about is the weather or some wild animal walking through my camp.\""
+  say paragraph "Logan shakes his head adamantly. \"It's a sore spot for me. Sorry. I know I'm the one being difficult here, but talking about the past puts me in a foul mood.\" You see the wolf's fists clench by his sides, the muscles under his furry hide starting to strain as he suppresses his anger. \"It's not something you'd need to worry about. All that crap hasn't mattered since I left the city. Up here, the worst I've got to worry about is the weather or some wild animal walking through my camp.\""
 
   option "Logan seems quite vulnerable at the moment. Apologize for dredging up the past and accept the wolf's request for company.": => await scene @ShelterOfferPressAcceptApologize
   option "Tell Logan that you're willing to accept his offer, but won't hesitate to bail on him if this 'long-buried' past comes back to haunt you.": => await scene @ShelterOfferPressAcceptWary
@@ -289,7 +289,7 @@ ShelterOfferPressAcceptApologize: =>
   await scene @LoganOfferAccepted
 
 ShelterOfferPressAcceptWary: =>
-  say paragraph "Cautiously, you inform the wolf that you are open to his offer, but only under the condition that he holds true to his side of the bargain and that none of his past mistakes come back to bite you. \"Of course,\" Logan says, letting out of a sigh of relief at your answer. \"That's only reasonable. Mark my words that's not going to be an issue, though. I've already taken every precaution I could to make sure it doesn't crop up again.\" You remind the wolf that this is still only a tenuous alliance, which he accepts with slumping shoulders and a simple nod."
+  say paragraph "Cautiously, you inform the wolf that you are open to his offer, but only under the condition that he holds true to his side of the bargain and that none of his past mistakes come back to bite you. \"Of course,\" Logan says, letting out of a sigh of relief at your answer. \"That's only reasonable. Mark my words that it's not going to be an issue, though. I've already taken every precaution I could to make sure it doesn't crop up again.\" You remind the wolf that this is still only a tenuous alliance, which he accepts with slumping shoulders and a simple nod."
   await scene @LoganOfferAccepted
 
 ShelterOfferPressMaybeLater: =>
