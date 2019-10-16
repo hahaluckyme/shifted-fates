@@ -22,7 +22,7 @@ ExplainPresenceHonestly: =>
 
 ExplainPresencePartially: =>
   say paragraph "Worried that telling him everything about your situation might make you more suspicious, you omit the details of how you got here and say that you were just looking for supplies. \"A thief, then?\" the wolf asks, a smirk crooking his muzzle as he looks you up and down. \"No, you don't look the type. 'Sides, you'd have already stuffed your pockets and ran off if you were. No thief's going to loiter around unless they're asking for trouble.\""
-  say paragraph "You try to come up with some kind of explanation, but the wolf just shakes his head. \"Don't even think about it. You're hiding something, I can tell. Now out with it, 'fore I kick you out of my camp.\" On the spot now, you relent to the lupine's stubborn insistence and admit that - yes - you weren't being entirely honest with him before. \"That's a nice way to sugar-coat it, but I'll let it pass,\" he chides. You go on to explain that you have no idea where you are or how you woke up here. " 
+  say paragraph "You try to come up with some kind of explanation, but the wolf just shakes his head. \"Don't even think about it. You're hiding something, I can tell. Now out with it, 'fore I kick you out of my camp.\" On the spot now, you relent to the lupine's stubborn insistence and admit that - yes - you weren't being entirely honest with him before. \"That's a nice way to sugar-coat it, but I'll let it pass,\" he chides. You go on to explain that you have no idea where you are or how you woke up here. "
   await scene @ExplainPresenceContinuation
 
 ExplainPresenceLie: =>
@@ -243,10 +243,10 @@ ShelterOfferUninterested: =>
   await scene @ShelterOfferOptions
 
 ShelterOfferOptions: =>
-  option "Food, shelter, and a bodyguard? That sounds like a pretty good deal to you. Accept the wolf's offer.": => await scene @ShelterOfferAccept
+  option "Food, shelter, and a bodyguard? That's a pretty good deal. Accept the wolf's offer.": => await scene @ShelterOfferAccept
   option "You're not so certain. Ask the wolf what's stopping him from taking advantage of you out here in the wilderness?": => await scene @ShelterOfferSkeptical
-  option "Inform Logan that you'll consider it, but you'd like to determine whether or not the base of the mountain is dangerous enough to warrant accepting his offer.": => await scene @ShelterOfferMaybeLater
-  option "You're not going to move in with a total stranger, much less a werewolf. Tell him that you're not interested in his offer.": => await scene @ShelterOfferDecline
+  option "Inform Logan that you'll consider it. After all, you haven't even checked the base of the mountain yet.": => await scene @ShelterOfferMaybeLater
+  option "Tell him that you're not interested in his offer. You've only just met the guy, and he's also a werewolf.": => await scene @ShelterOfferDecline
   await do choice
 
 ShelterOfferAccept: =>
