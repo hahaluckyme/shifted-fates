@@ -107,11 +107,13 @@ SupplyOfferRelent: =>
   await scene @SharingCanteen
 
 SupplyOfferInsist: =>
-  say paragraph "\"Suit yourself,\" Logan rumbles. \"I'm not going to claim responsibility when someone finds your body on the side of the road.\" The way his tone suddenly shifted to cold, unfeeling indifference sends a chill down your spine. Unable to shake this growing sense of dread, you quickly say your goodbyes and move away from the wolf's camp, though not without sparing one last glance to make sure you're not being followed."
+  say paragraph "\"Suit yourself,\" Logan rumbles. \"I'm not going to claim responsibility if someone finds your body on the side of the road.\" The way his tone suddenly shifted to cold, unfeeling indifference sends a chill down your spine. Unable to shake a growing sense of dread, you quickly say your goodbyes and walk away from the wolf's camp, though not without sparing one last glance to make sure you're not being followed."
+  await do pause
   await Player.location = MountainTrail2
 
 SupplyOfferFlee: =>
   say paragraph "You may have spilled your guts to him already, but only figuratively so. You nod your assent to the wolf, wait for him to disappear halfway into the tent, then turn heel to sprint from the campsite as fast as your feet will carry you. You take a sharp turn once past the clearing to run down the mountain pathway, determined to put as much distance between yourself and the wolf man as possible. You hear Logan call after you, but he doesn't pursue, his voice growing distant before trailing off completely. Exhausted, you find a seat on a nearby stump to catch your breath and recover. You could have waited for a more concrete reason to distrust him, but hey, better safe than sorry."
+  await do pause
   await Player.location = MountainTrail3
 
 # Logan offers to share his canteen with the player
@@ -247,6 +249,7 @@ NoShelterOfferChoices: =>
 NoShelterOfferGoodbyes: =>
   say paragraph "You thank the wolf for his hospitality and say that you'll be taking your leave now. \"What, not going to ask for one last favor?\" Logan teases. What is that supposed to mean? You quirk a brow at his words, only to be met with a dry chuckle. \"I'm just pulling your leg. I'm used to people asking for seconds after they already got a free handout.\" You tell Logan you didn't intend as much, a defense that he answers with a gentle smile. \"Oh, I know. You seem like the good type. A bit too much of a skeptic, but hey, that's not a bad thing in a world gone crazy.\""
   say paragraph "The wolf looks back over his shoulder toward something in the distance. Taking the hint, you thank Logan one last time before heading on your way, leaving the wolf man alone at his campsite."
+  await do pause
   await Player.location = MountainTrail2
 
 NoShelterOfferAskAboutNight: =>
@@ -282,6 +285,8 @@ ShelterOfferUninterested: =>
   say paragraph "\"At least hear me out!\" the wolf growls. \"You escaped from some kind of high-tech lab, and whoever runs or ransacked the place probably has a bounty on your head. Chances are that you're being hunted as we speak. Now, I know enough about bounty hunters to say that you're safer here than a hub like the city. All I ask for in return is a little help around camp.\""
   await scene @ShelterOfferOptions
 
+# All three options lead to this prompt
+
 ShelterOfferOptions: =>
   option "Food, shelter, and a bodyguard? That's a pretty good deal. Accept the wolf's offer.": => await scene @ShelterOfferAccept
   option "You're not so certain. Ask the wolf what's stopping him from taking advantage of you.": => await scene @ShelterOfferSkeptical
@@ -302,8 +307,7 @@ ShelterOfferSkeptical: =>
   await do choice
 
 ShelterOfferNoPress: =>
-  say paragraph "You politely inform Logan that any past transgressions are irrelevant to you. It's none of your business, and you respect the wolf's privacy. \"Thank you, but I wouldn't say I wronged anyone on purpose. I just made some mistakes that landed me in hot water with the wrong crowd.\" You tell him that it's water under the bridge now. Logan nods and gives you a gentle, appreciative look."
-  say paragraph "\"So, are you open to joining me, then?\" he asks. You consider it for a moment."
+  say paragraph "You politely inform Logan that any past transgressions are irrelevant to you. It's none of your business, and you respect the wolf's privacy. Logan nods and gives you an appreciative look. \"So, are you open to joining me, then?\" he asks. You consider it for a moment."
 
   option "By this point, you trust Logan enough to consider him an ally. Tell the wolf that you'd like to stay with him at his camp.": => await scene @ShelterOfferNoPressAccept
   option "You're still not certain about all this. Tell Logan that you'll consider his offer and get back to him later.": => await scene @ShelterOfferNoPressMaybeLater
@@ -311,51 +315,68 @@ ShelterOfferNoPress: =>
   await do choice
 
 ShelterOfferNoPressAccept: =>
-  say paragraph "After mulling it over, you tell Logan that you're willing to stick around in exchange for his protection. \"That's good to hear. And hey, don't worry, I'm not going to put up a fuss if you ever want to leave. You've got agency over your own life, no matter what.\" You nod to the wolf, then let out a silent sigh of relief. One can only hope he stays true to his words."
+  say paragraph "After mulling it over, you tell Logan that you're willing to stick around in exchange for his protection. \"That's good to hear. And hey, don't worry, I'm not going to put up a fuss if you ever want to leave. You've got agency over your own life, no matter what.\" You nod to the wolf, his words relieving your concerns."
   await scene @LoganOfferAccepted
 
 ShelterOfferNoPressMaybeLater: =>
   say paragraph "You're still not sure this is a good idea. You haven't seen the city for yourself, so you've only got the wolf's word to go on. There's a non-negligible chance that he's been lying to you this whole time."
-  say paragraph "\"What's the hold up?\" Logan asks. You reply honestly, saying that you need some time to think this through. The wolf looks a little annoyed, but nods all the same. \"Fair enough. I'll go ahead and start hanging the food up. You should get going here shortly if you want to make it to the city before nightfall.\""
-  say paragraph "Taking the hint, you thank the wolf for his hospitality one last time before heading on your way. You keep his offer in mind as you return to the mountain trail, still unsure if you made the right decision, but feeling better now that you've negotiated a place to stay if you end up needing one."
+  say paragraph "\"What's the hold up?\" Logan asks. You reply honestly, saying that you need some time to think this through. The wolf looks a little annoyed, but nods all the same. \"Fair enough. I'll go ahead and start hanging the food up. You should get going if you want to make it to the city before nightfall.\""
+  say paragraph "Taking the hint, you thank the wolf for his hospitality and head on your way. You keep his offer in mind as you return to the mountain trail, still unsure if you made the right decision, but feeling better now that you've negotiated a place to stay if you end up needing one."
+  await do pause
   await Player.location = MountainTrail2
 
 ShelterOfficeNoPressDecline: =>
   say paragraph "You tell Logan that you appreciate the offer, but aren't interested in settling down with him. You need to head out into the world yourself and see what awaits beyond these mountain woods."
-  say paragraph "The wolf gives you an odd look somewhere between irritation and disappointment. \"Suit yourself,\" he states bluntly. \"Just don't come crying back to me if you end up getting hurt.\" You tell Logan that you no intention of it, which causes him to smirk and laugh a bit. \"I respect your spirit. Lot more optimistic than I am these days. Still, you'll need more than spirit to keep your head on your shoulders. Don't go trusting strangers you've just met, okay?\""
+  say paragraph "The wolf gives you an odd look, somewhere between irritation and disappointment. \"Suit yourself,\" he says. \"Just don't come crawling back to me if you end up getting hurt.\" You tell Logan that you no intention of it, which causes him to smirk and laugh a bit. \"I respect your spirit. Lot more optimistic than I am these days. Still, you'll need more than spirit to keep your head on your shoulders. Don't go trusting strangers you've just met, okay?\""
   say paragraph "You thank Logan for his hospitality one last time before taking your leave. As you return to the mountain trail, you wonder if you should have kept his offer on the table, but there's a chance he wouldn't take too kindly to such a wishy-washy request. In the end, you've just glad you left on amicable terms."
+  await do pause
   await Player.location = MountainTrail2
 
 ShelterOfferPress: =>
   say paragraph "Logan shakes his head adamantly. \"It's a sore spot for me. Sorry. I know I'm the one being difficult here, but talking about the past puts me in a foul mood.\" You see the wolf's fists clench by his sides, the muscles under his furry hide starting to strain as he suppresses his anger. \"It's not something you need to worry about. All that crap hasn't mattered since I left the city. Up here, the worst I've got to worry about is the weather or some wild animal walking through my camp.\""
 
   option "Logan seems quite vulnerable at the moment. Apologize for dredging up the past and accept the wolf's offer.": => await scene @ShelterOfferPressAcceptApologize
-  option "Tell Logan that you're willing to accept his offer, but won't hesitate to bail on him if this 'long-buried' past comes back to haunt you.": => await scene @ShelterOfferPressAcceptWary
+  option "Tell Logan that you're willing to accept his offer, but won't hesitate to bail on him if things go sour.": => await scene @ShelterOfferPressAcceptWary
   option "There's a chance that Logan might be lying to you about the city. Inform him that you'll consider his offer, but wish to investigate for yourself first.": => await scene @ShelterOfferPressMaybeLater
-  option "Logan seems to have some dangerous skeletons in his closet. Tell him you're not interested if he refuses to tell you the truth.": => await scene @ShelterOfferPressDecline
+  option "Logan seems to have some dangerous skeletons in his closet. Tell him you're not interested in his offer.": => await scene @ShelterOfferPressDecline
   await do choice
 
 ShelterOfferPressAcceptApologize: =>
-  say paragraph "You apologize to the wolf for dredging up a past he's since buried. He gives you a somewhat odd look in response, but nods. \"'Buried.' Yeah, that's one way to put it. I'd rather just forget about it completely.\" His words come as a soft, sad rumble. You tell the wolf not to worry about it and inform him that you're open to sticking around, provided he holds true to his side of the bargain. \"Oh. That's... good!\" he states, straightening himself. He seems a bit taken aback that you decided to join him anyways, but also in a much better mood than before."
+  say paragraph "You apologize to the wolf for dredging up a past. He gives you a somewhat odd look in response, but nods. \"Buried. Yeah, that's one way to put it. I'd rather just forget about it completely.\" His words come as a soft, sad rumble. You tell the wolf not to worry about it and inform him that you're open to sticking around, provided he holds true to his end of the bargain. \"And you're sure about that?\" he asks, straightening himself. You inform Logan that you're positive."
   await scene @LoganOfferAccepted
 
 ShelterOfferPressAcceptWary: =>
-  say paragraph "Cautiously, you inform the wolf that you are open to his offer, but only under the condition that he holds true to his side of the bargain and that none of his past mistakes come back to bite you. \"Of course,\" Logan says, letting out of a sigh of relief at your answer. \"That's only reasonable. Mark my words that it's not going to be an issue, though. I've already taken every precaution I could to make sure it doesn't crop up again.\" You remind the wolf that this is only a tenuous alliance, which he accepts with a small nod."
+  say paragraph "Cautiously, you inform the wolf that you are open to his offer, but only under the condition that his past doesn't come back to bite you. \"Of course,\" Logan says. By the tone of his voice, he doesn't sound so certain. You glare at him for an honest answer. \"Look, I can't promise it won't crop up, but I'll do my best to leave you out of it if it does.\" Satisfied with his answer, you give the wolf a terse nod and ask him what needs to be done."
   await scene @LoganOfferAccepted
 
 ShelterOfferPressMaybeLater: =>
-  say paragraph ""
+  say paragraph "You politely explain that you'll keep his offer in mind, but need to confirm for yourself whether he's been telling the truth or not. \"Don't worry about it. You're just doing your due diligence.\" The wolf chuckles to himself, though he seems a bit dismayed. Sensing this, you reassure Logan that you appreciate his help so far. \"Ah, it's no skin off my back. I'm just doing my part to be a good samaritan. World needs more folks like that.\" Ready to leave, you say your goodbyes to the friendly wolf-man and return to the trail. You wonder to yourself whether or not you made the right call, but an abundance of caution is almost always preferable to to the alternative."
+  await do pause
+  await Player.location = MountainTrail2
 
 ShelterOfferPressDecline: =>
-  say paragraph ""
+  say paragraph "You tersely inform Logan that you have no interest in accepting his offer if he refuses to keep you in the loop about something that could put your life at risk. \"And barging into the city won't?\" Logan balks. \"Why do you think I'm roughing it in the mountains in the first place? It's high hell down there. You have no idea what you're getting yourself into.\" You respond that you'd rather take that risk than deal without whatever he's trying to hide. \"Look, I get it, and that's your call, but don't say I didn't warn you, okay? Just keep your head down and don't trust strangers.\""
+  say paragraph "As you say your goodbyes to Logan and head back to the mountain trail, you feel reasonably confident that you made the right call. There is no rational basis for living with someone who refuses to be honest with you, and you'd rather not tempt fate by shacking up with a complete stranger. The more you think about it, the more naive and risky accepting his offer seems. In the end, you're just glad you made it out of there without a more serious altercation."
+  await do pause
+  await Player.location = MountainTrail2
 
 ShelterOfferMaybeLater: =>
-  say paragraph ""
+  say paragraph "You tell Logan that you'll keep his offer in mind, but wish to check out the city for yourself first. \"I don't blame you,\" Logan responds. \"It'd be... pretty naive to just take my word for it.\" Curiosity piqued, you ask Logan why he'd make an offer he thinks would be naive to accept. \"Let me rephrase that: Whether you choose to keep away from the city now or after you've been there doesn't really matter - the outcome's still the same. The only difference is *where* you're putting yourself at risk.\""
+  say paragraph "You respond that what he's saying doesn't make sense. You could always survey the city from afar to verify the truth of his claims. At no point do you need to put yourself directly in harm's way to determine whether or not he's been lying to you. \"Yeah, I guess that makes sense,\" the wolf says. \"Either way, I'm just offering an olive branch. Accepting it up-front is still the right thing to do, in my eyes, even if it's naive. Does that makes sense?\" You nod to the wolf. \"Alright. Had me worried there. I'm not very good at social stuff, so sometimes it's hard for me to explain things.\" You assure Logan that he's got nothing to worry about, which he answers with a grateful nod."
+  say paragraph "Well-fed and satisfied with your little talk, you thank the wolf for his hospitality one last time before taking your leave. As you make your way back to the mountain trail, you mull over Logan's words in your head: \"*where* you're putting yourself at risk.\" Was he simply referring to the inherent risk of trusting someone, or was he implying that there was something about himself in particular that was dangerous? Either way, you leave with a sense of unease about the whole situation."
+  await do pause
+  await Player.location = MountainTrail2
 
 ShelterOfferDecline: =>
-  say paragraph ""
+  say paragraph "You state in no uncertain terms that you're not interested in joining Logan at his camp. The wolf seems dismayed by your decision, but doesn't press the issue. \"That's fine. I appreciate the honesty.\""
+  say paragraph "Curiosity piqued, you ask Logan if he's ever asked the question to someone else before. \"Nope. Folks these days have no interest in cooperating. Lots of folks are taught survival of the fittest from a young age, but don't know that it's all about finding a niche, not being selfish to a fault.\" Logan chuckles dryly and shakes his head. \"You're fresh meat around here, so you probably haven't seen what other people are like yet. Hard to blame you for being distrustful without a point of comparison.\""
+  say paragraph "Logan looks over his shoulder, then turns back to you with a tense expression. \"'Fraid I need to get going, though. I wish you safe travels, and don't be scared to show your face around here if you find the city too much for your tastes.\" You respectfully nod to the wolf, say your goodbyes, and return to the mountain trail, feeling better with some food in your stomach and a friendly contact to fall back on."
+  await do pause
+  await Player.location = MountainTrail2
+
+# Player accepted Logan's offer to stay at his camp
 
 LoganOfferAccepted: =>
   await do pause
-  say paragraph "\"I guess first order of business is getting all the food in a bundle and tying it up to a tree. Don't want bears or wolves wandering in here and eating us alive. Why don't you sit tight and I'll go set everything up? You can watch from where you are to see how it's done.\" You nod to the wolf, a little relieved that you're not being set to work already. You have to wonder what you've gotten yourself into, but push those second thoughts aside for now and find a seat as instructed."
+  say paragraph "\"I guess first order of business is getting all the food in a bundle and tying it up to a tree. Don't want any bears or wolves wandering in here and eating us alive. Why don't you sit tight and I'll go set everything up? You can watch from here to see how it's done.\" You nod to the wolf, a little relieved that you're not being set to work already. You have to wonder what you've gotten yourself into, but push those second thoughts aside for now and find a seat as instructed."
   say paragraph ""
