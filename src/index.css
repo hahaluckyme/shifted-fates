@@ -76,7 +76,8 @@ body {
 }
 
 .sidebar {
-  width: 100px;
+  /* width: 100px; */
+  color: #d4d4d4;
   background-color: #282c34;
 }
 

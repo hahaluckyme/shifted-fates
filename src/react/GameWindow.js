@@ -12,6 +12,10 @@ const GameButton = require('./GameButton').default;
 const ScrollBox = require('./ScrollBox').default;
 const data = require('data-loader').default;
 
+const {
+  isMobile,
+} = require('react-device-detect');
+
 class GameWindow extends React.Component {
   ended = false;
   state = {
@@ -254,15 +258,21 @@ class GameWindow extends React.Component {
       );
     };
 
+    const {
+      history,
+      ...state
+    } = this.state;
+
     return (
       <div className="game row fill">
-        {/* <div className="sidebar column">
-          <div className="sidetopbar fill column">
-            <div>room: {this.state.cur_room}</div>
-            <div>scene: {this.state.cur_scene}</div>
+        {!isMobile && (
+          <div className="sidebar column">
+            <pre className="sidetopbar fill">
+              {JSON.stringify(state, null, 2)}
+            </pre>
+            <div className="minimap">minimap</div>
           </div>
-          <div className="minimap">minimap</div>
-        </div> */}
+        )}
         <div className="main fill column">
           <ScrollBox
             history={this.state.history}
