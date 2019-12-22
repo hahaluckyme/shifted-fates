@@ -260,8 +260,33 @@ class GameWindow extends React.Component {
 
     const {
       history,
+      cur_room,
       ...state
     } = this.state;
+
+    let minimap = null;
+    if (cur_room) {
+      const Grid = cur_room.zone.Grid;
+      const width = Math.max(...Grid.map(column => column.length));
+      const height = Grid.length;
+
+      minimap = '';
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          const elem = Grid[y][x];
+          if (elem == null) {
+            minimap += ' ';
+          } else if (typeof(elem) === 'string') {
+            minimap += elem[0];
+          } else if (elem == cur_room) {
+            minimap += 'x';
+          } else {
+            minimap += 'a';
+          }
+        }
+        minimap += '\n';
+      }
+    }
 
     return (
       <div className="game row fill">
@@ -270,7 +295,9 @@ class GameWindow extends React.Component {
             <pre className="sidetopbar fill">
               {JSON.stringify(state, null, 2)}
             </pre>
-            <div className="minimap">minimap</div>
+            <pre className="minimap">
+              {minimap}
+            </pre>
           </div>
         )}
         <div className="main fill column">
