@@ -295,9 +295,11 @@ class GameWindow extends React.Component {
             <pre className="sidetopbar fill">
               {JSON.stringify(state, null, 2)}
             </pre>
-            <pre className="minimap">
-              {minimap}
-            </pre>
+            <div className="centered">
+              <pre className="minimap">
+                {minimap}
+              </pre>
+            </div>
           </div>
         )}
         <div className="main fill column">

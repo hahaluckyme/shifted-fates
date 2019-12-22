@@ -63,6 +63,3 @@ class Zone extends Entity
             when '-'
               @Grid[y][x-1].East = => await Player.location = @Grid[y][x+1]
               @Grid[y][x+1].West = => await Player.location = @Grid[y][x-1]
-
-    for prop of @
-      console.log(prop)
