@@ -281,7 +281,7 @@ class GameWindow extends React.Component {
           } else if (elem == cur_room) {
             minimap += 'x';
           } else {
-            minimap += 'a';
+            minimap += elem.name[0];
           }
         }
         minimap += '\n';
