@@ -265,7 +265,7 @@ class GameWindow extends React.Component {
     } = this.state;
 
     let minimap = null;
-    if (cur_room) {
+    if (cur_room && cur_room.zone && cur_room.zone.Grid) {
       const Grid = cur_room.zone.Grid;
       const width = Math.max(...Grid.map(column => column.length));
       const height = Grid.length;
