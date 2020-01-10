@@ -7,21 +7,21 @@ name: "Observatory"
 
 CAF = ObservatoryCafeteria
 CC  = ObservatoryComputerCenter
+ENT = ObservatoryEntrance
 GS  = ObservatoryGiftShop
-HE  = ObservatoryHallwayEast
-HFE = ObservatoryHallwayFarEast
-HI  = ObservatoryHallwayIntersection
-HN  = ObservatoryHallwayNorth
-HS  = ObservatoryHallwaySouth
-HW  = ObservatoryHallwayWest
+H1  = ObservatoryHallway1
+H2  = ObservatoryHallway2
+H3  = ObservatoryHallway3
+H4  = ObservatoryHallway4
+H5  = ObservatoryHallway5
+H6  = ObservatoryHallway6
 JC  = ObservatoryJanitorsCloset
 LIB = ObservatoryLibrary
+LOU = ObservatoryLounge
 OBS = ObservatoryObservatory
 REC = ObservatoryReception
 RES = ObservatoryRestrooms
 RL  = ObservatoryResearchLab
-SE  = ObservatoryStaffEntrance
-VE  = ObservatoryVisitorEntrance
 
 # Map
 # The map is a matrix grid
@@ -35,15 +35,19 @@ VE  = ObservatoryVisitorEntrance
 # 'v' = one-way south connection (no exit back)
 
 Grid: [
-  [   ,   ,   ,   ,   ,   , RL,   ,   ,   ,   ,   ,   ]
-  [   ,   ,   ,   ,   ,   ,'|',   ,   ,   ,   ,   ,   ]
-  [   ,   ,   ,   ,LIB,'-', HN,   ,RES,   , JC,   ,   ]
-  [   ,   ,   ,   ,'|',   ,'|',   ,'|',   ,'|',   ,   ]
-  [ VE,'-',REC,'-', HW,'-', HI,'-', HE,'-',HFE,'-',OBS]
-  [   ,   ,   ,   ,'|',   ,'|',   ,'|',   ,'|',   ,   ]
-  [   ,   ,   ,   ,CAF,   , HS,   , GS,   , CC,   ,   ]
-  [   ,   ,   ,   ,   ,   ,'|',   ,   ,   ,   ,   ,   ]
-  [   ,   ,   ,   ,   ,   , SE,   ,   ,   ,   ,   ,   ]
+  [   ,   ,   ,   ,OBS,   ,   ,   ,   ]
+  [   ,   ,   ,   ,'|',   ,   ,   ,   ]
+  [   ,   , JC,'-', H1,'-', CC,   ,   ]
+  [   ,   ,   ,   ,'|',   ,   ,   ,   ]
+  [   ,   ,RES,'-', H2,'-', GS,   ,   ]
+  [   ,   ,   ,   ,'|',   ,   ,   ,   ]
+  [ RL,'-', H3,'-', H4,'-', H5,'-',LOU]
+  [   ,   ,   ,   ,'|',   ,   ,   ,   ]
+  [   ,   ,LIB,'-', H6,'-',CAF,   ,   ]
+  [   ,   ,   ,   ,'|',   ,   ,   ,   ]
+  [   ,   ,   ,   ,REC,   ,   ,   ,   ]
+  [   ,   ,   ,   ,'|',   ,   ,   ,   ]
+  [   ,   ,   ,   ,ENT,   ,   ,   ,   ]
 ]
 
 # Additional Exits
