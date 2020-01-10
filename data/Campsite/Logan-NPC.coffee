@@ -9,12 +9,12 @@ Introduce: =>
   await scene @LoganIntroduction
 
 LoganIntroduction: =>
-  say paragraph "You wait at the campsite for a while. Your thoughts drift back to the laboratory again, wondering what exactly happened. A sudden noise from behind you jars you back to reality. When you turn to face the source, you can only stare in bewilderment at the sight of a large, bipedal wolf walking toward you. \"Hey!\" the creature calls out. \"What do you think you're doing? Hands where I can see them!\""
-  say paragraph "You didn't expect to find trouble so soon, much less in the form of a humanoid wolf. You take a few steps back and nervously assure him that you didn't touch any of his stuff. The wolf eyes you suspiciously. \"Nobody comes up here, not this far up the mountain. What were you doing in my camp?\""
+  say paragraph "You wait at the campsite for a while. Your thoughts drift back to the laboratory again, wondering what exactly happened. A sudden noise from behind you jars you back to reality. When you turn to face the source, you can only stare in bewilderment at the sight of a large, bipedal wolf walking toward you. \"Hey!\" the lupine calls out. \"What do you think you're doing? Hands where I can see them!\""
+  say paragraph "You didn't expect to find trouble so soon, much less in the form of the creature now before you. You take a few steps back and nervously assure him that you didn't touch any of his stuff. The wolf eyes you suspiciously. \"Nobody comes up here, not this far up the mountain. What were you doing in my camp?\""
 
   option "Be completely transparent about your situation.": => await scene @ExplainPresenceHonestly
   option "Tell him that you were just scavenging for supplies.": => await scene @ExplainPresencePartially
-  option "(Lie) Claim that you are a park warden and were checking his campsite for fire hazards.": => await scene @ExplainPresenceLie
+  option "(Lie) Claim that you're a park warden and were checking his campsite for fire hazards.": => await scene @ExplainPresenceLie
   option "State that it's none of his business and take your leave.": => await scene @ExplainPresenceLeave
   await do choice
 
@@ -23,27 +23,25 @@ ExplainPresenceHonestly: =>
   await scene @ExplainPresenceContinuation
 
 ExplainPresencePartially: =>
-  say paragraph "Worried that telling him everything might make you more suspicious, you omit the details of how you got here and state that you were just looking for supplies. \"A thief, then?\" the wolf asks, a smirk crooking his muzzle as he looks you up and down. \"No, you don't look the type. 'Sides, you'd have already stuffed your pockets and ran off if you were. No thief's going to stick around unless they're asking for trouble.\""
-  say paragraph "You try to come up with an explanation, but the wolf just shakes his head. \"Don't even think about it. You're hiding something, I can tell. Now out with it, 'fore I kick you out of my camp.\" Put on the spot, you relent to the lupine's demand and admit that - yes - you weren't being entirely honest with him before. \"That's a nice way to sugar-coat it, but I'll let it pass,\" he chides. You go on to explain that you have no idea where you are or how you woke up here. "
+  say paragraph "Worried that telling him everything might make you more suspicious, you omit the details of how you arrived here and state that you were just looking for supplies. \"A thief, then?\" the wolf asks, a smirk crooking his muzzle as he looks you up and down. \"No, you don't look the type, and you'd have already stuffed your pockets and ran off if you were. No thief's going to stick around unless they're asking for trouble.\""
+  say paragraph "You try to come up with an explanation, but the beast shakes his head at you before you can reply. \"Don't even think about it. You're hiding something, I can tell. Now out with it, 'fore I kick you out of my camp.\" Backed into a corner, you admit that you weren't being entirely honest with him before. In fact, you have no idea where you are or how you woke up here. "
   await scene @ExplainPresenceContinuation
 
 ExplainPresenceLie: =>
-  say paragraph "Before you even finish your sentence, you can see the wolf's muzzle spreading into a smirk. He chuckles to himself for a moment before breaking out into full-blown laughter. You stammer a response, but are drowned out by the noise. A paw-like hand suddenly slams hard against your back. \"Hoo boy, that's the dumbest lie I've heard in years!\" he wheezes. \"You've got some *nerve* to spin a tale like that!\" The wolf pauses to compose himself and wipe tears of laughter from his eyes. \"Hah... Save your breath. I can tell you're a good one. Saw you just standing there like a chicken with your head cut off 'fore I called out. You don't need to make up a story to prove you ain't a thief.\""
-  say paragraph "You sigh loudly and admit that - yes - that was a pretty terrible lie. Truth be told, you have no idea where you are or how you woke up here. "
+  say paragraph "Before you even finish your sentence, you can see the wolf's muzzle spreading into a smirk. \"Right. Mind showin' some proof?\" Taken aback by his request, you stammer for a moment as you think of an excuse. The man chuckles to himself and shakes his head at you. \"Save your breath, you glorious idiot. I saw you standing there like a chicken with your head cut off 'fore I called out. You don't need to lie to prove you ain't a thief.\""
+  say paragraph "Not willing to risk irritating the wolf, you admit that you weren't being honest with him. Truth be told, you have no idea where you are or how you woke up here. "
   await scene @ExplainPresenceContinuation
 
 ExplainPresenceLeave: =>
   say paragraph "You firmly tell the wolf that you'd rather not say. Now, if he'll excuse you, you'll be right on your-"
-  say paragraph "\"No, you're not going anywhere,\" the wolf man growls, quickly reaching out to snatch your arm and pull you toward him. Standing right in front of his formidable form, you're forced to crane your head back to meet his icy gaze. \"Nobody waltzes through my territory without answering to me. What were you doing in my camp?\""
-  say paragraph "Wincing from the pressure of his grip, you say you'll tell him, but only if he lets go of you. \"Not happening,\" the wolf snaps. \"My camp, my rules. Either settle down and speak or I'll start twisting your arm until you do.\" He punctuates this by turning his wrist ever-so-slightly, sending a surge of pain through your body. You cry out and tell him to stop, but the wolf isn't swayed by your pleas."
-  say paragraph "Unable to bear it, you admit through clenched teeth that you have no idea where you are or how you woke up here. "
+  say paragraph "\"No, you're not going anywhere,\" he growls, quickly reaching out to snatch your arm and pull you toward him. Standing right in front of his formidable form, you're forced to crane your head back to meet his icy gaze. \"Nobody waltzes through my territory without answering to me. What were you doing in my camp?\" Wincing at the pressure of his grip, you say you'll tell him, but only if he lets go of you. \"Not happening,\" the wolf snaps. \"My camp, my rules. Either settle down and speak or I'll start twisting your arm until you do.\""
+  say paragraph "Not wanting to get hurt, you hurriedly admit that you have no idea where you are or how you woke up here. "
   await scene @ExplainPresenceContinuation
 
 ExplainPresenceContinuation: =>
   say "The last thing you remember... well, you must have struck your head or something, because you can't recall anything about the night before. All you remember is waking up in a nearby building and stumbling upon his camp while exploring the area."
   say paragraph "He eyes you for a moment, then relaxes his expression. Seeing this, you feel the tension in your muscles abate and let out a breath you didn't realize you were holding. \"You seem strange, but genuine. The name's Logan. I've been living on this mountain for years. Nobody else bothers me up here. Forgive me for being so suspicious - my last encounter with another person was not so pleasant.\""
-  say paragraph "You ask him how he managed to stay hidden all this time. How is it possible that an actual, flesh-and-blood werewolf hasn't made the headlines by now? Is he just that good at hiding his tracks, or is there some kind of government cover-up keeping his existence under wraps?"
-  say paragraph "Logan looks extremely confused. \"News? Government? What are you on about? There hasn't been a government in decades. Did you just wake up from a coma or something?\""
+  say paragraph "You ask him how he managed to stay hidden all this time. How is it possible that an actual, flesh-and-blood werewolf hasn't made the news? Is he just that good at hiding his tracks, or is there some kind of government cover-up keeping his existence under wraps? \"News? Government? What are you on about? There hasn't been a government in decades. Did you just wake up from a coma or something?\""
 
   option "What?": => await scene @BurstExplanation
   option "No!": => await scene @BurstExplanation
@@ -54,14 +52,14 @@ BurstExplanation: =>
   say paragraph "Shocked, he ponders for a few seconds and taps a finger to his snout. \"You really don't know? Oh... How do I explain this all? It's been a couple of decades since the Burst. No clue exactly how long since then. There was this global crisis and almost everyone disappeared off the face of the planet at the same time. Like that one movie. And the survivors, they turned into big furry creatures like me. And smaller ones, too, I guess.\""
   say paragraph "The wolf man gives you a sympathetic look. \"Sorry if that's confusing. Don't really talk to people much, so I'm not much of a storyteller.\""
 
-  option "You're talking to a werewolf. By this point, anything is possible. Say that you believe him.": => await scene @BurstExplanationBelieve
+  option "You are talking to a werewolf. By this point, anything is possible. Say that you believe him.": => await scene @BurstExplanationBelieve
   option "Hesitate. He may be trying to trick you. Tell him you'll believe it when you see it.": => await scene @BurstExplanationWary
   option "Growl that there's absolutely no way in hell anything he just told you is true!": => await scene @BurstExplanationIncredulous
   option "Stare at him blankly.": => await scene @BurstExplanationStare
   await do choice
 
 BurstExplanationBelieve: =>
-  say paragraph "After everything that's already happened to you, what's the harm in suspending your disbelief one more time? Besides, it'd make sense that nobody would care about the existence of a werewolf if *everyone* was turned into anthropomorphic animals. Logan looks relieved that you trust him, albeit not completely at ease."
+  say paragraph "After everything that's already happened to you, you have little reason to doubt the wolf. Besides, it'd make sense that nobody would care about this existence if *everyone* was turned into some form of human-animal hybrid. Logan looks relieved that you trust him, albeit not completely at ease."
   say paragraph "\"Might want to be careful out there,\" he rumbles. \"Lots of folks won't be as honest with you. If you start buying the wrong crowd's crap, you could end up getting hurt - or worse. Take it from me.\" You reflexively assure him that you're not so gullible, but he doesn't look convinced. \"Just watch your back out there, okay?\" Not wishing to press the issue further, you nod your assent to the wolf."
   await scene @SupplyOffer
 
@@ -70,112 +68,33 @@ BurstExplanationWary: =>
   await scene @SupplyOffer
 
 BurstExplanationIncredulous: =>
-  say paragraph "The wolf laughs in response. \"I'm not asking you to put your faith in me - it's just history. What happened, happened. You can park your ass at the foot of the mountain and see for yourself.\" He seems genuine enough, but between the emotional shock of waking up in a futuristic laboratory, meeting a real-life werewolf, and now *this* story, you can't help but remain incredulous."
+  say paragraph "The wolf laughs in response. \"I'm not asking you to put your faith in me - it's just history. What happened, happened. You can park your ass at the foot of the mountain and see for yourself.\""
   await scene @SupplyOffer
 
 BurstExplanationStare: =>
-  say paragraph "Logan remains silent for a long moment, then shakes his head. \"I know. It's a lot to take in. Just remember that it's not the same world out there. Don't go wandering around thinking people will just ignore you. You're fresh meat - opportunity - and that's something folks are going to take advantage of.\" You break from your befuddled blanking to ask him what he means. \"You damn well know what I mean. Don't let your guard down.\" Worry joins hunger in your gut as you both fall silent again."
+  say paragraph "Logan remains silent for a long moment, then shakes his head. \"I know. It's a lot to take in. Just remember that it's not the same world out there. Don't go wandering around thinking people will just ignore you. You're fresh meat - opportunity - and that's something folks are going to take advantage of.\" You ask him what exactly he means by that. \"I mean exactly what I said,\" the wolf growls, \"so don't let your guard down.\" Worry joins hunger in your gut as you both fall silent again."
   await scene @SupplyOffer
 
 # Logan offers supplies to the player
 
 SupplyOffer: =>
-  say paragraph "\"Hey, before you go,\" Logan turns from you to gesture toward his tent, \"you're gonna need something for the road. I can hear your stomach growling from all the way over here. Let me slip inside and grab some food and water. You sit tight, okay?\""
-  option "He's been trustworthy so far. Stay where you are.": => await scene @SupplyOfferTrusting
-  option "You've got a bad feeling about this. Politely decline.": => await scene @SupplyOfferDecline
-  option "There is no way this is going to end well. *Run!*": => await scene @SupplyOfferFlee
+  say paragraph "\"Hey, before you go, you're gonna need something for the road. I can hear your stomach growling from all the way over here. I'll grab some food from my tent and we can both sit down for lunch, alright?"
+
+  option "Accept the wolf's offer. A bite to eat couldn't hurt.": => await scene @SupplyOfferAccept
+  option "Politely decline. Accepting food from him is too risky.": => await scene @SupplyOfferDecline
   await do choice
 
-SupplyOfferTrusting: =>
-  say paragraph "Given that he hasn't done anything to slight you so far, you tacitly nod your assent to him. \"I'll be right back. Shouldn't take long at all.\""
-  say paragraph "The wolf disappears inside of his tent. You hear the rustling of supplies being moved, but can't see exactly what he's up to. After a few seconds, he reemerges with a large canteen and two packets of freeze-dried fruit in hand."
-  say paragraph "Try as you might, you have trouble hiding the concern in your face about the contents of the opaque canteen. Logan picks up on your expression and gives you a serious look. \"Food's food. You can't afford to be a picky eater these days, so dig in.\""
-  await do pause
-  await scene @SharingCanteen
+SupplyOfferAccept: =>
+  say paragraph "\"Good to see you've got some sense. Now, sit tight while I make us a meal.\" Nodding to the wolf, you find a seat on a flat stump to rest your legs and relax while you wait. It feels good to sit down and focus on the cool breeze blowing over your skin. After a little while, the wolf reemerges from his tent with a large canteen and two packets of freeze-dried fruit."
 
 SupplyOfferDecline: =>
-  say paragraph "The wolf man gives you an incredulous look. \"Well, I guess I can't blame you. You must be all kinds of paranoid after everything you just heard. Still, you really shouldn't look a gift horse in the mouth. I think you'll feel a *lot* better with something in your belly...\""
-  option "Relent and accept his offer.": => await scene @SupplyOfferRelent
-  option "Insist that you're not interested.": => await scene @SupplyOfferInsist
-  await do choice
+  say paragraph "\"Too bad I'm not going to give you a choice here,\" the wolf growls. \"You might not have any sense, but I'm not going to let you starve yourself just 'cuz you don't trust me. Now, stop your fussing and sit tight or I'll hunt you down myself.\""
+  say paragraph "Cowed into silence, you obey the wolf's order and find a seat on a flat stump. You feel tense after his threat, like the danger of your situation has just sunk in now that the initial shock of waking up in the lab has worn off. After a little while, the wolf reemerges with from his tent with a large canteen and two packets of freeze-dried fruit."
 
-SupplyOfferRelent: =>
-  say paragraph "Oh, what the hell. There's no point in being difficult here. You let Logan know that - fine - he can go ahead and give you some of his supplies if he wants. The wolf smirks to himself at the news. \"Great,\" he rumbles. \"I'll be right back.\""
-  say paragraph "Logan disappears inside of his tent. You hear the rustling of supplies being moved, but can't see exactly what he's up to. The pit in your gut grows more prominent as you anxiously wait for him to find what he's looking for. After a few seconds, he reemerges with a large canteen and two packets of freeze-dried fruit."
-  say paragraph "On one hand, you're relieved that he wasn't just biding time to look for a knife or something. On the other, you're concerned about the contents of the opaque canteen. Noticing your expression, Logan gives you a serious look. \"Food's food. You can't afford to be a picky eater these days, so dig in.\""
-  await do pause
-  await scene @SharingCanteen
-
-SupplyOfferInsist: =>
-  say paragraph "\"Suit yourself,\" Logan rumbles. \"I'm not going to claim responsibility if someone finds your body on the side of the road.\" The way his tone suddenly shifted to cold, unfeeling indifference sends a chill down your spine. Unable to shake a growing sense of dread, you quickly say your goodbyes and walk away from the wolf's camp, though not without sparing one last glance to make sure you're not being followed."
-  await do pause
-  await Player.location = MountainTrail2
-
-SupplyOfferFlee: =>
-  say paragraph "You may have spilled your guts to him already, but only figuratively so. You nod your assent to the wolf, wait for him to disappear halfway into the tent, then turn heel to sprint from the campsite as fast as your feet will carry you. You take a sharp turn once past the clearing to run down the mountain pathway, determined to put as much distance between yourself and the wolf man as possible. You hear Logan call after you, but he doesn't pursue, his voice growing distant before trailing off completely. Exhausted, you find a seat on a nearby stump to catch your breath and recover. You could have waited for a more concrete reason to distrust him, but hey, better safe than sorry."
-  await do pause
-  await Player.location = MountainTrail3
-
-# Logan offers to share his canteen with the player
-
-SharingCanteen: =>
-  say paragraph "Before you have a chance to reconsider, Logan unscrews the top of his canteen and passes it to you. \"Drink. All of it.\" You tentatively take the bottle from him and give it a little swish. Half-full. The water inside doesn't have any noticeable discoloration or odor. \"Well, what are you waiting for?\" the wolf growls."
-  say paragraph "Your lips feel dry, but should you really go through with this? Logan stares at you expectantly. You're running out of time to make a decision."
-
-  option "Put your inhibitions aside and take a hearty swig.": => await scene @CanteenEager
-  option "Take a small sip first.": => await scene @CanteenHesitant
-  option "Request that Logan have a drink before you.": => await scene @CanteenLogan
-  option "Decline to drink and pass the canteen back.": => await scene @CanteenDeclined
-  await do choice
-  # Regardless of choice, proceed to the SharingFood scene
-  await do pause
-  await scene @SharingFood
-
-CanteenEager: =>
-  say paragraph "What's the worst that happen, you figure. You crane your head back and swallow the contents whole. The water inside is cool and pure, coating your throat as you drink it all down. By the time you finish, Logan greets you with a smile that doesn't quite reach his eyes. He curls two fingers to motion you to return the canteen. Feeling refreshed, you pass it back to the wolf and let out a quiet sigh."
-  say paragraph "\"Tastes pretty good, right?\" Logan asks with a soft chuckle. \"You must have been parched.\" You tell him you appreciate the drink, but wonder where he got it from. \"Rainwater, mostly. Dry seasons, I get it from clean, running streams. I've got a purifier not far from here to drip it through just in case.\" He seems to have thought this through. You thank him for the explanation and lick your lips, feeling a good deal better after hydrating, but still quite hungry."
-
-CanteenHesitant: =>
-  say paragraph "You don't necessarily want to insult your host, but you're not fully convinced that the contents haven't been tainted in some way, either. At the risk of annoying him, you take a cautious first sip. The water is cool, but not icy, and you don't taste anything out of the ordinary. \"That all?\" Logan asks. \"You're going to be thirsty if you don't drink up.\" He's right - your throat feels dry. Still, you can't help but wonder if there's an ulterior motive behind his hospitality."
-
-  option "Drink down the rest of the canteen's contents.": => await scene @CanteenContinued
-  option "Hand the canteen back.": => await scene @CanteenStopped
-  await do choice
-
-CanteenContinued: =>
-  say paragraph "If it hasn't made you nauseous yet, chances are a little more won't kill you. You drink down the rest in front of the wolf, letting the cool water serve as balm for your throat. Logan gives you a pensive look as you hand the canteen back to him. \"Maybe you never had to rough it before, but staying hydrated is important if you want to survive. I even went through the trouble of purifying it just to be safe.\" Curiosity piqued, you wipe your mouth and ask him what he means by that. \"I've got a filter system I made myself a little deeper in the woods. Run the rain and river water I collect through it, just to be safe.\" You nod in response, relieved to hear he's thought this through."
-
-CanteenStopped: =>
-  say paragraph "You err on the side of caution and hand the canteen back to the wolf. Logan looks at you incredulously. \"Well, can't say I blame you,\" he admits. \"No harm in being cautious around strangers, 'specially someone who looks like me.\" Try as he might to sound sympathetic, it's clear from the wolf's tone of voice that he's growing annoyed with your distrust."
-
-CanteenLogan: =>
-  say paragraph "Even though there's no obvious signs of contamination, you just can't be certain that the canteen's contents haven't been tainted in some way. You'd rather risk the ire of your mutated host than drink something which may or may not have been poisoned. Logan looks at you incredulously when you hand the canteen back to him, only to glower at the suggestion that he drink from it first."
-  say paragraph "\"No,\" the wolf man growls. \"I've already had half before you showed up. It's only fair that you have the rest. 'Sides, I can always gather more water after you leave.\" You argue that your suspicions are justified. There *are* such things as clear, odorless poisons, and you didn't see collect the water to rule out that possibility. The risk you'd be exposed to far outweighs the burden of being thirsty for a few more hours."
-  say paragraph "\"Poison? What the hell are you on about?\" Logan snarls. There's a pregnant pause between the two of you before the wolf lets out an exasperated sigh. \"Just shut up and have a drink already. Save this cloak-and-dagger shit for someone else.\""
-
-  option "Relent and take a swig.": => await scene @CanteenLoganRelent
-  option "If he's so intent on proving he's trustworthy, demand that the wolf drinks from the canteen first.": => await scene @CanteenLoganDemand
-  option "Staunchly refuse to drink.": => await scene @CanteenLoganRefuse
-  await do choice
-
-CanteenLoganRelent: =>
-  say paragraph "Logan seems to be getting increasingly irate. Rather than risk being mauled for provoking him further, you ask the wolf to hand you the canteen. He hands the bottle back to you without a word, though his eyes never leave yours."
-  say paragraph "You look down into the canteen. The fluid inside is clear and odorless. Nothing about the way it swishes in its container suggests there's anything other than pure, clean water. Putting your worries aside, you down it all back. It's cool and fresh, soothing your throat as you drink as much as you can. Once you've had your fill, you look back at Logan, who still seems pensive. \"Hope that hit the spot,\" he rumbles, and you nod."
-
-CanteenLoganDemand: =>
-  say paragraph "Logan rolls his eyes. \"If it'll make you feel better about it,\" he grumbles. The wolf says something along the lines of \"bottoms up\" as he tips the canteen back and drinks. Once finished, he hands the bottle back to you with a look of indifference. \"See? Nothing to worry about. Purified water, fresh from recent rainfall.\""
-  say paragraph "Worries assuaged, you cautiously drink from the canteen, mindful to avoid the part of the ridge that just came into contact with the werewolf's mouth. The water is cool and clear, a soothing balm for your parched throat. It's not long before you've swallowed every last drop. \"There. You didn't have to make it so difficult, but I'm glad you're feeling better now.\" You wipe your mouth clean with your arm, hand the canteen back to him, and thank him for the drink."
-
-CanteenLoganRefuse: =>
-  say paragraph "If he doesn't have an ulterior motive, why is he getting so angry at you for refusing a drink? Beyond the risk of being drugged or poisoned, there's a chance that his condition could spread through his saliva, which is likely still on the lip of the canteen or inside of it. You shudder inwardly at the thought of being tricked and firmly refuse his offer."
-  say paragraph "Logan looks frustrated with your insistence as he screws the lid back on the canteen. \"Suit yourself. Can't say I'm surprised that you don't trust me, but at least I offered.\" You tell the wolf you didn't mean anything by it. You just have your own skin to worry about, and you can't put your faith in strangers, no matter who they are. \"It's fine. Forgive and forget,\" the wolf grumbles. He looks hurt, but the skeptic inside of you is telling you not to give him an inch."
-
-CanteenDeclined: =>
-  say paragraph "You politely decline a drink from the canteen. \"What? Why?\" Logan asks, a confused look on his muzzle. You explain that he's still a stranger, and there's any number of things he could have done to spike or contaminate the contents without your knowledge. Moreover, you have no idea whether or not residue of his saliva could infect you with whatever caused him to change in the first place. As far as you're concerned, his word is moot on the matter until you see how a condition like his spreads firsthand."
-  say paragraph "\"That's... fair,\" the wolf grumbles. He seems annoyed by your decision. \"But, just so you know, a form like this isn't something you 'catch', if that makes sense. Takes intent to pass it along.\" You'd ask him what he means by that, but reckon he is just falling into the trappings of an urban myth. You know enough about infections to understand that concepts like \"energy\" and \"mindset\" have nothing to do with them. Logan picks up on your doubt, but doesn't push the subject further."
+SupplyOfferContinued: =>
+  say paragraph "Logan unscrews the top of the canteen and hands it you. \"Drink up,\" he commands. You look briefly at the clear contents swishing inside. Not seeing to smelling anything out of the ordinary, you tip it back to take a hearty swig. The cool water inside is the perfect balm for your throat, sending a shiver down your spine as you pour it back. The wolf watches you intently to make sure you get your fill. Feeling much better, you hand the canteen back to him and wipe a trickle of water from your chin."
 
 # Logan shares freeze-dried fruit with the player
-# Note to self: Consider options to refuse
 
 SharingFood: =>
   say paragraph "\"So, 'bout time we get you something to eat, huh?\" Logan offers. You look between him and the packets of freeze-dried fruit. Your stomach growls your assent for you. \"Worth a thousand words,\" the wolf teases, making you feel self-conscious about your body betraying your needs. He hands you a plastic bag full of strawberries. \"Now eat up. It doesn't taste good, but it'll keep you going.\""
@@ -378,5 +297,34 @@ ShelterOfferDecline: =>
 
 LoganOfferAccepted: =>
   await do pause
-  say paragraph "\"I guess first order of business is getting all the food in a bundle and tying it up to a tree. Don't want any bears or wolves wandering in here and eating us alive. Why don't you sit tight and I'll go set everything up? You can watch from here to see how it's done.\" You nod to the wolf, a little relieved that you're not being set to work already. You have to wonder what you've gotten yourself into, but push those second thoughts aside for now and find a seat as instructed."
-  say paragraph ""
+  say paragraph "\"I guess first order of business is getting all the food in a bundle and tying it up to a tree.  Don't want the scent to attract trouble. Why don't you sit tight while I grab everything we'll need?\" You nod to the wolf and find a seat as instructed, making yourself comfy in his camping chair."
+  say paragraph "Logan disappears into his tent. After a minute, he reemerges with a pack of supplies, a bundle of rope, and a carabiner. The lupine pauses to close his eyes and sniff at the air. \"Downwind should be... that-a-way,\" he comments, pointing off into the treeline. \"Now follow me. You need to learn how to do this stuff if you want to be self-sufficient.\""
+  say paragraph "Heeding the wolf's advice, you stand up to join him on a walk through the woods. Logan doesn't say a word during the trip, leaving your thoughts to drift to the pristine wilderness that surrounds you. Before long, he slows to a halt in front of a tall, broad tree. \"This should do. Here, hold this for me,\" the wolf rumbles, barely giving you time to react as he pushes the sack of food into your arms."
+  say paragraph "You watch Logan curiously as he threads the rope through the metal carabiner and ties a simple-looking knot. Looking up toward a branch, he gives a few twirls to warm up before throwing the weighted end toward it. The rope drapes over the branch, creating a crude form of pulley system to hang your shared supplies from. Logan uses both hands to lower the dangling end towards him, then grabs the metal clip as soon as it's in reach."
+  say paragraph "\"Pretty straightforward, yeah? Almost finished here,\" the wolf assures you. He fastens the pack to the carabiner with a D-ring before tugging on the rope to hoist it up off the ground. Once well out of reach, Logan ties the loose end around the tree's trunk and cinches it tight with another simple knot."
+
+  option "Ask how often you'll need to hang up and retrieve food.": => await scene @FoodHangFrequency
+  option "Ask if he learned to do this from experience.": => await scene @FoodHangExperience
+  option "Ask if any of the wildlife turned into animal people, too.": => await scene @FoodHangWildlife
+  option "Ask what's next.": => await scene @FoodHangContinue
+  await do choice
+
+FoodHangFrequency: =>
+  say paragraph "\"I always hang it up after dinner and take it down for breakfast,\" Logan explains. \"You're supposed to keep it hung up whenever you're not eating. I usually can't be bothered, but I heard some rustling while we were at camp and didn't want to take any chances.\""
+
+FoodHangExperience: =>
+  say paragraph "\"Nope. Learned this stuff from books before I even set foot on the mountain. Never even seen a bear out here, and I hope to keep it that way.\""
+
+FoodHangWildlife: =>
+  say paragraph "Logan gives you an incredulous look. \"Not that I know of,\" he states, sounding more confused than anything. \"I've seen plenty of the critters that old-world books talk about, but I never heard of them being warped into man-like forms. Seems like only humans got changed, far as I'm aware.\""
+
+FoodHangContinue: =>
+  say paragraph "\"We head back to camp. Nothing left to do but settle down for the evening and talk shop 'bout tomorrow.\" After checking the ties one last time, Logan turns from the tree to lead the way back again. Not wanting to stray too far the wolf, you follow him closely. The trip is dull without conversation, but thankfully uneventful, and you soon arrive at Logan's campsite."
+
+  say paragraph "The wolf gives a look over the shoulder to make sure you're still with him before all but falling back into his camping chair. Making himself comfortable, he kicks his legs up on a stump-turned-footrest and crosses his arms behind his head. You find a seat in the chair opposite the wolf and lean forward, looking at him meaningfully in search of that conversation he was wanting to have."
+
+  say paragraph "\"Hmn? Oh, right. Let's get down to brass tacks. Life out in the boonies isn't going to be a cakewalk. You'll need some to share the load. I'm still going to do the brunt of the work around here, but I won't hesitate to boot you out if you start acting like a freeloader.\""
+
+  say paragraph "You ask what exactly Logan will need help with around camp. \"Oh, plenty,\" the wolf says. \"Chopping firewood, setting and checking traps, stowing food, keeping eyes out for any would-be raiders, and making supply runs before we run out. Speaking of which, we'll also need to catch you up on local customs before you make any of those... what's it called, fox paws? I don't know, some kind of fancy old word for fuck-ups.\""
+
+  say paragraph "\"Either way, this your lucky day. You've got free reign to loaf around camp since I've...\""
