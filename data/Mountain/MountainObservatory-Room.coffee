@@ -5,12 +5,10 @@ Enter: =>
     say paragraph "You shiver as cold air blows past you, raising the hairs on your skin. It's chilly out here and fairly windy. The sky is speckled with wispy clouds, and the grass beneath you feet rustles in the breeze. You can see mountains in the distance, and judging from your perspective, you must be on a lower ridge. The treeline of a dense conifer forest lies just ahead."
   else
     say paragraph "You're in the grassy area just outside of the building you woke up in. The air up here is cool and clean, and the soft sound of rustling grass soothes your nerves."
-  say paragraph "You could enter the observatory again through either the visitor or staff entrance. An unmaintained trail runs through the forest to the west."
+  say paragraph "You could enter the observatory again through the entrance to your north. An unmaintained trail runs through the forest to the south."
 
-Choices: =>
-  option "Visitor Entrance": => await Player.location = ObservatoryVisitorEntrance
-  option "Staff Entrance": => await Player.location = ObservatoryStaffEntrance
-  await do choice
+North: =>
+  await Player.location = ObservatoryEntrance
 
 # await Player.location = CampsiteEmpty
 

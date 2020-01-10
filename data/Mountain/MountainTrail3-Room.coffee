@@ -3,5 +3,5 @@ name: "Mountain Trail"
 Enter: =>
     say paragraph "Placeholder."
 
-West: =>
+South: =>
   await Player.location = CityStreetOutskirts

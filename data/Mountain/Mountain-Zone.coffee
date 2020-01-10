@@ -7,9 +7,9 @@ name: "Mountain"
 
 LC  = MountainLoganCamp
 OBS = MountainObservatory
-TR1 = MountainTrail1
-TR2 = MountainTrail2
-TR3 = MountainTrail3
+T1  = MountainTrail1
+T2  = MountainTrail2
+T3  = MountainTrail3
 
 # Map
 # The map is a matrix grid
@@ -23,9 +23,13 @@ TR3 = MountainTrail3
 # 'v' = one-way south connection (no exit back)
 
 Grid: [
-  [   ,   , LC,   ,   ,   ,   ]
-  [   ,   ,'|',   ,   ,   ,   ]
-  [TR3,'-',TR2,'-',TR1,'-',OBS]
+  [   ,   ,OBS]
+  [   ,   ,'|']
+  [   ,   , T1]
+  [   ,   ,'|']
+  [ LC,'-', T2]
+  [   ,   ,'|']
+  [   ,   , T3]
 ]
 
 # Additional Exits
