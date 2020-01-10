@@ -6,7 +6,8 @@ Enter: =>
 Choices: =>
     option "Gifts": => await scene @Gifts
     option "Dressing Room": => await scene @DressingRoom
-    option "Cash Register": => await scene @CashRegister
+    if not ObservatoryGiftShop.looted
+        option "Cash Register": => await scene @CashRegister
     await do choice
 
 Gifts: =>
@@ -20,8 +21,10 @@ CashRegister: =>
 
     option "Steal the change.": => await scene @Steal
     option "Leave it alone.": => await scene @NoSteal
+    await do choice
 
 Steal: =>
+    ObservatoryGiftShop.looted = true
     say paragraph "You pocket the change before anyone can catch you in the act. Might buy you a snack if you get hungry later."
 
 NoSteal: =>
