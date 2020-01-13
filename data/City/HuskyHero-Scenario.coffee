@@ -1,7 +1,7 @@
 active: true
 
 Start: =>
-  say paragraph "While wandering through the city, you end up passing by one of the seedier-looking neighborhoods. You're about to give it a wide berth when you hear an agonized cry from down the street. Sparing another glance, you spot a fox woman writhing in protest beneath a muscular male husky, the canine growling aggressively as he pins her arms to the ground and kicks apart her legs. Her cries grow louder when the husky spears his stiff doggy cock into her folds, his hips rocking hard and fast as he ravishes his unwilling prey."
+  say paragraph "While wandering through the city, you end up passing by one of the seedier-looking neighborhoods. You're about to give it a wide berth when you hear an agonized cry from down the street. Sparing another glance, you spot a fox woman writhing in protest beneath a muscular male husky, the canine growling aggressively as he pins her arms to the ground and kicks apart her legs. Her cries grow louder when the husky spears his stiff canine length into her folds, his hips rocking hard and fast as he ravages his unwilling prey."
 
   option "Fight him": => await scene @Fight
   option "Distract him": => await scene @Distract
@@ -19,7 +19,7 @@ Fight: =>
   await do choice
 
 Overpower: =>
-  if roll str, 25
+  if roll str, 15
     say paragraph "Intent on giving the husky a lesson he won't soon forget, you jump forward and tackle him before he has a chance to gain the upper hand. The force of the impact startles the dog and knocks him flat on his back. You immediately wail away at his muzzle with harsh, fast punches. He growls and attempts to shove you off the whole time, but you have none of it, continuing to pummel his head until his snarls degrade into fearful whimpers and cries. Only once the last ounce of machismo is forcibly knocked from the husky's head do you relent, the raising his arms to shield his face before you can do any irreparable damage."
     say paragraph "Satisfied with the bad dog's scolding, you rise to your feat, breathing heavily from the adrenaline and exertion. The husky is quick to scamper off, running on all fours like the cowed dog he is. Once he's out of sight, you let out a sigh of relief and make your way back to a safer area of the city. You can't help but feel like maybe you went overboard, but you assure yourself that you did what was necessary and push the disquieting thought from your mind. You just hope that you don't have to play hero like this again any time soon."
   else
@@ -27,13 +27,13 @@ Overpower: =>
     say paragraph "\"Stupid whore!\" the husky snarls from above, his paws pressing your arms to the pavement and preventing you from wriggling free. His combined weight and strength are too much for you to contest, but you thrash and cry out all the same, hoping against hope that someone will hear and rescue you. Your cries are suddenly muffled when that long canine snout presses firm to your lips, silencing your efforts with a deep French kiss, his broad doggy tongue entwining with yours as it swirls around in your throat."
     say paragraph "His strangely arousing taste and the pressure of his form grinding against you eventually overpowers your will to protest, your fierce struggling fading into docile acceptance. Only once you fall completely limp, short of breath and half-hard beneath him, does your attacker finally relent, panting hotly against your face while you look up at him bitterly. \"See? It's not so bad once you just give in. You'll be a good pack bitch in no time,\" he teases. His suggestion makes you shudder in a mix of revulsion and excitement, finding yourself almost painfully aroused despite your better judgment."
     await do pause
-    if roll @Reaction1, 5
+    if roll mana
       await scene @FuckAndDump
     else
       await scene @BadEnd1
 
 LookForOpening: =>
-  if roll per, 20
+  if roll per, 15
     say paragraph "Waiting for the husky to act, you catch sight of his arm winding back and use this tell to weave under a fierce right hook. Having failed to anticipate this, the canine's momentum carries him forward, knocking him off-balance. You quickly slip behind him and drive a firm kick into his ass that knocks him the rest of the way down, a painful pratfall onto pavement leaving the husky immobilized as he groans and whimpers on the ground. You don't hesitate to book it in his moment of weakness, fleeing before he can recover and exact his rage-fueled revenge."
     say paragraph "Adrenaline pumping through your veins, you run for a long time before finally coming to a stop around several city blocks. You're still worried that the husky will be able to scent you, but bank on the rank stank of the city-folk to mask your own smell. Wiping your brow, you continue walking back to safety, fingers crossed that you'll never meet the same man again."
   else
@@ -41,20 +41,20 @@ LookForOpening: =>
     say paragraph "You look up at the sky without word. Some part of you is worried you might have a concussion, another screaming to lift yourself up and run away before it's too late. Your head, on the other hand, is in far too much pain to want to move at all, content to just lie here and let whatever happens wash over you. He beat you fair and square, you rationalize dimly, seeking any excuse to limit the ache in your skull."
     say paragraph "The husky leans over you, his breath bathing your face in warmth as he stares deeply into your eyes. \"Thought you were some hot shit, didn't ya?\" he teases. \"Don't kid yourself. You're nothing but another bitch in the making. Nothing but a stupid little whore who needs a hot dose of cum to fix that head of yours. Now be a good slut and spread those legs for me.\" There's something about his assertive tone and the way his paws stroke along your sides that leaves you hard despite yourself, your cock twitching weakly in submissive resignation."
     await do pause
-    if roll @Reaction1, 5
+    if roll mana
       await scene @FuckAndDump
     else
       await scene @BadEnd1
 
 RunFromFight: =>
-  if roll dex, 25
+  if roll dex, 15
     say paragraph "Seeing the canine's tall and muscular body up close gives you ample reason to reconsider. Rather than fight him, you quickly turn and beat tracks before he gets the chance to smash you into a pulp. The husky doesn't take too kindly to this and forgoes his vulpine fucktoy to pursue you instead, starting into a four-legged sprint while growling and barking his contempt. It's a close race, the canine hot on your heels while you sprint through the streets, but your stamina eventually prevails. You hear a chilling howl as you turn a corner, continuing to run like your life depended on it until you're finally sure that the dog's out of sight."
     say paragraph "You wipe the sweat from your brow and bend over to catch your breath. The fox girl most likely took the opportunity to flee her rapist, but you never looked back at any point to know for sure. Even if she manages to find trouble elsewhere, you can't help but feel proud of yourself for doing a good thing today. Your nerves, however, are still frayed from the close encounter, the adrenaline coursing through you leaving you jittery and paranoid for a little while longer as you make your way back to relative safety."
   else
     say paragraph "Intimidated by the muscular husky, you decide that picking a fight with him was a mistake and quickly turn around to run away as fast as you can. Enraged by your cowardice, the canine forgets about his recent fucktoy and begins to pursue you instead, falling down on all fours to chase after you in loping strides. You make a valiant effort to lose him, twisting sharply around corners to slow him down, but the husky closes the distance when your legs begin to falter. His raucous, frenzied barking comes to a swift and jarring halt when he finally jumps forward, sealing his arms around your torso to tackle you to the ground."
     say paragraph "You struggle fiercely, kicking and crying out in fear as he maneuvers himself fully atop of you. Once certain you can't wriggle free, you're roughly flipped over onto your back with your arms pinned down on either side of you, giving you no room to maneuver beyond your impotent bucking and thrashing. \"Come on, now. Did you really think you could get up in my face and then run away like a bitch?\" His tone is harsh, but measured, calm in a way that feels strangely disarming. You try to look away from him, but all this yields is a sultry rumble from the husky as he leans down to lick along your cheek. \"Don't worry your little head off, slut. Let your alpha take good care of you instead.\" His teasing words make you shudder, your length already half-hard with arousal despite yourself."
     await do pause
-    if roll @Reaction1, 5
+    if roll mana
       await scene @FuckAndDump
     else
       await scene @BadEnd1
@@ -68,7 +68,7 @@ Distract: =>
   await do choice
 
 MimicHowl: =>
-  if roll cha, 20
+  if roll cha, 10
     say paragraph "Maybe a convincing howl will turn his head long enough to give the girl time to escape? Looking first to obscure the source, you skulk out of sight of the couple, slipping behind a dumpster in a nearby alley. After taking a moment to steady your nerves, you crane your head back, take a deep breath, and release the air in your lungs as a low, resounding howl. The call echoes hauntingly through the streets and between buildings, sure to be heard by the lusty male husky. You notice his growls abruptly stop, but don't dare to step out to check on them, instead peeking past the safety of your cover. Sure enough, you catch a glimpse of gray and white fur sprinting by on all fours, the canine's tongue lolling out as he looks for the source of the sound."
     say paragraph "Once certain that the canine's out of earshot, you slip out of the alley and look back to where the fox girl was being claimed. It seems like she fled the moment her aggressor ran off, no signs of her or the man she was being molested by save for scarce bits of fur and clear fluids. You'd rather not stick around for much longer in case the dog wanders back, so you quickly make your way out of the neighborhood and back toward a safer zone of the city. You feel proud of yourself for thinking quick on your feet, but a little worried that the fox girl found herself in more trouble elsewhere. If nothing else, you acted with good intentions, and that's worth more than just fleeing without making an effort."
   else
@@ -76,13 +76,13 @@ MimicHowl: =>
     say paragraph "You notice the fox girl fleeing by the sound of her yipping voice fading into the distance, but you can't quite make out the husky's position. At first you wonder if he took the bait and ran off in another direction, but that hope is quickly dashed when you spot him stop at your exit, lifting his nose to follow the source of an uncertain scent. You're quick to jerk your head behind cover, but by then it's too late; the husky's taken notice of you, and his footsteps grow closer as he stalks into the alley with a low, menacing growl."
     say paragraph "Nerves getting the better of you, you make a break for it the moment the husky passes in the hopes of outpacing him. Try as you might to evade him, you scarcely make it out onto the street before you feel his paw around your arm. Momentum carries you forward as his steel grip jerks back, pulling your feet out from under you as you fall to the ground. The canine is quick to capitalize on your fumbling, dropping his bulk down to straddle your waist and pinning your wrists to the ground posthaste. \"Thought you were real sly trying to pull a fast one on me, huh? Too fucking bad you're not as clever as you think. A stupid little bitch like you should just shut your whore mouth let your alpha do all the thinking for you.\" The canine's voice comes in a low, harsh rumble, seething with anger but just restrained enough to feel mocking. There's something utterly dominant about it that a baser part of you can't help but find attractive, your length throbbing needily even as you thrash beneath him in resistance."
     await do pause
-    if roll @Reaction1, 5
+    if roll mana
       await scene @FuckAndDump
     else
       await scene @BadEnd1
 
 ShoutAndFlee: =>
-  if roll dex, 20
+  if roll dex, 10
     say paragraph "It's time to find the courage inside of you to stand up for someone in need. Taking a low stance to make a quick getaway, you draw from the rush of adrenaline coursing through you and let out a piercing, primal shout. The husky abruptly jolts up from the fox girl, who whimpers and yips fearfully as she scrambles away on all fours. Turning his head to face the origin of the sound, his expression quickly sours when he spots you. That's your cue to make a run for it, sprinting away from the furious dog with every ounce of energy in your body."
     say paragraph "The husky is quick to drop on all fours to pursue you. His quadrupedal lopes are frighteningly fast and his furious barking is a constant source of motivation. You run as quickly as your legs and lungs can carry you, but the husky remains hot on your heels for several city streets, swerving deftly around corners as he chases you like a car driven by a squirrel. His endurance does finally reach its limits, the dog petering to a halt behind you and letting out a frustrated howl as you leave him in the dust. You continue to run until you're certain that the husky's out of sight and earshot, then bend down to pause for some much-needed breath."
     say paragraph "You can't help but feel a great sense relief for both yourself and the husky's poor victim. Who knows what might have happened if her aggressor continued if you didn't stop him? You shake the chilling thought from your head and remind yourself to remain wary out here. If you ever let your guard down, you might just end up pinned beneath a horny hound and fucked like she was. You can only hope that someone would be as brave as you were and step in to prevent that."
@@ -90,7 +90,7 @@ ShoutAndFlee: =>
     say paragraph "You close your eyes and ball your fists, searching for the courage within you to follow through on your plan. Taking a runner's stance in preparation, you take a deep breath before letting it back out as a fierce, warning shout. The husky jumps back and looks around for the source of the noise, creating just the opening the fox girl needed to scramble up to her feet and bolt out of sight. When the husky's gaze settles on you, his expression suddenly darkens, staring into your eyes as if daring you to run."
     say paragraph "You break into a desperate sprint just as the husky lurches forward on all fours to pursue his new prey. Even though you give it your all, swerving through the city streets and taking every corner you can to shake him, the husky manages to catch up to you on the straight and pounces in a sudden leap. His arms seal around you before his weight drags you to the ground, pulling you chest-first into the pavement below. The impact knocks the air out of your lungs, leaving you coughing and wheezing weakly as he maneuvers you onto your back and lowers himself to straddle your waist. His large paws take hold of your wrists and pin them down to either side of you, giving you no room to escape as his muscular body weighs you down. \"You're nothing but another whore in the making,\" the husky growls roughly, his damp doggy cock throbbing against your stomach. \"Don't you worry, little bitch. I'll teach you everything you need to know.\""
     await do pause
-    if roll @Reaction1, 5
+    if roll mana
       await scene @FuckAndDump
     else
       await scene @BadEnd1
@@ -106,7 +106,7 @@ ThrowSomething: =>
     say paragraph "\"What the fuck are you doing?\" he calls out to you. Caught off-guard, you stare back at him like a deer in the headlights. Your lower lip quivers as you stammer out a response, equal parts excuse and apology, but the dog-man is having none of it. He shoves his vulpine cocksleeve to the ground, then stands up tall and starts to walk toward you. The fox girl scampers away, yipping and whimpering as she flees to relative safety. You try to do the same, but your legs lock up in fear as his towering form treads closer."
     say paragraph "His muzzle crooks in a malevolent smirk as he tilts your chin with a claw. \"What's wrong, little bitch? Are you afraid I'm going to hurt you?\" You nod timidly, the knot in your throat making it hard to muster anything more. \"Don't worry about a thing,\" the large dog assures you. \"Just settle down and let your alpha take care of you. I'll make sure you're niiice and comfortable beneath me...\" Scared stiff, you are unable to fight back as the husky envelops you in his arms, lifts you against his chest, and then lowers you down onto your back atop a warm bed of pavement."
     await do pause
-    if roll @Reaction1, 5
+    if roll mana
       await scene @FuckAndDump
     else
       await scene @BadEnd1
@@ -167,7 +167,7 @@ FleeNow: =>
   else
     say paragraph "Putting aside your fears, you step out from the alley and begin to skulk away. You are briefly distracted by the sound of a moan cutting through the fox girl's struggles, and that momentary lapse in attention is all it takes for your foot to scuff on the corner of a can. You suck in a sharp breath and look down at the source of the sound, then back to the couple. Your gaze is met by the piercing blue eyes of the husky, who appraises you hungrily as you stare back at him like a deer in the headlights."
     await do pause
-    if roll @Reaction1, 2
+    if roll mana
       say paragraph "\"Looks like we've got ourselves some company!\" the husky laughs derisively. The fox girl whimpers from beneath the male, still struggling under his steel hold. Her captor pays no mind to her continued resistance, treating it with the blase disinterest of someone who's heard it a thousand times before. Shame burns bright in your cheeks as you continue walking, only to stop in your tracks again when the husky calls out to you. \"Come on, join the fun! Bet you'll make a real pretty bitch for the pack. Mmmh, you'd look so cute with your tail all curled up against your back, now wouldn't you?\" Your teeth chatter in your mouth as you glower back at the teasing husky hunk. \"No? What a shame. Guess I'll have this lovely li'l fucktoy all to myself, then. Too bad, too, 'cause you'd be the perfect little slut to keep her company while I'm out makin' more.\" His words singe like a branding iron, and it takes all of your self-control to bite your tongue as he returns to pounding the helpless vulpine's cunt."
       say paragraph "Sickened by the scene, you tear your head away and skulk around a corner. Once safely out of sight, you keep walking as quickly as you can without drawing undue attention to yourself. The last thing you need right now is to be accosted by another horny husky and meet the same fucked-up fate as the fox girl. Their sounds of sex fade into the background as you make your way back to safety, thought it's clear by the tone that she's becoming more and more pliant to the canine's rough treatment. Whether or not she'll get out of there with her mind and body intact, you do not know, but you don't want to be around to find out either way. Whatever guilt you harbor for leaving her behind is eclipsed by the relief of getting out of there without being raped, maimed, or worse, and you thank your lucky stars that the husky kept your admonishment to mere verbal taunting."
     else
@@ -183,7 +183,7 @@ Escape: =>
     say paragraph "Convinced that playing hero isn't worth it, you slip away from the rutting couple, careful not to alert them as you make your swift escape. Relief washes over you the moment you turn the corner, out of sight and out of danger. As you wander toward a safer section of the city, your thoughts drift back to the poor canid and what horrible fate awaits her. Maybe you should have stepped in after all...? You shake your head to push the scene from your mind, certain that you made the only sensible decision."
   else
     say paragraph "With all those risks in mind, you come to the conclusion that playing hero isn't worth it and begin to skulk away from the couple. Your heart nearly stops when you trip on an uneven patch of pavement and stumble forward. Scrambling back up to your feet, you whip your head around to see if the husky caught wind of your pratfall. Your fears are confirmed by his glowering expression as he stops thrusting into his bitch to look you up and down."
-    if roll @Reaction1, 2
+    if roll mana
       say paragraph "You expect the canine to forget about his prey and start chasing after you, only to be surprised when the dog's muzzle creases in a cocky smirk instead. \"Looks like we've got ourselves an audience. Well, go on, little bitch. Smile for the camera.\" Tears running down her face, the fox woman gives you a forlorn look as she squirms beneath her husky captor, unable to do anything but accept the futility of the situation. \"Now, why don't you sit back, wait your turn, and let me show you how a *real* alpha takes care of his pack.\" Without another word, the male leans his weight over his plaything again and returns to fucking her into the hot pavement, the air soon filled with the sounds of her violation. Feeling sick to your stomach, you turn away and run from the scene without sparing the couple another glance."
       say paragraph "On the way back to a safer section of the city, you can't help but feel a mix of relief and remorse over what happened. You're grateful that the dog-man didn't react more violently to your intrusion, but regret that you didn't step in to stop him. Maybe if you manned up and scared him off, you could have brought her back to safety? No, that wouldn't be wise. The husky was *far* more fit than you'll ever be, and even if you succeeded, he would undoubtedly try to fuck you over in return. You make an effort to forget all about it and move on with your life, not wanting to dwell on the \"what-if\"s any more than necessary."
     else
@@ -192,12 +192,6 @@ Escape: =>
       say paragraph "\"Settle down,\" the larger male commands. Adrenaline takes over and you start to wail into him unthinkingly, throwing every punch and kick you can muster while screaming at him to let you go. The husky proves unfazed by your last-ditch defenses and bares the sharp points of his teeth at you to express his tired annoyance. \"Fine. You leave me choice, then.\" You're not so much shoved as wrestled onto your back, the canine keeping you pinned beneath his bulk until you recognize just how futile it is to keep struggling for your freedom. His eyes remain locked with yours even after you settle down, still panting and glaring up at him ruefully as tears of resentment streak down your fear-pale cheeks."
       await do pause
       await scene @BadEnd1
-
-Reaction1: =>
-  if Player.is_husky
-    bonus += 1
-  if Player.sex is "female"
-    bonus -= 3
 
 FuckAndDump: =>
   say paragraph "The larger male lets out a low, lustful growl as he appraises your body. His paw-like hand strokes down your fore, claw-tipped fingers tracing a serpentine pattern down your shirt. Still clothed, the impression of your lesser length is visible through your jeans, half-hard and wanting despite your better judgment. You can't help but let out a gasp when his padded palm brushes teasingly at the growing bulge, choking the threat you prepared in your throat. It's almost as if he's exuding some unseen influence on you, and the adrenaline of your earlier resistance only fuels your unwanted arousal."
