@@ -39,6 +39,8 @@ class Room extends Entity
     if @North then option North: => await do @North
     if @West then option West: => await do @West
     if @East then option East: => await do @East
+    if @Up then option Up: => await do @Up
+    if @Down then option Down: => await do @Down
 
   Choices: =>
     await do choice

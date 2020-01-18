@@ -12,6 +12,9 @@ Explore: =>
     2: => say paragraph "You cough a bit."
     3: => say paragraph "You find some nice flowers!"
 
+Up: =>
+  await Player.location = OverworldCity
+
 Choices: =>
   option "Explore": => await scene @Explore
   # option North: => say paragraph "There's too much wreckage to go north."
