@@ -2,7 +2,7 @@
 Shifted Fates is a post-apocalyptic text-based adventure game based around magic, transformation, and domination. A magic awakening has caused the near-extinction of humanity, and most of the survivors have been transformed into furry races. What kinds of strange new cultures will you find in this new world? Who will be your allies, and how will you choose to survive?
 
 # Demo
-https://forced.tf/
+https://hahaluckyme.github.io/shifted-fates/
 
 # How to contribute
 
